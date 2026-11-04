@@ -58,9 +58,10 @@ curl -s http://127.0.0.1:8000/api/health
 ## 4. 当前验证状态
 
 - 代码路径、模式切换、回退逻辑与前端标签已实现；
-- 当前仓库没有配置真实厂商 key，因此 **真实 DeepSeek / Qwen 调用尚未在本机验证**；
+- **DeepSeek 已用真实 key 在本机验证**：`scripts/check_remote.py` 返回“可用”，Agent 通过真实 Function Calling 调用了 3 个工具，RAG 返回 6 条引用；
+- **Vision 尚未配置真实 key**，因此 Qwen-VL 远程调用尚未验证；
 - `scripts/check_remote.py` 用最小请求分别验证聊天与视觉接口，填入 key 后即可执行；
-- 不要把 `.env`、key 或带 key 的日志提交到 Git。
+- key 只保存在本机 `.env`（权限 600、被 Git 忽略），不进入仓库或日志。
 
 ## 5. 安全边界
 
