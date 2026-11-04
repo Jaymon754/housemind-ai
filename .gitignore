@@ -1,0 +1,30 @@
+# Secrets and local state
+.env
+.env.local
+.DS_Store
+*.log
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Runtime data (SQLite, Chroma, uploads)
+backend/data/
+data/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/coverage/
+.pnpm-store/
+node_modules/
+
+# Tooling
+.swiftcache/
+.DS_Store
