@@ -215,6 +215,17 @@ docker compose up --build
 
 访问 `http://127.0.0.1:8000`。SQLite、Chroma 与上传文件保存在 `housemind-data` volume。
 
+### 6. 推送到公开仓库
+
+仓库已在本地完成多次有意义的提交（按数据、ML、API、Agent、前端、测试、文档拆分）。替换为你的 GitHub/Gitee 地址后执行：
+
+```bash
+git remote add origin https://github.com/<your-account>/housemind-ai.git
+git push -u origin main
+```
+
+推送前再跑一次 `git status` 与 `git grep -n "sk-"`，确认没有 `.env`、密钥或 `backend/data` 被跟踪。公开仓库建议开启 Issues，并在 About 中填写在线地址（如已部署）。
+
 ## 复现训练与评测
 
 ```bash
