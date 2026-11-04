@@ -56,11 +56,11 @@ let controller: AbortController | null = null
 let scrollScheduled = false
 
 const modeLabel = computed(() => (sessionMode.value === 'deepseek' ? 'DeepSeek Agent' : '本地规划器'))
-const modeDescription = computed(() =>
-  sessionMode.value === 'deepseek'
-    ? 'DeepSeek Function Calling · 自主选择工具'
-    : '确定性工具链 · 无密钥也可完整演示',
-)
+const modeDescription = computed(() => {
+  if (sessionMode.value === 'deepseek') return 'DeepSeek Function Calling · 自主选择工具'
+  if (configuredLLM.value) return '当前历史会话由本地规划器生成 · DeepSeek 已连接，可新建会话'
+  return '确定性工具链 · 无密钥也可完整演示'
+})
 const activeTools = computed(() => messages.value.reduce((sum, msg) => sum + (msg.toolCalls?.length ?? 0), 0))
 const activeCitations = computed(() => messages.value.reduce((sum, msg) => sum + (msg.citations?.length ?? 0), 0))
 const tools = computed(() => app.meta?.tools ?? [])

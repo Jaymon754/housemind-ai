@@ -29,7 +29,7 @@
 
 - [x] `python -m pytest tests -q` 全绿（当前 25 passed）
 - [x] 无密钥启动，`/api/health` 返回 `local-planner` / `local`
-- [ ] 配置密钥启动，Agent 切换 `deepseek`（如可测试）
+- [x] 配置密钥启动，Agent 切换 `deepseek`（已用真实 key 验证）
 - [ ] `GET /api/meta` 的指标与新 artifacts 一致
 - [ ] SQLite 自动建表；MySQL URL 可启动（可选）
 - [x] `GET /api/mcp/manifest` 正常

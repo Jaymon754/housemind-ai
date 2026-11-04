@@ -31,7 +31,7 @@ def check_deepseek() -> bool | None:
     try:
         from openai import OpenAI
 
-        client = OpenAI(api_key=settings.deepseek_api_key, base_url=settings.deepseek_base_url)
+        client = OpenAI(api_key=settings.deepseek_api_key, base_url=settings.deepseek_base_url, timeout=30.0)
         response = client.chat.completions.create(
             model=settings.deepseek_model,
             messages=[{"role": "user", "content": "只回复两个字：可用。"}],
@@ -57,7 +57,7 @@ def check_vision() -> bool | None:
         buffer = io.BytesIO()
         image.save(buffer, format="JPEG", quality=88)
         data_url = "data:image/jpeg;base64," + base64.b64encode(buffer.getvalue()).decode("ascii")
-        client = OpenAI(api_key=settings.vision_api_key, base_url=settings.vision_base_url)
+        client = OpenAI(api_key=settings.vision_api_key, base_url=settings.vision_base_url, timeout=30.0)
         response = client.chat.completions.create(
             model=settings.vision_model,
             messages=[
@@ -90,7 +90,10 @@ def main() -> int:
         return 2
     if any(result is False for result in results):
         return 1
-    print("\n远程模式配置可用；重启后端后 /api/health 会显示对应模式。")
+    if all(result is True for result in results):
+        print("\nDeepSeek 与 Vision 均可用；重启后端后 /api/health 会显示对应模式。")
+    else:
+        print("\n部分远程模式可用；未配置的 provider 会保持本地模式。")
     return 0
 
 
