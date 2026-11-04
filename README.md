@@ -216,7 +216,19 @@ docker compose up --build
 
 访问 `http://127.0.0.1:8000`。SQLite、Chroma 与上传文件保存在 `housemind-data` volume。
 
-### 6. 推送到公开仓库
+### 6. 可选：启用远程模型
+
+默认无需密钥。若要启用 DeepSeek Agent 或 Qwen-VL：
+
+```bash
+cp .env.example .env        # 已存在则跳过
+# 编辑 DEEPSEEK_API_KEY / VISION_API_KEY
+.venv/bin/python scripts/check_remote.py
+```
+
+完整字段、验证方法与安全边界见 [远程模型配置](docs/REMOTE_MODELS.md)。
+
+### 7. 推送到公开仓库
 
 仓库已在本地完成多次有意义的提交（按数据、ML、API、Agent、前端、测试、文档拆分）。替换为你的 GitHub/Gitee 地址后执行：
 
@@ -339,6 +351,7 @@ docs/               # 技术文档、截图、演示脚本
 - [AI 技术说明](docs/AI_TECHNICAL.md)
 - [创新点与社会价值](docs/INNOVATION.md)
 - [演示视频脚本](docs/DEMO_SCRIPT.md)
+- [远程模型配置](docs/REMOTE_MODELS.md)
 - [提交清单](docs/SUBMISSION_CHECKLIST.md)
 - [技术文档 PDF（16 页）](docs/HouseMind_AI_技术文档.pdf)
 - [演示视频（5:40 · 1080p）](docs/HouseMind_AI_Demo_1080p.mp4)

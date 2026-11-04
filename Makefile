@@ -1,4 +1,4 @@
-.PHONY: install dev start build train test rag-eval pdf video docker clean
+.PHONY: install dev start build train test rag-eval pdf video remote-check docker clean
 
 install:
 	./scripts/bootstrap.sh
@@ -26,6 +26,9 @@ pdf:
 
 video:
 	.venv/bin/python scripts/build_demo_video.py
+
+remote-check:
+	.venv/bin/python scripts/check_remote.py
 
 docker:
 	docker compose up --build
