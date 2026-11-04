@@ -210,7 +210,7 @@ class VisionService:
                 "单张照片无法判断结构、渗漏、电路或霉菌",
                 "无法测量面积或确认装修材料的真实品质",
             ],
-            "confidence": 0.28,
+            "confidence": 0.0,
             "capability_note": "当前未配置远程多模态模型，仅进行本地图像信号分析，不推断房间类型、风格或材质。",
             "questions_for_viewing": [
                 "现场核对采光、通风与噪音",

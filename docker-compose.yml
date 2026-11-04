@@ -1,0 +1,19 @@
+services:
+  app:
+    build: .
+    image: housemind-ai:1.0.0
+    ports:
+      - "8000:8000"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8000
+      DATABASE_URL: sqlite:////app/backend/data/housemind.db
+    volumes:
+      - housemind-data:/app/backend/data
+    restart: unless-stopped
+
+volumes:
+  housemind-data:

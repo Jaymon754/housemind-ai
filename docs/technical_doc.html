@@ -1,0 +1,1067 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>HouseMind AI · 技术文档</title>
+<style>
+@font-face {
+  font-family: "Fraunces";
+  src: url("../frontend/node_modules/@fontsource-variable/fraunces/files/fraunces-latin-full-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../frontend/node_modules/@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+}
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+:root {
+  --ink: #10231d;
+  --ink-2: #233a31;
+  --muted: #66736b;
+  --line: #d8d2c4;
+  --paper: #f7f3ea;
+  --paper-2: #efe9dc;
+  --gold: #a98147;
+  --sage: #3f6b57;
+  --red: #9a4d3f;
+}
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: "Manrope", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  font-size: 10.2pt;
+  line-height: 1.72;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  font-feature-settings: "tnum" 1, "ss01" 1;
+}
+.sheet {
+  position: relative;
+  min-height: 297mm;
+  padding: 18mm 17mm 15mm;
+  background: var(--paper);
+  break-before: page;
+  page-break-before: always;
+  overflow: hidden;
+}
+.sheet:first-of-type { break-before: auto; page-break-before: auto; }
+.sheet::after {
+  content: "";
+  position: absolute;
+  left: 17mm; right: 17mm; bottom: 9mm;
+  height: 1px;
+  background: var(--line);
+}
+.folio {
+  position: absolute;
+  left: 17mm; bottom: 5.2mm;
+  font-size: 7pt;
+  letter-spacing: .13em;
+  color: #8a918a;
+  text-transform: uppercase;
+}
+.folio.right { left: auto; right: 17mm; }
+h1, h2, h3, h4 { margin: 0; font-weight: 500; }
+h1 {
+  font-family: "Fraunces", "Songti SC", serif;
+  font-size: 31pt;
+  line-height: 1.08;
+  letter-spacing: -.02em;
+}
+h2 {
+  font-family: "Fraunces", "Songti SC", serif;
+  font-size: 20pt;
+  line-height: 1.18;
+  letter-spacing: -.01em;
+  margin: 0 0 5mm;
+}
+h2 em, h1 em { font-style: italic; color: var(--sage); }
+h3 {
+  font-family: "Fraunces", "Songti SC", serif;
+  font-size: 13pt;
+  line-height: 1.3;
+  margin: 6mm 0 2.2mm;
+}
+h4 { font-size: 9.2pt; letter-spacing: .02em; margin: 4mm 0 1.4mm; }
+p { margin: 0 0 3.2mm; }
+strong { font-weight: 700; }
+.small { font-size: 8.6pt; color: var(--muted); line-height: 1.65; }
+.tiny { font-size: 7.4pt; color: var(--muted); letter-spacing: .02em; }
+.kicker {
+  font-size: 7.2pt;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 3mm;
+}
+.rule { height: 1px; background: var(--line); margin: 5mm 0; }
+.lead { font-size: 11.2pt; line-height: 1.7; color: var(--ink-2); }
+.muted { color: var(--muted); }
+.gold { color: var(--gold); }
+.sage { color: var(--sage); }
+.red { color: var(--red); }
+.mono { font-family: "SFMono-Regular", "Menlo", monospace; font-size: 8.2pt; }
+.tag {
+  display: inline-block;
+  padding: 1mm 2.4mm;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  font-size: 7.2pt;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin: 0 1mm 1mm 0;
+}
+.tag.gold { border-color: #c9b08a; color: #7c5c2e; background: #f3ead9; }
+
+/* cover */
+.cover {
+  min-height: 297mm;
+  padding: 19mm 18mm 16mm;
+  background:
+    radial-gradient(1200px 600px at 80% 10%, rgba(176,138,82,.18), transparent 60%),
+    linear-gradient(155deg, #0d1e18 0%, #10231d 46%, #17342a 100%);
+  color: #f4eee2;
+  position: relative;
+  overflow: hidden;
+  break-after: page;
+}
+.cover::before {
+  content: "";
+  position: absolute;
+  inset: 9mm;
+  border: 1px solid rgba(244,238,226,.18);
+  pointer-events: none;
+}
+.cover .topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 7.2pt;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #c8b99e;
+  position: relative;
+  z-index: 2;
+}
+.cover .monogram {
+  width: 11mm; height: 11mm;
+  border: 1px solid #b08a52;
+  display: grid; place-items: center;
+  font-family: "Fraunces", serif;
+  font-size: 12pt;
+  color: #e8d7b6;
+}
+.cover .title-block { margin-top: 33mm; position: relative; z-index: 2; }
+.cover h1 {
+  font-size: 55pt;
+  line-height: .94;
+  color: #fbf6eb;
+  letter-spacing: -.035em;
+}
+.cover h1 span { display: block; font-style: italic; color: #d9c3a0; }
+.cover .cn {
+  font-family: "Songti SC", "Fraunces", serif;
+  font-size: 22pt;
+  letter-spacing: .06em;
+  margin-top: 8mm;
+  color: #efe4cf;
+}
+.cover .dek {
+  margin-top: 9mm;
+  max-width: 132mm;
+  font-size: 10pt;
+  line-height: 1.85;
+  color: #c9c3b4;
+}
+.cover .meta {
+  position: absolute;
+  left: 18mm; bottom: 18mm;
+  display: flex; gap: 13mm;
+  font-size: 7.6pt;
+  letter-spacing: .08em;
+  color: #b9ae99;
+  z-index: 2;
+}
+.cover .meta b { display: block; color: #f4eee2; font-weight: 600; margin-top: 1mm; letter-spacing: .02em; }
+.cover .cover-img {
+  position: absolute;
+  right: 0; bottom: 0;
+  width: 108mm;
+  opacity: .22;
+  filter: grayscale(1) contrast(1.1);
+  mix-blend-mode: screen;
+  z-index: 1;
+}
+.cover .stamp {
+  position: absolute;
+  right: 18mm; top: 18mm;
+  text-align: right;
+  font-size: 7pt;
+  letter-spacing: .12em;
+  color: #a99a80;
+  z-index: 2;
+}
+
+/* layout */
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; }
+.three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+.four { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; }
+.split { display: grid; grid-template-columns: 1.15fr .85fr; gap: 8mm; align-items: start; }
+.card {
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.42);
+  padding: 4.2mm 4.6mm;
+  break-inside: avoid;
+}
+.card.dark { background: var(--ink); color: #f1eadb; border-color: var(--ink); }
+.card.dark .small, .card.dark .tiny { color: #bcb6a8; }
+.card h4 { margin-top: 0; }
+.metric {
+  border-top: 2px solid var(--ink);
+  padding-top: 2.2mm;
+}
+.metric strong {
+  display: block;
+  font-family: "Fraunces", serif;
+  font-size: 19pt;
+  line-height: 1.05;
+  font-weight: 500;
+}
+.metric span { display: block; font-size: 7.4pt; color: var(--muted); letter-spacing: .04em; margin-top: 1mm; }
+.quote {
+  border-left: 2px solid var(--gold);
+  padding: 1mm 0 1mm 4.5mm;
+  font-family: "Fraunces", "Songti SC", serif;
+  font-size: 12.5pt;
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin: 5mm 0;
+}
+.note {
+  background: #eee7d8;
+  border: 1px solid #ddd2bd;
+  padding: 3.4mm 4mm;
+  font-size: 8.4pt;
+  line-height: 1.7;
+  color: #4b5049;
+}
+.note b { color: var(--ink); }
+
+/* table */
+table { width: 100%; border-collapse: collapse; font-size: 8.4pt; line-height: 1.45; break-inside: avoid; }
+th {
+  text-align: left;
+  font-size: 7pt;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1.5px solid var(--ink);
+  padding: 2.2mm 2mm;
+  font-weight: 700;
+}
+td { border-bottom: 1px solid var(--line); padding: 2.2mm 2mm; vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr.highlight td { background: #ece2ce; font-weight: 700; }
+
+/* figures */
+figure { margin: 4mm 0; break-inside: avoid; }
+figure img { width: 100%; display: block; border: 1px solid var(--line); }
+figcaption { font-size: 7.4pt; color: var(--muted); margin-top: 1.6mm; line-height: 1.5; }
+figure.half img { width: 100%; }
+.figrow { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+.figrow figure { margin: 2mm 0; }
+
+/* arch */
+.arch { margin: 5mm 0 2mm; }
+.arch-row { display: flex; align-items: stretch; gap: 3mm; margin-bottom: 3mm; }
+.arch-box {
+  flex: 1;
+  border: 1px solid var(--line);
+  background: #fbf8f0;
+  padding: 3mm 3.2mm;
+  font-size: 7.6pt;
+  line-height: 1.5;
+}
+.arch-box b { display: block; font-size: 8.4pt; margin-bottom: .8mm; }
+.arch-box small { color: var(--muted); font-size: 6.8pt; }
+.arch-label {
+  width: 18mm;
+  flex: 0 0 18mm;
+  font-size: 6.8pt;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding-top: 3mm;
+  text-align: right;
+}
+.arch-arrow { text-align: center; color: var(--gold); font-size: 9pt; line-height: 1; margin: -1mm 0 1.2mm; }
+
+/* toc */
+.toc { margin-top: 4mm; }
+.toc-row { display: flex; align-items: baseline; gap: 2mm; border-bottom: 1px solid var(--line); padding: 2.4mm 0; font-size: 9.2pt; }
+.toc-row .n { width: 8mm; color: var(--gold); font-family: "Fraunces", serif; }
+.toc-row .t { flex: 1; }
+.toc-row .d { color: var(--muted); font-size: 7.2pt; }
+
+code { font-family: "SFMono-Regular", "Menlo", monospace; font-size: 8pt; background: #eae3d5; padding: .2mm 1.2mm; border-radius: 2px; }
+pre {
+  background: #10231d;
+  color: #e9e0cf;
+  padding: 3.4mm 4mm;
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 7.4pt;
+  line-height: 1.65;
+  overflow: hidden;
+  white-space: pre-wrap;
+  border-radius: 2px;
+}
+pre .c { color: #9fb4a7; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="topline">
+    <div class="monogram">HM</div>
+    <div>Technical Dossier · 2026</div>
+  </div>
+  <div class="title-block">
+    <h1>House<span>Mind</span> AI</h1>
+    <div class="cn">读懂市场，再决定。</div>
+    <div class="dek">
+      面向金县住宅的 AI 估值与投资决策工作台。把真实成交、精确 TreeSHAP、概率区间、
+      现金流承销、混合 RAG、多工具 Agent 与视觉边界，放进同一条可核对的决策链。
+    </div>
+  </div>
+  <div class="meta">
+    <div>项目<b>AI 房产估值与投资决策</b></div>
+    <div>版本<b>1.0.0 / 2026-11</b></div>
+    <div>范围<b>King County · 2014–2015</b></div>
+  </div>
+  <img class="cover-img" src="screenshots/01-dashboard.png" alt="" />
+  <div class="stamp">辅助参考 · 非正式评估<br />NOT AN APPRAISAL</div>
+</div>
+
+<!-- 01 摘要 -->
+<section class="sheet">
+  <div class="kicker">00 / Abstract</div>
+  <h2>一个价格不够，<br /><em>一条决策链</em>才够。</h2>
+  <p class="lead">
+    房产决策的困难不在于缺少一个数字，而在于这个数字是否可信、为什么、会错多少、如果出租是否养得起、
+    以及模型在什么情况下不该被相信。HouseMind AI 用七个模块回答这些问题。
+  </p>
+
+  <div class="four" style="margin:7mm 0 6mm">
+    <div class="metric"><strong>$59,477</strong><span>XGBoost 测试 MAE</span></div>
+    <div class="metric"><strong>0.9156</strong><span>测试 R²</span></div>
+    <div class="metric"><strong>81.5%</strong><span>80% 区间实测覆盖率</span></div>
+    <div class="metric"><strong>21,418</strong><span>清洗后真实成交</span></div>
+  </div>
+
+  <div class="split">
+    <div>
+      <h3>本文档回答什么</h3>
+      <p>
+        系统如何从 21,613 条原始成交走到可用的估值；为什么选择 XGBoost；区间如何校准；
+        TreeSHAP 如何保证加性；RAG 为什么能拒答；Agent 在没有大模型密钥时如何仍然真实工作；
+        视觉能力为何主动设限；以及这套系统在工程与安全上做了什么。
+      </p>
+      <p>
+        所有指标由仓库脚本生成，可在 <span class="mono">ml/artifacts/</span> 复核。本文档不把
+        UCI、California 与 King County 的绝对误差放在同一张表里比较，也不声称模型能预测当前市场。
+      </p>
+      <div class="quote">“估值是带不确定性的区间判断，不是精确到个位数的真值。”</div>
+    </div>
+    <div>
+      <h3>目录</h3>
+      <div class="toc">
+        <div class="toc-row"><span class="n">01</span><span class="t">问题、范围与设计原则</span></div>
+        <div class="toc-row"><span class="n">02</span><span class="t">系统架构与请求链路</span></div>
+        <div class="toc-row"><span class="n">03</span><span class="t">数据、特征与防泄漏</span></div>
+        <div class="toc-row"><span class="n">04</span><span class="t">模型、区间与误差</span></div>
+        <div class="toc-row"><span class="n">05</span><span class="t">可解释性与投资引擎</span></div>
+        <div class="toc-row"><span class="n">06</span><span class="t">RAG、Agent 与 MCP</span></div>
+        <div class="toc-row"><span class="n">07</span><span class="t">多模态、工程与安全</span></div>
+        <div class="toc-row"><span class="n">08</span><span class="t">评测、限制与复现</span></div>
+      </div>
+      <div class="note" style="margin-top:5mm">
+        <b>阅读提示</b><br />
+        第 3–5 节是 AI 深度；第 6–7 节是工程与产品；第 8 节是评审最关心的“边界与诚实”。
+      </div>
+    </div>
+  </div>
+  <div class="folio">HouseMind AI · Technical Dossier</div><div class="folio right">01</div>
+</section>
+
+<!-- 02 问题 -->
+<section class="sheet">
+  <div class="kicker">01 / Problem &amp; Scope</div>
+  <h2>先承认边界，<br />再谈<em>智能</em>。</h2>
+  <div class="two">
+    <div>
+      <h3>四个真实问题</h3>
+      <p><b>价格不可质疑。</b>多数 AVM 只给一个数字，用户无法判断它凭什么、误差多大。</p>
+      <p><b>投资与估值脱节。</b>知道房价，不等于知道月供、NOI、DSCR 和退出回报。</p>
+      <p><b>大模型会编造。</b>房产问题涉及税务、保险、法律，回答必须能回到来源。</p>
+      <p><b>多模态被过度承诺。</b>一张照片不能判断结构安全，但很多产品暗示它可以。</p>
+      <h3>设计原则</h3>
+      <p><span class="tag gold">可验证</span><span class="tag gold">可降级</span><span class="tag gold">可解释</span></p>
+      <p class="small">
+        每个数字来自 artifact、工具结果或引用；没有密钥也能完整演示，但界面必须标注模式；
+        每个结论都要展示假设、区间与限制。
+      </p>
+    </div>
+    <div>
+      <div class="card dark">
+        <div class="kicker" style="color:#c9b08a">Scope / 适用范围</div>
+        <h3 style="color:#f4eee2;margin-top:1mm">King County<br />2014-05 — 2015-05</h3>
+        <p class="small" style="color:#c9c3b4">
+          美元计价的住宅成交样本。模型学习的是这段历史中的特征—价格关系，
+          不是 2026 年的挂牌市场，也不是中国、商业地产或豪宅的通用估值器。
+        </p>
+        <div class="rule" style="background:#3a4d43"></div>
+        <p class="small" style="color:#c9c3b4;margin:0">
+          输出定位：初筛、挂牌参考、投资假设测算、方法教学。<br />
+          不用于：正式评估、贷款审批、法律/税务意见、自动出价。
+        </p>
+      </div>
+      <div class="note" style="margin-top:4mm">
+        <b>为什么不做“全国房价预测”？</b><br />
+        不同城市、年代、币种与产权制度的数据分布不可直接迁移。把三个数据集拼在一起训练，
+        会得到一个看似通用、实际无法解释的模型。HouseMind 选择把边界写进产品。
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:8mm">七个模块，一条链路</h3>
+  <div class="three">
+    <div class="card"><h4>01 数据驾驶舱</h4><p class="small">市场结构、空间价格、样本质量。先理解市场，再看单套房。</p></div>
+    <div class="card"><h4>02 智能估值</h4><p class="small">点估计 + 80% 区间 + 局部 SHAP + 可比 + what-if。</p></div>
+    <div class="card"><h4>03 投资决策</h4><p class="small">月供、NOI、Cap Rate、CoC、DSCR、IRR、情景与敏感性。</p></div>
+  </div>
+  <div class="three" style="margin-top:3mm">
+    <div class="card"><h4>04 AI 顾问</h4><p class="small">6 个真实工具的 SSE Agent，工具轨迹可追溯、可持久化。</p></div>
+    <div class="card"><h4>05 知识库</h4><p class="small">Chroma + BM25 混合检索，引用到章节，超纲问题拒答。</p></div>
+    <div class="card"><h4>06 图像分析</h4><p class="small">本地物理信号 + 可选 VLM；明确不判断结构安全。</p></div>
+  </div>
+  <div class="card" style="margin-top:3mm"><h4>07 研究实验室</h4><p class="small">模型对比、全局 SHAP、区间校准、未见邮编泛化、三个数据集的独立实验与模型卡。</p></div>
+  <div class="folio">HouseMind AI · Technical Dossier</div><div class="folio right">02</div>
+</section>
+
+<!-- 03 架构 -->
+<section class="sheet">
+  <div class="kicker">02 / Architecture</div>
+  <h2>共享服务层，<br />两条<em>入口</em>。</h2>
+  <p class="lead">
+    网页 API 与 MCP 工具协议共享同一套业务能力。Agent 不是另一个应用，而是服务层之上的编排器；
+    这样“页面上的估值”和“Agent 调用的估值”永远是同一个模型、同一套假设。
+  </p>
+
+  <div class="arch">
+    <div class="arch-row">
+      <div class="arch-label">Client</div>
+      <div class="arch-box"><b>Vue 3 SPA</b><small>7 个页面 · Pinia · Vue Router · ECharts · SSE 客户端</small></div>
+      <div class="arch-box"><b>MCP Client</b><small>Claude Desktop / Cursor · stdio JSON-RPC</small></div>
+    </div>
+    <div class="arch-arrow">↓ HTTP / SSE &nbsp;&nbsp;·&nbsp;&nbsp; stdio ↓</div>
+    <div class="arch-row">
+      <div class="arch-label">Interface</div>
+      <div class="arch-box"><b>FastAPI REST</b><small>/api/valuation · /investment · /dashboard · /knowledge · /vision</small></div>
+      <div class="arch-box"><b>SSE Agent</b><small>/api/agent/stream · meta → status → tool_call → tool_result → token → citations → done</small></div>
+      <div class="arch-box"><b>MCP Server</b><small>FastMCP · 6 tools · 与 Web 共享 execute_tool</small></div>
+    </div>
+    <div class="arch-arrow">↓</div>
+    <div class="arch-row">
+      <div class="arch-label">Core</div>
+      <div class="arch-box"><b>ModelService</b><small>XGBoost · interval · TreeSHAP · comps · market · what-if</small></div>
+      <div class="arch-box"><b>InvestmentService</b><small>mortgage · NOI · DSCR · IRR · scenarios · sensitivity</small></div>
+      <div class="arch-box"><b>RAGService</b><small>Chroma · BM25 · domain boost · abstention · citations</small></div>
+      <div class="arch-box"><b>VisionService</b><small>Pillow signals · optional Qwen-VL · boundaries</small></div>
+    </div>
+    <div class="arch-arrow">↓</div>
+    <div class="arch-row">
+      <div class="arch-label">State</div>
+      <div class="arch-box"><b>Artifacts</b><small>joblib · metrics JSON · SHAP · model card</small></div>
+      <div class="arch-box"><b>Chroma</b><small>persistent · 18 docs / 71 chunks</small></div>
+      <div class="arch-box"><b>SQLite / MySQL</b><small>conversations · messages · tool_events · saved_analyses</small></div>
+      <div class="arch-box"><b>Uploads</b><small>validated · EXIF stripped · random names</small></div>
+    </div>
+  </div>
+
+  <div class="two" style="margin-top:7mm">
+    <div>
+      <h3>关键工程决策</h3>
+      <p><b>单进程、启动即加载。</b>模型、训练集、邮编统计与 Chroma 索引在 lifespan 中初始化；请求路径不做重训练或全表聚合。</p>
+      <p><b>前端由 FastAPI 托管。</b>生产构建产物挂在 <span class="mono">/</span>，单端口即可演示；开发时 Vite 5173 代理 <span class="mono">/api</span>。</p>
+      <p><b>共享 execute_tool。</b>Agent 与 MCP 都不直接碰模型，统一经过工具层做参数转换、异常处理与摘要。</p>
+    </div>
+    <div>
+      <h3>请求链路（估值）</h3>
+      <pre>POST /api/valuation/analyze
+  → Pydantic 校验（面积/邮编/等级）
+  → 特征工程（复用 ml/common.py）
+  → 邮编基准映射（训练集拟合）
+  → XGBoost predict
+  → pred_contribs=True（精确 TreeSHAP）
+  → 区间 + 置信度 + 可比 + 市场
+  → JSON（点估计、P10/P90、归因、warnings）</pre>
+    </div>
+  </div>
+  <div class="folio">HouseMind AI · Technical Dossier</div><div class="folio right">03</div>
+</section>
+
+<!-- 04 数据 -->
+<section class="sheet">
+  <div class="kicker">03 / Data</div>
+  <h2>三个数据集，<br />三套<em>问题</em>。</h2>
+  <div class="split">
+    <div>
+      <p>
+        主模型只使用 King County。UCI 与 California 是独立实验，用来检验方法在小样本、
+        不同目标定义下的表现，而不是拼接成“更大的训练集”。三者的地区、年代、币种、
+        目标定义不同，绝对误差不可横向比较。
+      </p>
+      <h3>King County 清洗</h3>
+      <table>
+        <tr><td>原始成交</td><td class="num">21,613 × 21</td></tr>
+        <tr><td>重复记录</td><td class="num">−177</td></tr>
+        <tr><td>清洗后</td><td class="num">21,418</td></tr>
+        <tr><td>训练 / 测试</td><td class="num">17,134 / 4,284</td></tr>
+        <tr><td>目标</td><td class="num">成交价 USD</td></tr>
+        <tr><td>时间</td><td class="num">2014-05 — 2015-05</td></tr>
+      </table>
+      <h3>22 个特征</h3>
+      <p class="small">
+        结构：卧室、卫浴、室内/土地面积、楼层、地上/地下面积。<br />
+        位置：经纬度、邮编市场基准价。<br />
+        质量：滨水、景观、状况、建筑等级、建造/翻新年份。<br />
+        派生：房龄、是否翻新、容积率代理、卫浴卧室比、周边面积。
+      </p>
+    </div>
+    <div>
+      <div class="card">
+        <h4>防泄漏：邮编基准价</h4>
+        <p class="small">
+          <span class="mono">zip_market_value</span> 只在训练集上按邮编计算平滑中位价，
+          再映射到测试集与新请求。未见邮编回退全局中位数，并在泛化实验中单独报告。
+        </p>
+        <div class="rule"></div>
+        <h4>防泄漏：早停与区间</h4>
+        <p class="small">
+          早停从训练集内部再切 10% 验证（1,714 行），测试集只做最终评估。
+          区间用训练集内部 5 折 OOF 残差，不触碰测试集。
+        </p>
+      </div>
+      <div class="note" style="margin-top:4mm">
+        <b>为什么不随机打乱时间？</b><br />
+        本项目是横截面 AVM，不是时间序列预测；随机切分对应“同一历史窗口内的 i.i.d. 部署”。
+        时间外推的风险通过“数据截止”与“未见邮编”实验单独暴露，而不是假装解决。
+      </div>
+      <h3>独立数据集</h3>
+      <table>
+        <tr><th>数据集</th><th>行数</th><th>目标</th></tr>
+        <tr><td>UCI 新店区</td><td class="num">414</td><td>万元新台币/坪</td></tr>
+        <tr><td>California</td><td class="num">20,640</td><td>1990 中位房价</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="folio">HouseMind AI · Technical Dossier</div><div class="folio right">04</div>
+</section>
+
+<!-- 05 模型 -->
+<section class="sheet">
+  <div class="kicker">04 / Model</div>
+  <h2>先跑赢基线，<br />再谈<em>可解释</em>。</h2>
+  <p class="lead">
+    Ridge 给出线性下界，Random Forest 检验非线性集成，XGBoost 在偏差—方差之间取得更好的平衡。
+    选择依据是测试 MAE，而不是只看 R²。
+  </p>
+  <div class="two">
+    <div>
+      <table>
+        <tr><th>模型</th><th class="num">MAE</th><th class="num">R²</th><th class="num">MAPE</th></tr>
+        <tr><td>Ridge</td><td class="num">$99,414.81</td><td class="num">0.7916</td><td class="num">20.45%</td></tr>
+        <tr><td>Random Forest</td><td class="num">$64,051.47</td><td class="num">0.8940</td><td class="num">12.58%</td></tr>
+        <tr class="highlight"><td>XGBoost</td><td class="num">$59,477.26</td><td class="num">0.9156</td><td class="num">11.91%</td></tr>
+      </table>
+      <p class="small" style="margin-top:3mm">
+        XGBoost 相对 Ridge 的 MAE 降低 <b>40.2%</b>；测试集 4,284 套。
+        中位绝对误差 $37,147；±10% 内 58.2%，±20% 内 83.2%。
+      </p>
+      <h3>配置</h3>
+      <p class="small">
+        1200 棵上限 · depth 6 · learning rate 0.03 · subsample 0.8 ·
+        colsample 0.8 · min_child_weight 3 · 早停 60 轮。
+        早停命中 1200 上限，说明继续加树收益已很小；最终模型在完整训练集上重训。
+      </p>
+    </div>
+    <div>
+      <figure>
+        <img src="../ml/reports/model_comparison.png" alt="模型对比" />
+        <figcaption>图 1 · 三个模型在同一测试集上的 MAE / RMSE 对比。数值来自 artifacts，不在前端硬编码。</figcaption>
+      </figure>
+    </div>
+  </div>
+  <figure style="margin-top:4mm">
+    <img src="../ml/reports/actual_vs_predicted.png" alt="实际 vs 预测" style="max-height:82mm;object-fit:contain;object-position:left" />
+    <figcaption>图 2 · 测试集实际价与预测价。高价房更分散，是绝对误差上升的主要原因之一。</figcaption>
+  </figure>
+  <div class="folio">HouseMind AI · Technical Dossier</div><div class="folio right">05</div>
+</section>
+
+<!-- 06 区间与解释 -->
+<section class="sheet">
+  <div class="kicker">05 / Uncertainty &amp; Explanation</div>
+  <h2>让“会错多少”<br />成为<em>一等公民</em>。</h2>
+  <div class="split">
+    <div>
+      <h3>不对称 80% 区间</h3>
+      <p>
+        训练集分 5 折，每折用其余 4 折训练同配置 XGBoost，收集 OOF 残差；
+        取 10% 与 90% 分位，得到区间偏移。最终输出：
+      </p>
+      <pre>[ŷ − 90,228, ŷ + 86,242]
+测试覆盖率 81.5% · 中位宽度 $176,470</pre>
+      <p class="small">
+        区间允许不对称，因为残差本身不对称；用“±固定百分比”会在高价房处过度自信。
+        区间仍只覆盖历史误差模式，遇到装修、景观、产权变化会失效。
+      </p>
+      <h3>精确 TreeSHAP</h3>
+      <p>
+        直接调用 XGBoost 原生 <span class="mono">booster.predict(pred_contribs=True)</span>，
+        得到精确 Shapley 值，不经过 <span class="mono">shap</span> 包的模型转换。
+        对每套房源，基准值 + 所有特征贡献 ≈ 预测值，API 测试固定断言这一加性关系。
+      </p>
+      <div class="note">
+        <b>三个常见误读</b><br />
+        SHAP 不是因果效应；不使用受保护字段不等于公平；全局重要不等于局部重要。
+      </div>
+    </div>
+    <div>
+      <figure>
+        <img src="../ml/reports/residual_distribution.png" alt="残差分布" />
+        <figcaption>图 3 · 残差分布。均值约 +$1,224，长尾说明为什么需要分位数区间。</figcaption>
+      </figure>
+      <figure>
+        <img src="../ml/reports/shap_importance.png" alt="全局 SHAP" />
+        <figcaption>图 4 · 全局平均绝对 SHAP。面积、纬度、邮编基准是主要驱动。</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="folio">HouseMind AI · Technical Dossier</div><div class="folio right">06</div>
+</section>
+
+<!-- 07 误差 -->
+<section class="sheet">
+  <div class="kicker">05 / Error Analysis</div>
+  <h2>平均值会<em>藏起</em><br />子市场的差异。</h2>
+  <p class="lead">
+    总体 MAE 是 $59,477，但不同价格带与区域的误差并不相同。产品和研究页都展示这些切片，
+    避免用户把“平均表现”当成“这套房的保证”。
+  </p>
+  <div class="two">
+    <div>
+      <h3>按价格带</h3>
+      <table>
+        <tr><th>价格带</th><th class="num">样本</th><th class="num">MAE</th><th class="num">MAPE</th></tr>
+        <tr><td>&lt;300k</td><td class="num">179</td><td class="num">$37,819</td><td class="num">16.67%</td></tr>
+        <tr><td>300–500k</td><td class="num">292</td><td class="num">$41,427</td><td class="num">10.51%</td></tr>
+        <tr><td>500–750k</td><td class="num">202</td><td class="num">$61,329</td><td class="num">10.08%</td></tr>
+        <tr><td>750k–1M</td><td class="num">70</td><td class="num">$74,390</td><td class="num">8.87%</td></tr>
+        <tr><td>1–2M</td><td class="num">46</td><td class="num">$194,284</td><td class="num">14.71%</td></tr>
+        <tr><td>2M+</td><td class="num">11</td><td class="num">$253,238</td><td class="num">10.46%</td></tr>
+      </table>
+      <p class="small">
+        低价房 MAPE 更高（分母小），高价房绝对误差更大。两者都不代表“模型更差”，
+        但都提醒用户看区间与可比，而不是只看一个点。
+      </p>
+    </div>
+    <div>
+      <h3>按区域</h3>
+      <table>
+        <tr><th>区域</th><th class="num">样本</th><th class="num">MAE</th><th class="num">MAPE</th></tr>
+        <tr><td>东区</td><td class="num">165</td><td class="num">$72,220</td><td class="num">10.54%</td></tr>
+        <tr><td>北金县</td><td class="num">182</td><td class="num">$93,491</td><td class="num">13.29%</td></tr>
+        <tr><td>南金县</td><td class="num">137</td><td class="num">$35,295</td><td class="num">11.17%</td></tr>
+        <tr><td>西雅图中南部</td><td class="num">133</td><td class="num">$48,633</td><td class="num">15.95%</td></tr>
+        <tr><td>西雅图北区</td><td class="num">135</td><td class="num">$74,228</td><td class="num">12.50%</td></tr>
+        <tr><td>西雅图西岸</td><td class="num">48</td><td class="num">$77,343</td><td class="num">11.39%</td></tr>
+      </table>
+      <p class="small">
+        北金县与西岸的绝对误差更高；分组样本较小，解读应看区间而非单点。
+      </p>
+    </div>
+  </div>
+  <div class="note" style="margin-top:6mm">
+    <b>泛化不是一句“效果很好”。</b> 在未见邮编 GroupShuffleSplit 中，14 个邮编完全未出现，
+    MAE 从 $59,477 升到 <b>$95,130</b>，R² 从 0.9156 降到 <b>0.7814</b>。
+    这个下降比任何“平均分”都更能说明冷启动的真实代价。
+  </div>
+  <div class="folio">HouseMind AI · Technical Dossier</div><div class="folio right">07</div>
+</section>
+
+<!-- 08 投资引擎 -->
+<section class="sheet">
+  <div class="kicker">05 / Underwriting</div>
+  <h2>把“感觉能赚”<br />拆成<em>现金流</em>。</h2>
+  <div class="split">
+    <div>
+      <h3>确定性公式</h3>
+      <pre>月供 = P · r(1+r)^n / ((1+r)^n − 1)
+NOI = 有效租金 − 房产税 − 保险 − HOA − 维护
+DSCR = NOI / 年债务偿还额
+Cap Rate = NOI / 购买价
+CoC = 年税前现金流 / 自有资金
+IRR = 使 NPV = 0 的折现率</pre>
+      <p class="small">
+        所有输入、假设、输出一起返回；页面展示月度瀑布、5 年 schedule、
+        退出净回款、5×5 租金×利率敏感性，以及基准/乐观/悲观情景。
+      </p>
+      <h3>默认值：不美化负现金流</h3>
+      <p>
+        默认案例是西雅图北区一套 $570,000 联排，月租 $2,950，首付 25%，利率 6.5%。
+        月供约 $2,702，月现金流 <b class="red">−$1,000</b>，DSCR <b>0.63</b>，
+        盈亏平衡入住率 <b>128.9%</b>。
+      </p>
+      <p class="small">
+        这不是 bug，而是产品态度：如果默认案例需要补贴，就显示需要补贴；
+        用户可以提高租金、首付或更换市场，而不是被一个“正现金流”的假默认值误导。
+      </p>
+    </div>
+    <div>
+      <figure>
+        <img src="screenshots/03-investment.png" alt="投资决策页" />
+        <figcaption>图 5 · 投资页：结论、KPI、月度瀑布、schedule、敏感性与情景。</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="folio">HouseMind AI · Technical Dossier</div><div class="folio right">08</div>
+</section>
+
+<!-- 09 RAG -->
+<section class="sheet">
+  <div class="kicker">06 / Retrieval</div>
+  <h2>检索不到，<br />就说<em>不知道</em>。</h2>
+  <div class="split">
+    <div>
+      <h3>混合检索</h3>
+      <p>
+        18 篇方法文档切成 71 个片段。查询同时走 512 维字符 n-gram 哈希向量与 BM25；
+        两路 min-max 归一后，加领域词权重、章节权重与标题覆盖：
+      </p>
+      <pre>0.46 · vector
++ 0.27 · bm25
++ 0.17 · expanded
++ 0.14 · title coverage
++ domain / section bonus</pre>
+      <p class="small">
+        每篇文档最多保留 2 个片段，避免一个长文档垄断结果。
+        DSCR、Cap Rate、NOI、IRR、SHAP、AVM、PMI、1031、MAE、R² 等领域词会被加权。
+      </p>
+      <h3>拒答门槛</h3>
+      <p>
+        查询必须包含至少一个特定双字/拉丁术语，并与语料有实际重叠，否则返回空结果。
+        这避免了“更换汽车轮胎”因为“更换”二字命中房屋维护段落而硬答。
+      </p>
+      <h3>回答</h3>
+      <p class="small">
+        有密钥时用 DeepSeek 基于 Top 片段生成；无密钥时用本地抽取式回答。
+        两种模式都带编号引用、标题、章节、来源与 URL；无结果时明确说“没有找到”。
+      </p>
+    </div>
+    <div>
+      <figure>
+        <img src="screenshots/05-knowledge.png" alt="知识库" />
+        <figcaption>图 6 · 知识库：回答、引用、检索模式与文档库。</figcaption>
+      </figure>
+      <div class="card" style="margin-top:3mm">
+        <h4>小型 gold set（20 + 4）</h4>
+        <table>
+          <tr><td>Hit@1</td><td class="num">20 / 20</td></tr>
+          <tr><td>Hit@3</td><td class="num">20 / 20</td></tr>
+          <tr><td>超纲拒答</td><td class="num">4 / 4</td></tr>
+        </table>
+        <p class="tiny" style="margin:2mm 0 0">
+          内部人工检查，不是开放域 benchmark；问题与判定见 <span class="mono">ml/evaluate_rag.py</span>。
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="folio">HouseMind AI · Technical Dossier</div><div class="folio right">09</div>
+</section>
+
+<!-- 10 Agent -->
+<section class="sheet">
+  <div class="kicker">06 / Agent &amp; MCP</div>
+  <h2>先调工具，<br />再<em>说话</em>。</h2>
+  <p class="lead">
+    Agent 的输出不是“模型即兴写一段”，而是工具结果的综合。每次调用都有参数、摘要与耗时；
+    即使刷新页面，轨迹仍然保留。
+  </p>
+  <div class="split">
+    <div>
+      <h3>SSE 事件流</h3>
+      <pre>meta       会话 ID / 模式 / 安全判定
+status     规划、执行、综合
+tool_call  工具名、参数、理由
+tool_result 摘要、耗时、数据
+token      逐字输出
+citations  标题、章节、来源、URL
+done       消息 ID、建议追问</pre>
+      <h3>两种模式，同一套工具</h3>
+      <p><b>DeepSeek：</b>OpenAI 兼容 Function Calling，最多 6 轮工具循环。</p>
+      <p><b>本地规划器：</b>规则解析预算/邮编/面积/租金/首付/利率，固定工具链，
+        模板报告。界面明确显示 <span class="mono">LOCAL PLANNER</span>，不冒充 LLM。</p>
+      <h3>安全</h3>
+      <p class="small">
+        输入注入检测、canary、输出清洗、PII 脱敏、30 次/分钟限流、工具参数强制转换。
+        高危输入直接阻止；单工具失败不终止整条链。
+      </p>
+    </div>
+    <div>
+      <figure>
+        <img src="screenshots/04-agent.png" alt="Agent 工具轨迹" />
+        <figcaption>图 7 · Agent 页：4 个工具的调用轨迹、摘要、耗时，以及带引用的结论。</figcaption>
+      </figure>
+      <div class="note">
+        <b>MCP：</b>官方 FastMCP stdio server 暴露同样 6 个工具，可接入 Claude Desktop / Cursor。
+        Web 端 manifest 在 <span class="mono">GET /api/mcp/manifest</span>。
+      </div>
+    </div>
+  </div>
+  <div class="folio">HouseMind AI · Technical Dossier</div><div class="folio right">10</div>
+</section>
+
+<!-- 11 Vision -->
+<section class="sheet">
+  <div class="kicker">07 / Multimodal</div>
+  <h2>看见，<br />但不<em>越界</em>。</h2>
+  <div class="split">
+    <div>
+      <h3>本地模式</h3>
+      <p>
+        Pillow 读取亮度、过暗/过亮像素比例、色温、饱和度、边缘密度与主色板。
+        它只描述“画面本身”，不推断房间类型、风格、材质、面积、结构安全、霉菌、电路或产权。
+      </p>
+      <div class="note">
+        <b>没有语义模型时，不伪造置信度。</b><br />
+        页面显示“语义能力 · 未启用”，而不是给出一个看似精确的 28%。
+      </div>
+      <h3>远程模式</h3>
+      <p>
+        可选 Qwen-VL 只做可见语义描述：空间类型、采光、材质、明显破损；
+        仍不输出结构安全、价格或法律结论，并附“不能替代持牌房屋检查”。
+      </p>
+      <h3>现场清单</h3>
+      <p class="small">
+        面积与产权、渗漏与霉变、电路与管道、噪音与采光、HOA 规则、保险与洪水风险——
+        这些必须由人或持牌检查完成，照片只能提供线索。
+      </p>
+    </div>
+    <div>
+      <figure>
+        <img src="screenshots/06-vision.png" alt="图像分析" />
+        <figcaption>图 8 · 图像页：本地信号、主色板、观察与能力边界。</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="folio">HouseMind AI · Technical Dossier</div><div class="folio right">11</div>
+</section>
+
+<!-- 12 Research -->
+<section class="sheet">
+  <div class="kicker">08 / Research</div>
+  <h2>把泛化<em>摊开</em>，<br />而不是挑好看的。</h2>
+  <div class="split">
+    <div>
+      <h3>未见邮编</h3>
+      <p>
+        GroupShuffleSplit 按邮编分组，80/20 切分，14 个邮编在训练中完全未出现。
+        模型只能回退到全局邮编基准，因此误差显著上升：
+      </p>
+      <table>
+        <tr><td>随机切分 MAE</td><td class="num">$59,477</td></tr>
+        <tr><td>未见邮编 MAE</td><td class="num">$95,130</td></tr>
+        <tr><td>未见邮编 R²</td><td class="num">0.7814</td></tr>
+        <tr><td>未见邮编数</td><td class="num">14</td></tr>
+      </table>
+      <p class="small" style="margin-top:3mm">
+        这不是“模型变差了”，而是冷启动场景的真实下界。产品在输入新邮编时提示补充可比与人工复核。
+      </p>
+      <h3>三个独立实验</h3>
+      <table>
+        <tr><th>数据集</th><th class="num">MAE</th><th class="num">R²</th></tr>
+        <tr><td>King County</td><td class="num">$59,477</td><td class="num">0.9156</td></tr>
+        <tr><td>UCI 新店区</td><td class="num">3.70</td><td class="num">0.8305</td></tr>
+        <tr><td>California</td><td class="num">$29,383</td><td class="num">0.8472</td></tr>
+      </table>
+      <p class="tiny">单位、年代、目标不同，禁止横向比较绝对误差。</p>
+    </div>
+    <div>
+      <figure>
+        <img src="screenshots/07-research.png" alt="研究实验室" />
+        <figcaption>图 9 · 研究页：模型对比、全局 SHAP、区间校准、泛化与模型卡。</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="folio">HouseMind AI · Technical Dossier</div><div class="folio right">12</div>
+</section>
+
+<!-- 13 Engineering -->
+<section class="sheet">
+  <div class="kicker">07 / Engineering &amp; UX</div>
+  <h2>让复杂<em>可读</em>，<br />让错误<em>可见</em>。</h2>
+  <div class="two">
+    <div>
+      <h3>前端</h3>
+      <p class="small">
+        Vue 3.5 + TypeScript strict + Vite 7 + Pinia 3 + ECharts 5。
+        自研设计系统，不引入 Element Plus；Fraunces 衬线 + Manrope 无衬线本地打包。
+        七个页面共享 PageHeader、卡片、表格、图表与免责声明。
+      </p>
+      <h3>响应式</h3>
+      <p class="small">
+        桌面 1600×1000 与移动 390×844 均做 DOM 检查：无横向溢出、无破图、无 console error。
+        移动端侧栏抽屉、表格横向滚动、图表高度压缩、知识库管线两列。
+      </p>
+      <h3>可访问性</h3>
+      <p class="small">
+        语义化标签、可见 focus、按钮 aria-label、图表文字替代、颜色不是唯一信息通道；
+        负现金流用暖红而非警报红，避免污名化。
+      </p>
+    </div>
+    <div>
+      <h3>安全矩阵</h3>
+      <table>
+        <tr><th>风险</th><th>措施</th></tr>
+        <tr><td>提示词注入</td><td>模式检测 + 降级/阻止</td></tr>
+        <tr><td>系统提示泄漏</td><td>canary + 输出清洗</td></tr>
+        <tr><td>XSS</td><td>DOMPurify + 后端清洗</td></tr>
+        <tr><td>PII</td><td>手机/邮箱/SSN 脱敏</td></tr>
+        <tr><td>滥用</td><td>30 次/分钟滑动窗口</td></tr>
+        <tr><td>恶意上传</td><td>MIME + Pillow + 大小 + EXIF</td></tr>
+        <tr><td>密钥</td><td>仅环境变量，.env 忽略</td></tr>
+      </table>
+      <h3>测试</h3>
+      <p class="small">
+        25 个 pytest：估值、SHAP 加性、投资数学、RAG、上传与大小限制、SSE、历史轨迹、注入、PII、MCP、模型确定性。
+        外部依赖（DeepSeek / Vision）不配置时，测试仍覆盖本地模式。
+      </p>
+    </div>
+  </div>
+  <div class="figrow" style="margin-top:5mm">
+    <figure><img src="screenshots/02-valuation.png" alt="估值页" /><figcaption>图 10 · 估值页：主视觉是区间，不是单个数字。</figcaption></figure>
+    <figure><img src="screenshots/01-dashboard.png" alt="驾驶舱" /><figcaption>图 11 · 驾驶舱：市场结构、空间价格与样本质量。</figcaption></figure>
+  </div>
+  <div class="folio">HouseMind AI · Technical Dossier</div><div class="folio right">13</div>
+</section>
+
+<!-- 14 Limitations -->
+<section class="sheet">
+  <div class="kicker">08 / Limits &amp; Roadmap</div>
+  <h2>知道<em>不适用</em>，<br />才算真正可用。</h2>
+  <div class="two">
+    <div>
+      <h3>已知限制</h3>
+      <p><b>时间：</b>2014–2015 历史成交，不反映 2020 年后市场，不是当前挂牌价。</p>
+      <p><b>地理：</b>仅 King County；不对美国境外、中国购房政策或商业地产定价。</p>
+      <p><b>冷启动：</b>未见邮编回退全局基准，MAE 升至 $95,130。</p>
+      <p><b>视觉：</b>不能判断结构安全、渗漏、霉变、电路、产权或真实装修质量。</p>
+      <p><b>RAG：</b>本地字符哈希不是语义大模型；20 题 gold set 不代表开放域效果。</p>
+      <p><b>投资：</b>未计个人所得税、资本利得税、1031 置换与地方租赁法规。</p>
+      <p><b>Agent：</b>无密钥时是确定性规划器，不具备开放域语言理解；界面明确标注。</p>
+    </div>
+    <div>
+      <h3>为什么主动展示限制</h3>
+      <p>
+        金融 AI 的风险往往不是“算错”，而是“让用户以为不会错”。把数据截止、未见邮编误差、
+        图像边界、本地模式写进界面，是把解释权还给用户。
+      </p>
+      <div class="quote">“辅助参考，不是评估报告。”</div>
+      <h3>路线</h3>
+      <p class="small">
+        1. 接入 MLS 最新成交与挂牌，做时间衰减与市场调整；<br />
+        2. 用 BGE/OpenAI embedding 替换字符哈希，保留拒答与引用；<br />
+        3. PDF 报告导出与团队协作；<br />
+        4. 公平性分组审计与漂移监控；<br />
+        5. 税后、1031 与多物业组合；<br />
+        6. 移动端拍照即估值（仍需明确视觉边界）。
+      </p>
+    </div>
+  </div>
+  <div class="note" style="margin-top:7mm">
+    <b>社会价值：</b>降低首次购房者的信息不对称；帮助小投资者识别负现金流；
+    用可解释的区间与引用对抗“AI 权威数字”；同时明确不替代评估师、律师、税务顾问与房屋检查。
+  </div>
+  <div class="folio">HouseMind AI · Technical Dossier</div><div class="folio right">14</div>
+</section>
+
+<!-- 15 Reproduce -->
+<section class="sheet">
+  <div class="kicker">09 / Reproduce &amp; Deliverables</div>
+  <h2>每一个数字，<br />都能<em>重跑</em>。</h2>
+  <div class="split">
+    <div>
+      <h3>启动</h3>
+      <pre>python3.13 -m venv .venv
+.venv/bin/pip install -r backend/requirements.txt
+cd frontend &amp;&amp; pnpm install &amp;&amp; pnpm build
+cd ..
+cp .env.example .env
+.venv/bin/python -m uvicorn backend.main:app --port 8000</pre>
+      <p class="small">
+        打开 <span class="mono">http://127.0.0.1:8000</span>；API 文档 <span class="mono">/docs</span>。
+        无密钥时完整运行本地规划器、本地视觉与本地抽取式 RAG。
+      </p>
+      <h3>复现训练</h3>
+      <pre>./scripts/train.sh
+.venv/bin/python -m pytest tests -q</pre>
+      <p class="small">
+        产物：模型 joblib、metrics JSON、全局 SHAP、模型卡、误差切片、
+        泛化实验、RAG gold set、四张诊断图。
+      </p>
+    </div>
+    <div>
+      <h3>交付物</h3>
+      <table>
+        <tr><td>公开仓库</td><td>代码 · README · 环境模板 · 测试</td></tr>
+        <tr><td>技术文档</td><td>本文档（≤30 页）</td></tr>
+        <tr><td>演示视频</td><td>5–8 分钟 · 1080p</td></tr>
+        <tr><td>在线部署</td><td>Docker / 单端口可选</td></tr>
+        <tr><td>数据说明</td><td>三数据集隔离 · 原始许可</td></tr>
+      </table>
+      <h3>技术栈</h3>
+      <p class="small">
+        Python 3.13 · FastAPI · XGBoost · scikit-learn · ChromaDB · SQLAlchemy ·
+        Vue 3 · TypeScript · Vite · Pinia · ECharts · Pillow · MCP SDK
+      </p>
+      <div class="note">
+        <b>诚实声明</b><br />
+        本项目为竞赛作品与教育性分析工具，不构成正式评估、贷款审批、税务或投资建议。
+        数据集遵循原始许可；模型只适用于文档所述范围。
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:12mm;border-top:2px solid var(--ink);padding-top:5mm">
+    <div class="kicker">HouseMind AI · 2026</div>
+    <div style="font-family:'Fraunces','Songti SC',serif;font-size:24pt;line-height:1.25">
+      读懂市场，再决定。
+    </div>
+    <p class="small" style="max-width:130mm;margin-top:3mm">
+      价格是区间，解释是责任，边界是产品的一部分。
+    </p>
+  </div>
+  <div class="folio">HouseMind AI · Technical Dossier</div><div class="folio right">15</div>
+</section>
+
+</body>
+</html>

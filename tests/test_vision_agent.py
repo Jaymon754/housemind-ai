@@ -92,3 +92,13 @@ def test_mcp_manifest(client):
     body = manifest.json()
     assert body["serverInfo"]["name"] == "housemind-ai"
     assert len(body["tools"]) == 6
+
+
+def test_vision_rejects_oversize(client):
+    payload = b"\xff\xd8" + b"0" * (9 * 1024 * 1024)
+    response = client.post(
+        "/api/vision/upload",
+        files={"file": ("huge.jpg", payload, "image/jpeg")},
+    )
+    assert response.status_code == 400
+    assert "8 MB" in response.text

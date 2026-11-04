@@ -1,0 +1,3 @@
+# Optional: only needed to rebuild the demo video / technical PDF tooling.
+-r backend/requirements.txt
+imageio-ffmpeg==0.8.1

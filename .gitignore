@@ -32,3 +32,6 @@ node_modules/
 # IDE
 Datasets/.idea/
 .idea/
+
+# Chrome headless artefact
+:memory:.ses
