@@ -28,3 +28,7 @@ node_modules/
 # Tooling
 .swiftcache/
 .DS_Store
+
+# IDE
+Datasets/.idea/
+.idea/
