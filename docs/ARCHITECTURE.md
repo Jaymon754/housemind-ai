@@ -172,13 +172,13 @@ query
 - Vite 7 构建；Vue Router 4；Pinia 3。
 - ECharts 5 按需引入；`markRaw` 避免图表实例被响应式代理。
 - 自研设计系统：CSS variables + 组件，不引入 Element Plus。
-- 字体：Fraunces Variable（标题衬线）+ Manrope Variable（正文/数字），本地打包，不依赖 Google Fonts。
+- 字体：Manrope Variable（标题、正文、数字统一无衬线）+ PingFang SC 中文回退，本地打包，不依赖 Google Fonts。
 
 ### 6.2 设计语言
 
-- 深墨绿 `#10231d`、暖沙 `#f5f0e6`、黄铜 `#b08a52`，低饱和、编辑感。
-- 页面结构：`PageHeader`（kicker / 大标题 / lede / meta）+ 内容网格。
-- 数字使用等宽数字特性与细分隔线，强调“报告”而非“后台表格”。
+- 深海军蓝 `#0f172a` / `#0b1c2c`、页面浅灰 `#f3f6f9`、机构蓝 `#1d5a96`，白色数据卡与克制阴影。
+- 页面结构：`PageHeader`（kicker / 大标题 / lede / meta）+ 白色内容网格；去掉大号衬线、水印与黄铜装饰。
+- 数字使用等宽数字特性与细分隔线，强调“可核对的决策界面”而非装饰性报表。
 - 负现金流用暖红，不用警报红；避免把市场事实道德化。
 - 移动端：侧栏抽屉、表格横向滚动、图表高度压缩、知识库管线 2 列。
 

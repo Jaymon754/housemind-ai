@@ -354,7 +354,7 @@ docs/               # 技术文档、截图、演示脚本
 - [远程模型配置](docs/REMOTE_MODELS.md)
 - [提交清单](docs/SUBMISSION_CHECKLIST.md)
 - [技术文档 PDF（16 页）](docs/HouseMind_AI_技术文档.pdf)
-- [演示视频（5:40 · 1080p）](docs/HouseMind_AI_Demo_1080p.mp4)
+- [演示视频（5:35 · 1080p）](docs/HouseMind_AI_Demo_1080p.mp4)
 
 ## 数据来源与致谢
 

@@ -34,11 +34,11 @@ const overview = computed(() => data.value?.overview)
 const pulse = computed(() => data.value?.market_pulse)
 
 const priceBands = [
-  { max: 350_000, color: '#496b59', label: '<35万' },
-  { max: 500_000, color: '#7f9d86', label: '35–50万' },
-  { max: 750_000, color: '#c5a977', label: '50–75万' },
-  { max: 1_200_000, color: '#c58d6c', label: '75–120万' },
-  { max: Infinity, color: '#b46b52', label: '120万+' },
+  { max: 350_000, color: '#1e3a5f', label: '<35万' },
+  { max: 500_000, color: '#2c5f8f', label: '35–50万' },
+  { max: 750_000, color: '#3f7fb8', label: '50–75万' },
+  { max: 1_200_000, color: '#6fa4d1', label: '75–120万' },
+  { max: Infinity, color: '#a9c9e6', label: '120万+' },
 ]
 
 const mapOption = computed<EChartsOption>(() => {
@@ -51,7 +51,7 @@ const mapOption = computed<EChartsOption>(() => {
       data: points.filter((p) => p.price >= min && p.price < band.max).map((p) => [p.lon, p.lat, p.price, p.area]),
       symbolSize: 3.2,
       itemStyle: { color: band.color, opacity: 0.76 },
-      emphasis: { itemStyle: { opacity: 1, borderColor: '#f4efe5', borderWidth: 1 } },
+      emphasis: { itemStyle: { opacity: 1, borderColor: '#ffffff', borderWidth: 1 } },
       large: true,
       largeThreshold: 300,
     }
@@ -67,7 +67,7 @@ const mapOption = computed<EChartsOption>(() => {
       itemWidth: 5,
       itemHeight: 5,
       itemGap: 15,
-      textStyle: { color: 'rgba(244,239,229,.54)', fontSize: 8.5, fontFamily: 'Manrope Variable' },
+      textStyle: { color: 'rgba(248,250,252,.54)', fontSize: 8.5, fontFamily: 'Manrope Variable' },
     },
     tooltip: {
       ...tooltipCommon,
@@ -75,7 +75,7 @@ const mapOption = computed<EChartsOption>(() => {
       formatter: (params: unknown) => {
         const item = params as { data: number[] }
         return `<div style="font-size:9px;letter-spacing:.12em;opacity:.55">KING COUNTY</div>
-          <div style="font-family:Fraunces Variable;font-size:18px;margin:3px 0">${usd(item.data[2])}</div>
+          <div style="font-family:Manrope Variable;font-size:18px;margin:3px 0">${usd(item.data[2])}</div>
           <div style="font-size:10px;opacity:.65">${num(item.data[3])} sqft · ${(item.data[2] / item.data[3]).toFixed(0)} USD/sqft</div>`
       },
     },
@@ -106,7 +106,7 @@ const histogramOption = computed<EChartsOption>(() => {
       axisPointer: { type: 'shadow' },
       formatter: (params: unknown) => {
         const item = (params as { name: string; value: number }[])[0]
-        return `<div style="font-size:10px">${item.name}</div><div style="font-family:Fraunces Variable;font-size:20px;margin-top:2px">${num(item.value)} <span style="font-size:10px;opacity:.6">套</span></div>`
+        return `<div style="font-size:10px">${item.name}</div><div style="font-family:Manrope Variable;font-size:20px;margin-top:2px">${num(item.value)} <span style="font-size:10px;opacity:.6">套</span></div>`
       },
     },
     xAxis: {
@@ -114,7 +114,7 @@ const histogramOption = computed<EChartsOption>(() => {
       data: bins.map((b) => b.bin.replace('–', '–')),
       ...axisCommon,
       axisLabel: { ...axisCommon.axisLabel, interval: 4, rotate: 0 },
-      axisLine: { lineStyle: { color: 'rgba(16,35,29,.14)' } },
+      axisLine: { lineStyle: { color: 'rgba(15,23,42,.14)' } },
     },
     yAxis: { type: 'value', ...axisCommon, axisLabel: { ...axisCommon.axisLabel, fontSize: 9 } },
     series: [
@@ -129,7 +129,7 @@ const histogramOption = computed<EChartsOption>(() => {
             x: 0, y: 0, x2: 0, y2: 1,
             colorStops: [
               { offset: 0, color: palette.gold },
-              { offset: 1, color: 'rgba(176,138,82,.22)' },
+              { offset: 1, color: 'rgba(29,90,150,.18)' },
             ],
           },
         },
@@ -158,7 +158,7 @@ const trendOption = computed<EChartsOption>(() => {
       icon: 'circle',
       itemWidth: 5,
       itemHeight: 5,
-      textStyle: { color: '#737a72', fontSize: 9, fontFamily: 'Manrope Variable' },
+      textStyle: { color: '#64748b', fontSize: 9, fontFamily: 'Manrope Variable' },
     },
     xAxis: {
       type: 'category',
@@ -178,7 +178,7 @@ const trendOption = computed<EChartsOption>(() => {
         yAxisIndex: 1,
         data: trend.map((t) => t.count),
         barWidth: '32%',
-        itemStyle: { color: 'rgba(111,138,118,.18)', borderRadius: [2, 2, 0, 0] },
+        itemStyle: { color: 'rgba(15,118,110,.16)', borderRadius: [2, 2, 0, 0] },
       },
       {
         name: '中位价',
@@ -194,8 +194,8 @@ const trendOption = computed<EChartsOption>(() => {
           color: {
             type: 'linear', x: 0, y: 0, x2: 0, y2: 1,
             colorStops: [
-              { offset: 0, color: 'rgba(176,138,82,.18)' },
-              { offset: 1, color: 'rgba(176,138,82,0)' },
+              { offset: 0, color: 'rgba(29,90,150,.14)' },
+              { offset: 1, color: 'rgba(29,90,150,0)' },
             ],
           },
         },
@@ -214,7 +214,7 @@ const areaOption = computed<EChartsOption>(() => {
       trigger: 'axis',
       formatter: (params: unknown) => {
         const item = (params as { name: string; value: number }[])[0]
-        return `<div style="font-size:10px">${item.name} sqft</div><div style="font-family:Fraunces Variable;font-size:20px">$${item.value}/sqft</div><div style="font-size:9px;opacity:.55">中位成交单价</div>`
+        return `<div style="font-size:10px">${item.name} sqft</div><div style="font-family:Manrope Variable;font-size:20px">$${item.value}/sqft</div><div style="font-size:9px;opacity:.55">中位成交单价</div>`
       },
     },
     xAxis: { type: 'category', data: bands.map((b) => b.band), ...axisCommon, axisLabel: { ...axisCommon.axisLabel, fontSize: 9 } },
@@ -224,13 +224,13 @@ const areaOption = computed<EChartsOption>(() => {
         type: 'bar',
         data: bands.map((b, i) => ({
           value: b.median_ppsf,
-          itemStyle: { color: i >= 5 ? palette.clay : i >= 3 ? palette.gold : palette.sage, borderRadius: [2, 2, 0, 0] },
+          itemStyle: { color: i >= 5 ? palette.clay : i >= 3 ? '#3f7fb8' : palette.sage, borderRadius: [2, 2, 0, 0] },
         })),
         barWidth: '54%',
         markLine: {
           symbol: 'none',
           label: { formatter: '区域中位', color: palette.muted, fontSize: 8, position: 'insideEndTop' },
-          lineStyle: { color: 'rgba(16,35,29,.28)', type: 'dashed', width: 1 },
+          lineStyle: { color: 'rgba(15,23,42,.28)', type: 'dashed', width: 1 },
           data: [{ yAxis: overview.value?.median_ppsf ?? 0 }],
         },
       },
@@ -307,7 +307,7 @@ const maxRegionPrice = computed(() => Math.max(...(data.value?.regions.map((r) =
             <div>
               <div class="atlas-kicker">PRICE ATLAS / KING COUNTY</div>
               <h2 class="atlas-title">价格不是均匀分布的。</h2>
-              <p class="atlas-sub">每个点是一笔真实成交。颜色越暖，成交价越高；位置保留原始经纬度。</p>
+              <p class="atlas-sub">每个点是一笔真实成交。颜色越浅，成交价越高；位置保留原始经纬度。</p>
             </div>
             <div class="atlas-legend">
               <span v-for="band in priceBands" :key="band.label" class="atlas-legend-item">
@@ -495,31 +495,31 @@ const maxRegionPrice = computed(() => Math.max(...(data.value?.regions.map((r) =
 </template>
 
 <style scoped>
-.kpi-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); background: rgba(251, 248, 241, 0.52); border-radius: 5px; overflow: hidden; }
+.kpi-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); background: #ffffff; border-radius: 10px; overflow: hidden; }
 .kpi-strip > * { border: 0; border-right: 1px solid var(--line); border-radius: 0; background: transparent; }
 .kpi-strip > *:last-child { border-right: 0; }
 .kpi-skeleton { height: 137px; border-radius: 0; }
 .spinning { animation: spin 0.9s linear infinite; }
 
 .atlas-grid { display: grid; grid-template-columns: minmax(0, 1.72fr) minmax(300px, 0.78fr); gap: 16px; }
-.atlas-panel { background: var(--ink); color: var(--paper); border-radius: 5px; padding: 24px 24px 0; overflow: hidden; position: relative; }
-.atlas-panel::before { content: ''; position: absolute; right: 0; top: 0; width: 45%; height: 100%; background: radial-gradient(circle at 70% 20%, rgba(176,138,82,.12), transparent 60%); pointer-events: none; }
+.atlas-panel { background: var(--ink); color: var(--paper); border-radius: 10px; padding: 24px 24px 0; overflow: hidden; position: relative; }
+.atlas-panel::before { content: ''; position: absolute; right: 0; top: 0; width: 45%; height: 100%; background: radial-gradient(circle at 70% 20%, rgba(29,90,150,.12), transparent 60%); pointer-events: none; }
 .atlas-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; position: relative; z-index: 2; }
 .atlas-kicker { font-size: 8px; letter-spacing: .2em; color: var(--gold-light); }
-.atlas-title { font-family: var(--font-serif);font-size: 27px; font-weight: 450; letter-spacing: -.025em; margin-top: 7px; }
-.atlas-sub { font-size: 10.5px; line-height: 1.7; color: rgba(244,239,229,.46); margin-top: 6px; max-width: 420px; }
+.atlas-title { font-family: var(--font-serif);font-size: 27px; font-weight: 650; letter-spacing: -.025em; margin-top: 7px; }
+.atlas-sub { font-size: 10.5px; line-height: 1.7; color: rgba(248,250,252,.46); margin-top: 6px; max-width: 420px; }
 .atlas-legend { display: flex; flex-wrap: wrap; gap: 9px; max-width: 220px; justify-content: flex-end; }
-.atlas-legend-item { display: inline-flex; align-items: center; gap: 4px; font-size: 8px; color: rgba(244,239,229,.52); }
+.atlas-legend-item { display: inline-flex; align-items: center; gap: 4px; font-size: 8px; color: rgba(248,250,252,.52); }
 .atlas-legend-item i { width: 5px; height: 5px; border-radius: 50%; }
 .atlas-canvas { position: relative; margin: 12px -6px 0; }
-.map-corner { position: absolute; font-size: 7px; letter-spacing: .16em; line-height: 1.7; color: rgba(244,239,229,.28); pointer-events: none; }
+.map-corner { position: absolute; font-size: 7px; letter-spacing: .16em; line-height: 1.7; color: rgba(248,250,252,.28); pointer-events: none; }
 .map-corner.top-left { top: 9px; left: 8px; }
 .map-corner.bottom-right { right: 8px; bottom: 12px; text-align: right; }
-.atlas-foot { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(244,239,229,.12); margin: 0 -24px; padding: 15px 24px; gap: 16px; }
+.atlas-foot { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(248,250,252,.12); margin: 0 -24px; padding: 15px 24px; gap: 16px; }
 .atlas-foot > div { display: flex; flex-direction: column; gap: 3px; }
-.atlas-foot span { font-size: 7.5px; letter-spacing: .14em; color: rgba(244,239,229,.34); text-transform: uppercase; }
-.atlas-foot strong { font-family: var(--font-serif); font-size: 20px; font-weight: 450; color: var(--paper); }
-.atlas-foot small { font-size: 8.5px; color: rgba(244,239,229,.36); line-height: 1.5; }
+.atlas-foot span { font-size: 7.5px; letter-spacing: .14em; color: rgba(248,250,252,.34); text-transform: uppercase; }
+.atlas-foot strong { font-family: var(--font-serif); font-size: 20px; font-weight: 650; color: var(--paper); }
+.atlas-foot small { font-size: 8.5px; color: rgba(248,250,252,.36); line-height: 1.5; }
 
 .side-stack { display: flex; flex-direction: column; gap: 16px; }
 .pulse-card { flex: 1; }
@@ -528,15 +528,15 @@ const maxRegionPrice = computed(() => Math.max(...(data.value?.regions.map((r) =
 .pulse-top span { color: var(--muted); }
 .pulse-top strong { font-weight: 700; }
 .positive { color: var(--positive); }
-.pulse-track { height: 3px; background: var(--paper-3); border-radius: 3px; overflow: hidden; }
-.pulse-track span { display: block; height: 100%; background: var(--sage); border-radius: 3px; }
+.pulse-track { height: 3px; background: var(--paper-3); border-radius: 7px; overflow: hidden; }
+.pulse-track span { display: block; height: 100%; background: var(--sage); border-radius: 7px; }
 .pulse-track .gold-track { background: var(--gold); }
 .pulse-foot { display: flex; justify-content: space-between; font-size: 8.5px; color: var(--muted-light); margin-top: 5px; }
 .pulse-split { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); margin: 17px 0 12px; padding: 12px 0; }
 .pulse-split > div { display: flex; flex-direction: column; gap: 3px; }
 .pulse-split > div + div { border-left: 1px solid var(--line-soft); padding-left: 16px; }
 .pulse-split span { font-size: 8px; letter-spacing: .1em; color: var(--muted); }
-.pulse-split strong { font-family: var(--font-serif); font-size: 15px; font-weight: 500; }
+.pulse-split strong { font-family: var(--font-serif); font-size: 15px; font-weight: 650; }
 .pulse-split small { font-size: 9px; color: var(--muted-light); }
 .card-caption { font-size: 8.5px; line-height: 1.6; color: var(--muted-light); }
 .zip-card { flex: 0 0 auto; }
@@ -549,7 +549,7 @@ const maxRegionPrice = computed(() => Math.max(...(data.value?.regions.map((r) =
 .zip-head { display: flex; justify-content: space-between; font-size: 9.5px; gap: 8px; }
 .zip-head strong { font-weight: 650; letter-spacing: .04em; }
 .zip-head span { color: var(--muted); font-variant-numeric: tabular-nums; }
-.zip-track { height: 2px; background: var(--paper-3); margin-top: 5px; border-radius: 2px; overflow: hidden; }
+.zip-track { height: 2px; background: var(--paper-3); margin-top: 5px; border-radius: 6px; overflow: hidden; }
 .zip-track span { display: block; height: 100%; background: linear-gradient(90deg, var(--sage), var(--gold)); }
 .zip-count { font-size: 8px; color: var(--muted-light); width: 28px; text-align: right; }
 
@@ -564,29 +564,29 @@ const maxRegionPrice = computed(() => Math.max(...(data.value?.regions.map((r) =
 .region-name small { font-size: 8px; color: var(--muted-light); }
 .region-price { display: flex; align-items: center; gap: 8px; }
 .region-price > span { width: 61px; font-variant-numeric: tabular-nums; }
-.region-price i { flex: 1; height: 3px; background: var(--paper-3); border-radius: 2px; overflow: hidden; }
-.region-price b { display: block; height: 100%; background: var(--sage); border-radius: 2px; }
+.region-price i { flex: 1; height: 3px; background: var(--paper-3); border-radius: 6px; overflow: hidden; }
+.region-price b { display: block; height: 100%; background: var(--sage); border-radius: 6px; }
 .region-ppsf, .region-count { font-variant-numeric: tabular-nums; color: var(--muted); }
 .insight-strip { display: flex; gap: 9px; align-items: flex-start; border-top: 1px solid var(--line-soft); padding-top: 12px; margin-top: 8px; color: var(--gold); }
 .insight-strip p { font-size: 9.5px; line-height: 1.65; color: var(--muted); }
 
-.research-band { background: var(--ink); color: var(--paper); border-radius: 5px; padding: 30px; position: relative; overflow: hidden; }
-.research-band::after { content: 'HM'; position: absolute; right: 20px; bottom: -58px; font-family: var(--font-serif); font-size: 210px; color: rgba(244,239,229,.025); line-height: 1; pointer-events: none; }
+.research-band { background: var(--ink); color: var(--paper); border-radius: 10px; padding: 30px; position: relative; overflow: hidden; }
+.research-band::after { content: 'HM'; position: absolute; right: 20px; bottom: -58px; font-family: var(--font-serif); font-size: 210px; color: rgba(248,250,252,.025); line-height: 1; pointer-events: none; }
 .research-band-head { display: flex; justify-content: space-between; gap: 30px; align-items: flex-start; position: relative; z-index: 1; }
-.research-band h2 { font-family: var(--font-serif); font-size: clamp(28px, 2.6vw, 38px); font-weight: 440; letter-spacing: -.03em; margin-top: 11px; line-height: 1.14; }
+.research-band h2 { font-family: var(--font-serif); font-size: clamp(28px, 2.6vw, 38px); font-weight: 650; letter-spacing: -.03em; margin-top: 11px; line-height: 1.14; }
 .research-band h2 em { color: var(--gold-light); font-weight: 380; }
-.research-band p { max-width: 690px; font-size: 11.5px; line-height: 1.8; color: rgba(244,239,229,.5); margin-top: 12px; }
-.research-stats { display: grid; grid-template-columns: repeat(2, 1fr) 1.1fr; border-top: 1px solid rgba(244,239,229,.13); margin-top: 27px; padding-top: 20px; position: relative; z-index: 1; }
+.research-band p { max-width: 690px; font-size: 11.5px; line-height: 1.8; color: rgba(248,250,252,.5); margin-top: 12px; }
+.research-stats { display: grid; grid-template-columns: repeat(2, 1fr) 1.1fr; border-top: 1px solid rgba(248,250,252,.13); margin-top: 27px; padding-top: 20px; position: relative; z-index: 1; }
 .research-stat { display: flex; flex-direction: column; gap: 4px; padding-right: 22px; }
-.research-stat + .research-stat { border-left: 1px solid rgba(244,239,229,.13); padding-left: 22px; }
-.rs-label { font-size: 7.5px; letter-spacing: .15em; color: rgba(244,239,229,.34); }
-.research-stat strong { font-family: var(--font-serif); font-size: 26px; font-weight: 430; color: var(--paper); margin-top: 3px; }
-.research-stat small { font-size: 8.5px; color: rgba(244,239,229,.38); }
-.dataset-stat { flex-direction: row; align-items: center; gap: 10px; border-left: 1px solid rgba(244,239,229,.13); padding-left: 22px; color: var(--gold-light); }
+.research-stat + .research-stat { border-left: 1px solid rgba(248,250,252,.13); padding-left: 22px; }
+.rs-label { font-size: 7.5px; letter-spacing: .15em; color: rgba(248,250,252,.34); }
+.research-stat strong { font-family: var(--font-serif); font-size: 26px; font-weight: 650; color: var(--paper); margin-top: 3px; }
+.research-stat small { font-size: 8.5px; color: rgba(248,250,252,.38); }
+.dataset-stat { flex-direction: row; align-items: center; gap: 10px; border-left: 1px solid rgba(248,250,252,.13); padding-left: 22px; color: var(--gold-light); }
 .dataset-stat div { display: flex; flex-direction: column; gap: 3px; }
 .dataset-stat strong { font-family: var(--font-sans); font-size: 11px; font-weight: 600; }
 .dataset-stat small { font-size: 8px; }
-.research-band-foot { display: flex; justify-content: space-between; margin-top: 24px; padding-top: 13px; border-top: 1px solid rgba(244,239,229,.1); font-size: 8px; letter-spacing: .08em; color: rgba(244,239,229,.33); position: relative; z-index: 1; }
+.research-band-foot { display: flex; justify-content: space-between; margin-top: 24px; padding-top: 13px; border-top: 1px solid rgba(248,250,252,.1); font-size: 8px; letter-spacing: .08em; color: rgba(248,250,252,.33); position: relative; z-index: 1; }
 .research-band-foot span { display: inline-flex; align-items: center; gap: 5px; }
 .data-quality { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 18px; margin-top: 17px; padding: 14px 2px; border-bottom: 1px solid var(--line); }
 .data-quality p { font-size: 9.5px; color: var(--muted); line-height: 1.65; }
@@ -606,7 +606,7 @@ const maxRegionPrice = computed(() => Math.max(...(data.value?.regions.map((r) =
   .research-band { padding: 22px; }
   .research-band-head { flex-direction: column; }
   .research-stats { grid-template-columns: 1fr 1fr; gap: 16px 0; }
-  .dataset-stat { grid-column: 1 / -1; border-left: 0 !important; padding-left: 0 !important; border-top: 1px solid rgba(244,239,229,.13); padding-top: 13px; }
+  .dataset-stat { grid-column: 1 / -1; border-left: 0 !important; padding-left: 0 !important; border-top: 1px solid rgba(248,250,252,.13); padding-top: 13px; }
   .research-band-foot { flex-direction: column; gap: 6px; }
   .data-quality { grid-template-columns: 1fr; gap: 8px; }
 }

@@ -32,17 +32,17 @@ FPS = 24
 GAP = 0.85
 LEAD = 0.35
 
-INK = (10, 26, 21)
-INK_2 = (16, 35, 29)
-PAPER = (247, 243, 234)
-GOLD = (176, 138, 82)
-GOLD_LIGHT = (217, 195, 160)
-MUTED = (170, 170, 156)
+INK = (11, 28, 44)
+INK_2 = (15, 42, 67)
+PAPER = (248, 250, 252)
+GOLD = (29, 90, 150)
+GOLD_LIGHT = (119, 168, 212)
+MUTED = (148, 163, 184)
 
-FONT_SERIF_CN = "/System/Library/Fonts/Supplemental/Songti.ttc"
 FONT_SANS_CN = "/System/Library/Fonts/Hiragino Sans GB.ttc"
 FONT_SANS_EN = "/System/Library/Fonts/Avenir Next.ttc"
-FONT_SERIF_EN = "/System/Library/Fonts/Supplemental/Georgia.ttf"
+FONT_SERIF_CN = FONT_SANS_CN
+FONT_SERIF_EN = FONT_SANS_EN
 
 
 def font(path: str, size: int, index: int = 0) -> ImageFont.FreeTypeFont:
@@ -79,23 +79,23 @@ def text(draw, xy, s, f, fill, anchor="la", spacing=4):
 
 
 def background() -> Image.Image:
-    """Quiet dark-green gradient with an editorial grid."""
+    """Quiet navy gradient with a restrained institutional grid."""
     base = Image.new("RGB", (W, H), INK)
     px = base.load()
     for y in range(H):
         t = y / H
-        r = int(10 + 8 * t)
-        g = int(24 + 14 * t)
-        b = int(19 + 9 * t)
+        r = int(11 + 5 * t)
+        g = int(28 + 15 * t)
+        b = int(44 + 24 * t)
         for x in range(W):
             px[x, y] = (r, g, b)
     overlay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(overlay)
     for x in range(0, W, 80):
-        d.line([(x, 0), (x, H)], fill=(230, 215, 185, 9), width=1)
+        d.line([(x, 0), (x, H)], fill=(255, 255, 255, 8), width=1)
     for y in range(0, H, 80):
-        d.line([(0, y), (W, y)], fill=(230, 215, 185, 9), width=1)
-    d.ellipse([W - 560, -260, W + 120, 420], fill=(176, 138, 82, 18))
+        d.line([(0, y), (W, y)], fill=(255, 255, 255, 8), width=1)
+    d.ellipse([W - 560, -260, W + 120, 420], fill=(29, 90, 150, 22))
     return Image.alpha_composite(base.convert("RGBA"), overlay).convert("RGB")
 
 
@@ -117,14 +117,14 @@ def screenshot_window(image_path: Path, zoom: float, focus: tuple[float, float])
     crop = shot.crop((int(x0), int(y0), int(x0 + cw), int(y0 + ch)))
     content_w, content_h = 1570, 981
 
-    win = Image.new("RGBA", (content_w, content_h + 34), (18, 29, 25, 255))
+    win = Image.new("RGBA", (content_w, content_h + 34), (15, 23, 42, 255))
     d = ImageDraw.Draw(win)
-    d.rectangle([0, 0, content_w, 34], fill=(22, 36, 31, 255))
+    d.rectangle([0, 0, content_w, 34], fill=(23, 37, 58, 255))
     for i, color in enumerate([(196, 101, 86), (204, 163, 82), (103, 145, 111)]):
         d.ellipse([16 + i * 19, 12, 25 + i * 19, 21], fill=color + (255,))
     url = "127.0.0.1:8000"
-    d.rounded_rectangle([100, 8, content_w - 20, 26], radius=9, fill=(37, 51, 45, 255))
-    d.text((116, 11), url, font=font(FONT_SANS_EN, 10, 0), fill=(168, 176, 166))
+    d.rounded_rectangle([100, 8, content_w - 20, 26], radius=9, fill=(30, 47, 70, 255))
+    d.text((116, 11), url, font=font(FONT_SANS_EN, 10, 0), fill=(148, 163, 184))
 
     content = crop.resize((content_w, content_h), Image.Resampling.BICUBIC)
     mask = Image.new("L", content.size, 0)
@@ -147,9 +147,9 @@ def scene_frame(scene: dict, t: float, duration: float, total_t: float, total_du
 
     # Brand and scene status
     draw.rectangle([70, 42, 82, 54], fill=GOLD)
-    draw.text((96, 38), "HOUSEMIND AI", font=font(FONT_SANS_EN, 16, 1), fill=(230, 222, 207))
-    draw.text((96, 58), "PROPERTY INTELLIGENCE / DECISION WORKBENCH", font=font(FONT_SANS_EN, 8), fill=(154, 158, 146))
-    draw.text((W - 70, 42), f"TECHNICAL DEMO · 2026  /  {scene['kicker'].split(' / ')[0]}", font=font(FONT_SANS_EN, 10), fill=(160, 160, 145), anchor="ra")
+    draw.text((96, 38), "HOUSEMIND AI", font=font(FONT_SANS_EN, 16, 0), fill=(248, 250, 252))
+    draw.text((96, 58), "PROPERTY INTELLIGENCE / DECISION WORKBENCH", font=font(FONT_SANS_EN, 8), fill=(148, 163, 184))
+    draw.text((W - 70, 42), f"TECHNICAL DEMO · 2026  /  {scene['kicker'].split(' / ')[0]}", font=font(FONT_SANS_EN, 10), fill=(148, 163, 184), anchor="ra")
 
     if scene["image"]:
         focus = (0.5, 0.5)
@@ -179,34 +179,34 @@ def scene_frame(scene: dict, t: float, duration: float, total_t: float, total_du
             ld = ImageDraw.Draw(layer)
             ld.rounded_rectangle(
                 [bx1, by1, bx2, by2], radius=8,
-                fill=(176, 138, 82, int(12 + 10 * pulse)),
-                outline=(205, 174, 123, int(190 + 40 * pulse)), width=2,
+                fill=(29, 90, 150, int(12 + 10 * pulse)),
+                outline=(119, 168, 212, int(190 + 40 * pulse)), width=2,
             )
             # corner ticks
             for (px, py, dx, dy) in [(bx1, by1, 1, 1), (bx2, by1, -1, 1), (bx1, by2, 1, -1), (bx2, by2, -1, -1)]:
-                ld.line([(px, py), (px + 14 * dx, py)], fill=(232, 207, 166, 230), width=3)
-                ld.line([(px, py), (px, py + 14 * dy)], fill=(232, 207, 166, 230), width=3)
+                ld.line([(px, py), (px + 14 * dx, py)], fill=(158, 197, 230, 230), width=3)
+                ld.line([(px, py), (px, py + 14 * dy)], fill=(158, 197, 230, 230), width=3)
             canvas = Image.alpha_composite(canvas.convert("RGBA"), layer).convert("RGB")
             draw = ImageDraw.Draw(canvas)
 
-    # Bottom editorial caption
+    # Bottom institutional caption
     band = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     bd = ImageDraw.Draw(band)
     for i in range(150):
         alpha = int(235 * (i / 149) ** 0.7)
-        bd.line([(0, 930 + i), (W, 930 + i)], fill=(9, 23, 18, alpha))
-    bd.line([(70, 930), (W - 70, 930)], fill=(176, 138, 82, 190), width=1)
+        bd.line([(0, 930 + i), (W, 930 + i)], fill=(8, 20, 33, alpha))
+    bd.line([(70, 930), (W - 70, 930)], fill=(29, 90, 150, 200), width=1)
     canvas = Image.alpha_composite(canvas.convert("RGBA"), band).convert("RGB")
     draw = ImageDraw.Draw(canvas)
-    draw.text((70, 950), scene["kicker"], font=font(FONT_SANS_EN, 11, 1), fill=(201, 176, 137))
-    title_font = fit_font(FONT_SERIF_CN, scene["title"], 1400, 40, 0, 26)
-    draw.text((70, 970), scene["title"], font=title_font, fill=(247, 241, 229))
-    draw.text((70, 1022), scene["subtitle"], font=font(FONT_SANS_CN, 17), fill=(191, 190, 176))
-    draw.text((W - 70, 1022), "辅助参考 · 非正式评估", font=font(FONT_SANS_CN, 13), fill=(150, 155, 143), anchor="ra")
+    draw.text((70, 950), scene["kicker"], font=font(FONT_SANS_EN, 11, 0), fill=(119, 168, 212))
+    title_font = fit_font(FONT_SANS_CN, scene["title"], 1400, 38, 2, 26)
+    draw.text((70, 970), scene["title"], font=title_font, fill=(248, 250, 252))
+    draw.text((70, 1022), scene["subtitle"], font=font(FONT_SANS_CN, 17), fill=(148, 163, 184))
+    draw.text((W - 70, 1022), "辅助参考 · 非正式评估", font=font(FONT_SANS_CN, 13), fill=(148, 163, 184), anchor="ra")
 
     # Progress
     draw.rectangle([0, H - 4, int(W * min(1, total_t / total_duration)), H], fill=GOLD)
-    draw.rectangle([int(W * min(1, total_t / total_duration)), H - 4, W, H], fill=(32, 43, 37))
+    draw.rectangle([int(W * min(1, total_t / total_duration)), H - 4, W, H], fill=(30, 41, 59))
 
     # Dip to black at scene boundaries for clean cuts.
     fade = 0.0
@@ -224,38 +224,38 @@ def title_frame(scene: dict, t: float, duration: float, outro: bool = False) -> 
     canvas = GRID_BG.copy()
     overlay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(overlay)
-    # subtle vertical gold rule
-    d.rectangle([70, 120, 72, H - 120], fill=(176, 138, 82, 80))
-    d.text((120, 130), scene["kicker"], font=font(FONT_SANS_EN, 11, 1), fill=(201, 176, 137))
+    # subtle vertical accent rule
+    d.rectangle([70, 120, 72, H - 120], fill=(29, 90, 150, 120))
+    d.text((120, 130), scene["kicker"], font=font(FONT_SANS_EN, 11, 0), fill=(119, 168, 212))
 
     if not outro:
         main = "HouseMind AI"
-        f = font(FONT_SERIF_EN, 84, 0)
-        d.text((120, 230), "House", font=f, fill=(250, 245, 234))
-        d.text((120 + f.getlength("House"), 230), "Mind AI", font=font(FONT_SERIF_EN, 84, 0), fill=GOLD_LIGHT)
-        d.text((124, 350), "读懂市场，再决定。", font=font(FONT_SERIF_CN, 44), fill=(231, 219, 198))
-        d.line([(124, 430), (820, 430)], fill=(176, 138, 82, 180), width=1)
-        d.text((124, 456), "AI 房产估值与投资决策工作台", font=font(FONT_SANS_CN, 20), fill=(186, 184, 168))
+        f = font(FONT_SANS_EN, 76, 0)
+        d.text((120, 230), "House", font=f, fill=(248, 250, 252))
+        d.text((120 + f.getlength("House"), 230), "Mind AI", font=font(FONT_SANS_EN, 76, 0), fill=GOLD_LIGHT)
+        d.text((124, 350), "读懂市场，再决定。", font=font(FONT_SANS_CN, 40, 2), fill=(203, 213, 225))
+        d.line([(124, 430), (820, 430)], fill=(29, 90, 150, 200), width=1)
+        d.text((124, 456), "AI 房产估值与投资决策工作台", font=font(FONT_SANS_CN, 20), fill=(148, 163, 184))
         chips = ["XGBoost", "TreeSHAP", "80% INTERVAL", "RAG", "AGENT"]
         cx = 124
         for chip in chips:
             tw = d.textlength(chip, font=font(FONT_SANS_EN, 11))
-            d.rounded_rectangle([cx, 530, cx + tw + 28, 562], radius=16, outline=(176, 138, 82, 160), width=1)
-            d.text((cx + 14, 540), chip, font=font(FONT_SANS_EN, 11), fill=(213, 196, 169))
+            d.rounded_rectangle([cx, 530, cx + tw + 28, 562], radius=16, outline=(77, 128, 178, 200), width=1)
+            d.text((cx + 14, 540), chip, font=font(FONT_SANS_EN, 11), fill=(158, 197, 230))
             cx += tw + 40
-        d.text((124, H - 150), "TECHNICAL DEMO  ·  05:40  ·  1080P", font=font(FONT_SANS_EN, 11), fill=(139, 145, 132))
+        d.text((124, H - 150), "TECHNICAL DEMO  ·  1080P  ·  HOUSEMIND AI", font=font(FONT_SANS_EN, 11), fill=(100, 116, 139))
     else:
-        d.text((120, 250), "读懂市场，", font=font(FONT_SERIF_CN, 70), fill=(247, 241, 229))
-        d.text((120, 350), "再决定。", font=font(FONT_SERIF_CN, 70), fill=GOLD_LIGHT)
-        d.line([(124, 465), (780, 465)], fill=(176, 138, 82, 180), width=1)
+        d.text((120, 250), "读懂市场，", font=font(FONT_SANS_CN, 64, 2), fill=(248, 250, 252))
+        d.text((120, 350), "再决定。", font=font(FONT_SANS_CN, 64, 2), fill=GOLD_LIGHT)
+        d.line([(124, 465), (780, 465)], fill=(29, 90, 150, 200), width=1)
         d.text((124, 492), "数据 · 区间 · 解释 · 边界", font=font(FONT_SANS_CN, 22), fill=(193, 190, 174))
         stats = [("$59,477", "XGBoost MAE"), ("81.5%", "区间覆盖率"), ("$95,130", "未见邮编 MAE")]
         sx = 124
         for value, label in stats:
-            d.text((sx, 590), value, font=font(FONT_SERIF_EN, 28, 0), fill=(237, 224, 202))
-            d.text((sx, 630), label, font=font(FONT_SANS_CN, 13), fill=(160, 164, 151))
+            d.text((sx, 590), value, font=font(FONT_SANS_EN, 30, 0), fill=(248, 250, 252))
+            d.text((sx, 630), label, font=font(FONT_SANS_CN, 13), fill=(148, 163, 184))
             sx += 280
-        d.text((124, H - 150), "HOUSEMIND AI  /  2026  /  THANK YOU", font=font(FONT_SANS_EN, 11), fill=(139, 145, 132))
+        d.text((124, H - 150), "HOUSEMIND AI  /  2026  /  THANK YOU", font=font(FONT_SANS_EN, 11), fill=(100, 116, 139))
 
     canvas = Image.alpha_composite(canvas.convert("RGBA"), overlay).convert("RGB")
     # fade in/out
@@ -320,7 +320,7 @@ def main() -> None:
         "-f", "rawvideo", "-vcodec", "rawvideo", "-s", f"{W}x{H}", "-pix_fmt", "rgb24", "-r", str(FPS),
         "-i", "-", "-i", str(work / "narration.wav"),
         "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p",
-        "-c:a", "aac", "-b:a", "160k", "-af", "loudnorm=I=-16:TP=-1.5:LRA=11",
+        "-c:a", "aac", "-b:a", "160k", "-af", "loudnorm=I=-16:TP=-2.0:LRA=11,volume=-1.0dB",
         "-shortest", "-movflags", "+faststart",
         "-metadata", "title=HouseMind AI — 产品演示",
         str(ROOT / args.out),

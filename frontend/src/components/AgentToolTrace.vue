@@ -91,11 +91,11 @@ function argSummary(args: Record<string, unknown>): string {
 </template>
 
 <style scoped>
-.tool-trace { border: 1px solid var(--line); background: rgba(234,226,212,.28); border-radius: 4px; margin: 11px 0 13px; overflow: hidden; }
+.tool-trace { border: 1px solid var(--line); background: #f8fafc; border-radius: 8px; margin: 11px 0 13px; overflow: hidden; }
 .trace-head { display: flex; align-items: center; gap: 7px; padding: 8px 11px; border-bottom: 1px solid var(--line-soft); }
 .trace-orb { width: 19px; height: 19px; border-radius: 50%; background: var(--ink); color: var(--gold-light); display: grid; place-items: center; }
 .trace-orb.active { animation: pulse-orb 1.6s ease infinite; }
-@keyframes pulse-orb { 0%,100% { box-shadow: 0 0 0 0 rgba(176,138,82,.3); } 50% { box-shadow: 0 0 0 5px rgba(176,138,82,0); } }
+@keyframes pulse-orb { 0%,100% { box-shadow: 0 0 0 0 rgba(29,90,150,.3); } 50% { box-shadow: 0 0 0 5px rgba(29,90,150,0); } }
 .trace-title { font-size: 8.5px; font-weight: 650; letter-spacing: .08em; }
 .trace-count { font-size: 7.5px; color: var(--muted); border: 1px solid var(--line); border-radius: 99px; padding: 1px 5px; }
 .trace-live { margin-left: auto; display: inline-flex; align-items: center; gap: 4px; font-size: 7.5px; color: var(--gold); }
@@ -107,7 +107,7 @@ function argSummary(args: Record<string, unknown>): string {
 .trace-item:last-child { border-bottom: 0; }
 .trace-item > summary { display: flex; align-items: center; gap: 8px; padding: 7px 4px; cursor: pointer; list-style: none; }
 .trace-item > summary::-webkit-details-marker { display: none; }
-.tool-icon { width: 23px; height: 23px; border: 1px solid var(--line); border-radius: 3px; display: grid; place-items: center; color: var(--ink-soft); flex: 0 0 auto; background: rgba(251,248,241,.6); }
+.tool-icon { width: 23px; height: 23px; border: 1px solid var(--line); border-radius: 7px; display: grid; place-items: center; color: var(--ink-soft); flex: 0 0 auto; background: #ffffff; }
 .tool-copy { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 1px; }
 .tool-name { font-size: 8.5px; font-weight: 650; }
 .tool-summary { font-size: 7.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 520px; }
@@ -121,7 +121,7 @@ function argSummary(args: Record<string, unknown>): string {
 .detail-block { display: flex; flex-direction: column; gap: 2px; }
 .detail-label { font-size: 6.5px; letter-spacing: .12em; color: var(--muted-light); }
 .detail-block p { font-size: 8px; line-height: 1.55; color: var(--muted); }
-.detail-block code { font-size: 7.5px; line-height: 1.55; color: var(--ink-soft); word-break: break-all; background: rgba(16,35,29,.04); padding: 4px 6px; border-radius: 2px; }
+.detail-block code { font-size: 7.5px; line-height: 1.55; color: var(--ink-soft); word-break: break-all; background: rgba(15,23,42,.04); padding: 4px 6px; border-radius: 6px; }
 .raw-details summary { font-size: 7.5px; color: var(--muted); cursor: pointer; }
-.raw-details pre { max-height: 190px; overflow: auto; background: var(--ink); color: rgba(244,239,229,.8); padding: 9px; font-size: 7px; line-height: 1.55; border-radius: 3px; margin-top: 5px; }
+.raw-details pre { max-height: 190px; overflow: auto; background: var(--ink); color: rgba(248,250,252,.8); padding: 9px; font-size: 7px; line-height: 1.55; border-radius: 7px; margin-top: 5px; }
 </style>

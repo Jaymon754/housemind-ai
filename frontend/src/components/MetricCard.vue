@@ -26,9 +26,9 @@ withDefaults(
 </template>
 
 <style scoped>
-.metric-card { padding: 19px 20px 18px; border: 1px solid var(--line); background: rgba(251, 248, 241, 0.66); border-radius: 5px; position: relative; overflow: hidden; }
-.metric-card::after { content: ''; position: absolute; right: -24px; top: -24px; width: 70px; height: 70px; border: 1px solid rgba(176, 138, 82, 0.16); border-radius: 50%; }
-.metric-card.dark { background: var(--ink); border-color: var(--ink); color: var(--paper); }
-.metric-card.dark .metric-label, .metric-card.dark .metric-meta, .metric-card.dark .metric-note { color: rgba(244, 239, 229, 0.5); }
-.metric-card.dark .metric-value { color: var(--paper); }
+.metric-card { padding: 18px 19px 17px; border: 1px solid var(--line); background: #fff; border-radius: 10px; position: relative; overflow: hidden; box-shadow: var(--shadow-sm); }
+.metric-card::after { display: none; }
+.metric-card.dark { background: var(--ink-deep); border-color: #1e3a50; color: #f8fafc; }
+.metric-card.dark .metric-label, .metric-card.dark .metric-meta, .metric-card.dark .metric-note { color: rgba(248, 250, 252, 0.5); }
+.metric-card.dark .metric-value { color: #f8fafc; }
 </style>

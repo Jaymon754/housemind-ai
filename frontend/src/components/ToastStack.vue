@@ -21,12 +21,12 @@ const toast = useToastStore()
 
 <style scoped>
 .toast-stack { position: fixed; right: 24px; bottom: 24px; z-index: 90; display: flex; flex-direction: column; gap: 8px; }
-.toast { display: flex; align-items: center; gap: 9px; min-width: 240px; max-width: 380px; background: var(--ink); color: var(--paper); padding: 11px 13px; font-size: 11.5px; border-radius: 4px; box-shadow: 0 16px 40px rgba(8,20,16,.24); }
+.toast { display: flex; align-items: center; gap: 9px; min-width: 240px; max-width: 380px; background: var(--ink-deep); color: #f8fafc; padding: 11px 13px; font-size: 11.5px; border-radius: 8px; box-shadow: 0 16px 40px rgba(15,23,42,.22); }
 .toast.success svg { color: #a9c8a9; }
 .toast.error svg { color: #e0a28f; }
 .toast.info svg { color: var(--gold-light); }
 .toast span { flex: 1; }
-.toast button { background: none; border: 0; color: rgba(244,239,229,.5); cursor: pointer; padding: 2px; }
+.toast button { background: none; border: 0; color: rgba(248,250,252,.55); cursor: pointer; padding: 2px; }
 .toast-enter-active, .toast-leave-active { transition: all .24s ease; }
 .toast-enter-from, .toast-leave-to { opacity: 0; transform: translateY(8px); }
 </style>

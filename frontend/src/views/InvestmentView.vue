@@ -255,7 +255,7 @@ const cashFlowOption = computed<EChartsOption>(() => {
           items.map((i) => `<div style="display:flex;justify-content:space-between;gap:18px;margin-top:3px"><span><i style="display:inline-block;width:6px;height:6px;border-radius:50%;background:${i.color};margin-right:6px"></i>${i.seriesName}</span><b>${usd(i.value)}</b></div>`).join('')
       },
     },
-    legend: { top: 0, right: 0, icon: 'circle', itemWidth: 5, itemHeight: 5, textStyle: { color: '#737a72', fontSize: 8.5 } },
+    legend: { top: 0, right: 0, icon: 'circle', itemWidth: 5, itemHeight: 5, textStyle: { color: '#64748b', fontSize: 8.5 } },
     xAxis: { type: 'category', data: schedule.map((s) => `Y${s.year}`), ...axisCommon, axisLabel: { ...axisCommon.axisLabel, fontSize: 8.5 } },
     yAxis: [
       { type: 'value', ...axisCommon, axisLabel: { ...axisCommon.axisLabel, formatter: (v: number) => `$${Math.round(v / 1000)}k` } },
@@ -279,7 +279,7 @@ const cashFlowOption = computed<EChartsOption>(() => {
         smooth: 0.2,
         showSymbol: false,
         lineStyle: { color: palette.ink, width: 1.5 },
-        areaStyle: { color: 'rgba(16,35,29,.04)' },
+        areaStyle: { color: 'rgba(15,23,42,.04)' },
       },
       {
         name: '累计现金流',
@@ -306,7 +306,7 @@ const sensitivityOption = computed<EChartsOption>(() => {
       ...tooltipCommon,
       formatter: (params: unknown) => {
         const p = params as { value: number[] }
-        return `<div style="font-size:9px;opacity:.55">月租 ${usd(rents[p.value[0]])} · 利率 ${rates[p.value[1]].toFixed(2)}%</div><div style="font-family:Fraunces Variable;font-size:20px;margin-top:2px">${signedUsd(p.value[2])}<span style="font-size:9px;opacity:.55"> / 月</span></div>`
+        return `<div style="font-size:9px;opacity:.55">月租 ${usd(rents[p.value[0]])} · 利率 ${rates[p.value[1]].toFixed(2)}%</div><div style="font-family:Manrope Variable;font-size:20px;margin-top:2px">${signedUsd(p.value[2])}<span style="font-size:9px;opacity:.55"> / 月</span></div>`
       },
     },
     xAxis: {
@@ -317,7 +317,7 @@ const sensitivityOption = computed<EChartsOption>(() => {
       name: '月租金',
       nameLocation: 'middle',
       nameGap: 27,
-      nameTextStyle: { color: '#737a72', fontSize: 8 },
+      nameTextStyle: { color: '#64748b', fontSize: 8 },
     },
     yAxis: {
       type: 'category',
@@ -327,21 +327,21 @@ const sensitivityOption = computed<EChartsOption>(() => {
       name: '利率',
       nameLocation: 'middle',
       nameGap: 36,
-      nameTextStyle: { color: '#737a72', fontSize: 8 },
+      nameTextStyle: { color: '#64748b', fontSize: 8 },
     },
     visualMap: {
       show: false,
       min: -bound,
       max: bound,
-      inRange: { color: ['#b46b52', '#e4c9ba', '#f4efe5', '#b9cbbd', '#6f8a76'] },
+      inRange: { color: ['#b42318', '#f2c7c1', '#f8fafc', '#b7d9cf', '#0f766e'] },
     },
     series: [
       {
         type: 'heatmap',
         data: values,
-        label: { show: true, fontSize: 7, color: 'rgba(16,35,29,.75)', formatter: (p: unknown) => { const v = (p as { value: number[] }).value[2]; return `${v >= 0 ? '+' : ''}${Math.round(v / 10) / 100}k` } },
-        itemStyle: { borderColor: '#fbf8f1', borderWidth: 2, borderRadius: 2 },
-        emphasis: { itemStyle: { shadowBlur: 8, shadowColor: 'rgba(16,35,29,.2)' } },
+        label: { show: true, fontSize: 7, color: 'rgba(15,23,42,.75)', formatter: (p: unknown) => { const v = (p as { value: number[] }).value[2]; return `${v >= 0 ? '+' : ''}${Math.round(v / 10) / 100}k` } },
+        itemStyle: { borderColor: '#ffffff', borderWidth: 2, borderRadius: 2 },
+        emphasis: { itemStyle: { shadowBlur: 8, shadowColor: 'rgba(15,23,42,.2)' } },
       },
     ],
   }
@@ -685,7 +685,7 @@ const maxScenarioIrr = computed(() => Math.max(1, ...scenarioCards.value.map((c)
 <style scoped>
 .preset-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 18px; overflow-x: auto; padding-bottom: 2px; }
 .preset-label { font-size: 8px; letter-spacing: .15em; color: var(--muted); flex: 0 0 auto; margin-right: 3px; }
-.preset-chip { flex: 0 0 auto; border: 1px solid var(--line); background: rgba(251,248,241,.6); border-radius: 3px; padding: 6px 10px; display: flex; flex-direction: column; gap: 1px; text-align: left; transition: border-color .2s, background .2s; }
+.preset-chip { flex: 0 0 auto; border: 1px solid var(--line); background: #ffffff; border-radius: 7px; padding: 6px 10px; display: flex; flex-direction: column; gap: 1px; text-align: left; transition: border-color .2s, background .2s; }
 .preset-chip:hover { border-color: var(--gold); background: var(--paper-2); }
 .preset-chip span { font-size: 9px; font-weight: 600; }
 .preset-chip small { font-size: 7.5px; color: var(--muted); }
@@ -714,28 +714,28 @@ const maxScenarioIrr = computed(() => Math.max(1, ...scenarioCards.value.map((c)
 .result-live { color: var(--muted); display: inline-flex; align-items: center; gap: 6px; }
 .live-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--positive); box-shadow: 0 0 0 3px rgba(77,127,98,.1); }
 .result-time { margin-left: 12px; color: var(--muted-light); letter-spacing: 0; }
-.verdict-panel { background: var(--ink); color: var(--paper); border-radius: 5px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 30px; padding: 25px 29px; position: relative; overflow: hidden; }
-.verdict-panel::before { content: ''; position: absolute; right: -50px; top: -80px; width: 260px; height: 260px; border: 1px solid rgba(216,188,140,.12); border-radius: 50%; }
-.verdict-left { border-right: 1px solid rgba(244,239,229,.13); padding-right: 28px; }
+.verdict-panel { background: var(--ink); color: var(--paper); border-radius: 10px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 30px; padding: 25px 29px; position: relative; overflow: hidden; }
+.verdict-panel::before { content: ''; position: absolute; right: -50px; top: -80px; width: 260px; height: 260px; border: 1px solid rgba(119,168,212,.12); border-radius: 50%; }
+.verdict-left { border-right: 1px solid rgba(248,250,252,.13); padding-right: 28px; }
 .verdict-kicker { font-size: 7.5px; letter-spacing: .18em; color: var(--gold-light); }
-.verdict-number { font-family: var(--font-serif); font-size: clamp(39px, 4vw, 55px); font-weight: 430; letter-spacing: -.045em; line-height: 1; margin-top: 10px; white-space: nowrap; }
-.verdict-number span { font-family: var(--font-sans); font-size: 10px; font-weight: 500; letter-spacing: 0; color: rgba(244,239,229,.4); margin-left: 5px; }
+.verdict-number { font-family: var(--font-serif); font-size: clamp(39px, 4vw, 55px); font-weight: 650; letter-spacing: -.045em; line-height: 1; margin-top: 10px; white-space: nowrap; }
+.verdict-number span { font-family: var(--font-sans); font-size: 10px; font-weight: 650; letter-spacing: 0; color: rgba(248,250,252,.4); margin-left: 5px; }
 .verdict-number.positive { color: #b9d0bd; }
 .verdict-number.negative { color: #dfa58f; }
-.verdict-label { font-size: 9px; color: rgba(244,239,229,.55); margin-top: 5px; letter-spacing: .05em; }
+.verdict-label { font-size: 9px; color: rgba(248,250,252,.55); margin-top: 5px; letter-spacing: .05em; }
 .verdict-right { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: center; }
-.verdict-right > p { font-size: 9.5px; line-height: 1.7; color: rgba(244,239,229,.53); max-width: 390px; }
-.verdict-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 15px; padding-top: 12px; border-top: 1px solid rgba(244,239,229,.11); }
+.verdict-right > p { font-size: 9.5px; line-height: 1.7; color: rgba(248,250,252,.53); max-width: 390px; }
+.verdict-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 15px; padding-top: 12px; border-top: 1px solid rgba(248,250,252,.11); }
 .verdict-facts div { display: flex; flex-direction: column; gap: 2px; }
-.verdict-facts span { font-size: 7px; color: rgba(244,239,229,.34); }
-.verdict-facts strong { font-family: var(--font-serif); font-size: 15px; font-weight: 450; color: var(--paper); }
-.verdict-watermark { position: absolute; right: 17px; bottom: -25px; font-family: var(--font-serif); font-size: 90px; color: rgba(244,239,229,.025); }
+.verdict-facts span { font-size: 7px; color: rgba(248,250,252,.34); }
+.verdict-facts strong { font-family: var(--font-serif); font-size: 15px; font-weight: 650; color: var(--paper); }
+.verdict-watermark { position: absolute; right: 17px; bottom: -25px; font-family: var(--font-serif); font-size: 90px; color: rgba(248,250,252,.025); }
 
-.kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid var(--line); background: rgba(251,248,241,.6); margin-top: 10px; border-radius: 4px; overflow: hidden; }
+.kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid var(--line); background: #ffffff; margin-top: 10px; border-radius: 8px; overflow: hidden; }
 .kpi-item { padding: 14px 14px 13px; border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 3px; }
 .kpi-item:last-child { border-right: 0; }
 .kpi-label { font-size: 7.5px; letter-spacing: .1em; color: var(--muted); }
-.kpi-item strong { font-family: var(--font-serif); font-size: 22px; font-weight: 480; letter-spacing: -.02em; margin-top: 3px; white-space: nowrap; }
+.kpi-item strong { font-family: var(--font-serif); font-size: 22px; font-weight: 650; letter-spacing: -.02em; margin-top: 3px; white-space: nowrap; }
 .kpi-item small { font-size: 7.5px; color: var(--muted-light); }
 .positive { color: var(--positive); }
 .negative { color: var(--negative); }
@@ -744,7 +744,7 @@ const maxScenarioIrr = computed(() => Math.max(1, ...scenarioCards.value.map((c)
 .cash-waterfall { display: flex; flex-direction: column; gap: 7px; }
 .cash-row { display: grid; grid-template-columns: 78px 1fr 63px; align-items: center; gap: 9px; }
 .cash-label { font-size: 9px; color: var(--muted); }
-.cash-track { height: 9px; background: rgba(16,35,29,.035); border-radius: 1px; }
+.cash-track { height: 9px; background: rgba(15,23,42,.035); border-radius: 1px; }
 .cash-bar { display: block; height: 100%; border-radius: 1px; }
 .cash-bar.income { background: linear-gradient(90deg, #87a58d, var(--sage)); }
 .cash-bar.expense { background: linear-gradient(90deg, #d7ac9c, var(--clay)); }
@@ -752,17 +752,17 @@ const maxScenarioIrr = computed(() => Math.max(1, ...scenarioCards.value.map((c)
 .cash-value { font-size: 9px; font-weight: 650; text-align: right; font-variant-numeric: tabular-nums; }
 .cash-total { display: grid; grid-template-columns: 1fr auto; align-items: baseline; border-top: 1px solid var(--line); margin-top: 7px; padding-top: 11px; }
 .cash-total span { font-size: 10px; font-weight: 650; }
-.cash-total strong { font-family: var(--font-serif); font-size: 25px; font-weight: 480; }
+.cash-total strong { font-family: var(--font-serif); font-size: 25px; font-weight: 650; }
 .cash-total small { grid-column: 1 / -1; font-size: 8px; color: var(--muted-light); margin-top: 1px; }
 
 .exit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 11px 18px; }
 .exit-grid div { display: flex; flex-direction: column; gap: 2px; }
 .exit-grid span { font-size: 7.5px; color: var(--muted); }
-.exit-grid strong { font-family: var(--font-serif); font-size: 17px; font-weight: 480; }
+.exit-grid strong { font-family: var(--font-serif); font-size: 17px; font-weight: 650; }
 .exit-bar { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 8px; margin-top: 15px; padding-top: 12px; border-top: 1px solid var(--line-soft); }
 .exit-bar-label { font-size: 7.5px; color: var(--muted); }
-.exit-bar-track { height: 4px; background: var(--paper-3); border-radius: 3px; overflow: hidden; }
-.exit-bar-track span { display: block; height: 100%; border-radius: 3px; }
+.exit-bar-track { height: 4px; background: var(--paper-3); border-radius: 7px; overflow: hidden; }
+.exit-bar-track span { display: block; height: 100%; border-radius: 7px; }
 .positive-fill { background: var(--sage); }
 .negative-fill { background: var(--clay); }
 .exit-bar strong { font-size: 9px; }
@@ -770,11 +770,11 @@ const maxScenarioIrr = computed(() => Math.max(1, ...scenarioCards.value.map((c)
 
 .scenarios-card { padding-bottom: 18px; }
 .scenario-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-.scenario-card { border: 1px solid var(--line); padding: 13px; border-radius: 3px; background: rgba(251,248,241,.5); }
-.scenario-card.active { border-color: var(--ink); background: rgba(234,226,212,.3); }
+.scenario-card { border: 1px solid var(--line); padding: 13px; border-radius: 7px; background: #ffffff; }
+.scenario-card.active { border-color: var(--ink); background: #f1f5f9; }
 .scenario-head { display: flex; justify-content: space-between; align-items: center; font-size: 9px; font-weight: 650; }
-.scenario-cf { font-family: var(--font-serif); font-size: 26px; font-weight: 470; letter-spacing: -.03em; margin: 8px 0 9px; white-space: nowrap; }
-.scenario-cf small { font-family: var(--font-sans); font-size: 8px; font-weight: 500; color: var(--muted-light); }
+.scenario-cf { font-family: var(--font-serif); font-size: 26px; font-weight: 650; letter-spacing: -.03em; margin: 8px 0 9px; white-space: nowrap; }
+.scenario-cf small { font-family: var(--font-sans); font-size: 8px; font-weight: 650; color: var(--muted-light); }
 .scenario-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
 .scenario-stats div { display: flex; flex-direction: column; gap: 1px; }
 .scenario-stats span { font-size: 7px; color: var(--muted); }
@@ -783,11 +783,11 @@ const maxScenarioIrr = computed(() => Math.max(1, ...scenarioCards.value.map((c)
 .scenario-bar span { display: block; height: 100%; background: var(--gold); }
 .scenario-note { display: block; font-size: 7px; line-height: 1.5; color: var(--muted-light); }
 
-.warnings { border: 1px solid rgba(180,107,82,.24); background: rgba(180,107,82,.055); padding: 14px 16px; border-radius: 4px; }
+.warnings { border: 1px solid rgba(180,35,24,.24); background: rgba(180,35,24,.055); padding: 14px 16px; border-radius: 8px; }
 .warnings-head { display: flex; align-items: center; gap: 7px; font-size: 10px; font-weight: 650; color: #8e4e39; }
 .warnings ul { margin: 7px 0 0; padding-left: 17px; }
 .warnings li { font-size: 9px; line-height: 1.65; color: #7e5b4e; }
-.assumptions { padding: 16px; border: 1px solid var(--line); border-radius: 4px; background: rgba(234,226,212,.22); }
+.assumptions { padding: 16px; border: 1px solid var(--line); border-radius: 8px; background: #f8fafc; }
 .assumptions-title { display: flex; align-items: center; gap: 6px; font-size: 9.5px; font-weight: 650; }
 .assumptions-title svg { color: var(--sage); }
 .assumption-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 9px 18px; margin-top: 10px; }
@@ -805,7 +805,7 @@ const maxScenarioIrr = computed(() => Math.max(1, ...scenarioCards.value.map((c)
   .kpi-item:nth-child(3) { border-right: 0; }
   .kpi-item:nth-child(-n+3) { border-bottom: 1px solid var(--line); }
   .verdict-panel { grid-template-columns: 1fr; gap: 17px; }
-  .verdict-left { border-right: 0; border-bottom: 1px solid rgba(244,239,229,.13); padding: 0 0 15px; }
+  .verdict-left { border-right: 0; border-bottom: 1px solid rgba(248,250,252,.13); padding: 0 0 15px; }
 }
 @media (max-width: 980px) {
   .investment-layout { grid-template-columns: 1fr; }

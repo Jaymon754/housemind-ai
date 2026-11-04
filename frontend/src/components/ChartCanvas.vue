@@ -56,5 +56,5 @@ watch(
 <style scoped>
 .chart-shell { position: relative; width: 100%; }
 .chart-inner { width: 100%; height: 100%; }
-.chart-loading { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(251, 248, 241, 0.65); backdrop-filter: blur(2px); }
+.chart-loading { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(255, 255, 255, 0.72); backdrop-filter: blur(2px); }
 </style>

@@ -1,27 +1,27 @@
 export const palette = {
-  ink: '#10231d',
-  inkSoft: '#294038',
-  paper: '#fbf8f1',
-  gold: '#b08a52',
-  goldLight: '#d8bc8c',
-  sage: '#6f8a76',
-  sageLight: '#a6b9a9',
-  clay: '#b46b52',
-  line: 'rgba(16,35,29,0.12)',
-  muted: '#737a72',
+  ink: '#0f172a',
+  inkSoft: '#334155',
+  paper: '#ffffff',
+  gold: '#1d5a96',
+  goldLight: '#77a8d4',
+  sage: '#0f766e',
+  sageLight: '#99f6e4',
+  clay: '#b42318',
+  line: 'rgba(15,23,42,0.12)',
+  muted: '#64748b',
 }
 
 export const axisCommon = {
-  axisLine: { lineStyle: { color: 'rgba(16,35,29,0.16)' } },
+  axisLine: { lineStyle: { color: 'rgba(15,23,42,0.14)' } },
   axisTick: { show: false },
-  axisLabel: { color: '#737a72', fontSize: 11, fontFamily: 'Manrope, PingFang SC, sans-serif' },
-  splitLine: { lineStyle: { color: 'rgba(16,35,29,0.07)', type: 'dashed' as const } },
+  axisLabel: { color: '#64748b', fontSize: 10.5, fontFamily: 'Manrope Variable, PingFang SC, sans-serif' },
+  splitLine: { lineStyle: { color: 'rgba(15,23,42,0.06)', type: 'dashed' as const } },
 }
 
 export const tooltipCommon = {
-  backgroundColor: '#10231d',
+  backgroundColor: '#0f172a',
   borderWidth: 0,
   padding: [10, 13],
-  textStyle: { color: '#f8f2e7', fontSize: 12, fontFamily: 'Manrope, PingFang SC, sans-serif' },
-  extraCssText: 'border-radius:6px;box-shadow:0 12px 30px rgba(10,25,20,.22);',
+  textStyle: { color: '#f8fafc', fontSize: 12, fontFamily: 'Manrope Variable, PingFang SC, sans-serif' },
+  extraCssText: 'border-radius:8px;box-shadow:0 12px 30px rgba(15,23,42,.22);',
 }

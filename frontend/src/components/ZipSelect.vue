@@ -83,16 +83,16 @@ onBeforeUnmount(() => document.removeEventListener('mousedown', onDocClick))
 
 <style scoped>
 .zip-select { position: relative; }
-.zip-input-wrap { display: flex; align-items: center; height: 39px; border: 1px solid var(--line); background: rgba(251,248,241,.65); border-radius: 3px; padding: 0 10px; gap: 7px; transition: border-color .2s, box-shadow .2s; }
-.zip-input-wrap.open, .zip-input-wrap:focus-within { border-color: var(--gold); background: var(--paper-2); box-shadow: 0 0 0 3px rgba(176,138,82,.09); }
+.zip-input-wrap { display: flex; align-items: center; height: 39px; border: 1px solid var(--line); background: #ffffff; border-radius: 7px; padding: 0 10px; gap: 7px; transition: border-color .2s, box-shadow .2s; }
+.zip-input-wrap.open, .zip-input-wrap:focus-within { border-color: var(--gold); background: var(--paper-2); box-shadow: 0 0 0 3px rgba(29,90,150,.09); }
 .zip-icon { color: var(--gold); flex: 0 0 auto; }
 .zip-input-wrap input { border: 0; outline: 0; background: transparent; flex: 1; min-width: 0; font-size: 12px; letter-spacing: .04em; }
 .zip-region { font-size: 8.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 68px; }
 .zip-chevron { color: var(--muted); flex: 0 0 auto; }
-.zip-dropdown { position: absolute; z-index: 50; top: calc(100% + 5px); left: 0; right: 0; background: var(--paper-2); border: 1px solid var(--line); border-radius: 4px; box-shadow: 0 18px 45px rgba(16,35,29,.16); max-height: 270px; overflow-y: auto; padding: 4px; }
-.zip-drop-head { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; gap: 6px; padding: 7px 8px; font-size: 8px; color: var(--muted); background: rgba(251,248,241,.96); border-bottom: 1px solid var(--line-soft); }
-.zip-option { width: 100%; display: grid; grid-template-columns: 48px 1fr auto 12px; align-items: center; gap: 8px; border: 0; background: transparent; padding: 8px; border-radius: 3px; text-align: left; }
-.zip-option:hover, .zip-option.selected { background: rgba(176,138,82,.09); }
+.zip-dropdown { position: absolute; z-index: 50; top: calc(100% + 5px); left: 0; right: 0; background: var(--paper-2); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 18px 45px rgba(15,23,42,.16); max-height: 270px; overflow-y: auto; padding: 4px; }
+.zip-drop-head { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; gap: 6px; padding: 7px 8px; font-size: 8px; color: var(--muted); background: #ffffff; border-bottom: 1px solid var(--line-soft); }
+.zip-option { width: 100%; display: grid; grid-template-columns: 48px 1fr auto 12px; align-items: center; gap: 8px; border: 0; background: transparent; padding: 8px; border-radius: 7px; text-align: left; }
+.zip-option:hover, .zip-option.selected { background: rgba(29,90,150,.09); }
 .zip-option-code { font-size: 10.5px; font-weight: 650; letter-spacing: .04em; }
 .zip-option-region { font-size: 9px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .zip-option-price { font-size: 9px; color: var(--muted); font-variant-numeric: tabular-nums; }
