@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-11-04T09:49:42.675489+00:00",
+  "duration_seconds": 28.3,
+  "king_county": {
+    "best_model": "xgboost",
+    "metrics": {
+      "mae": 59477.26,
+      "rmse": 100985.85,
+      "r2": 0.9156,
+      "mape": 11.91,
+      "median_ae": 37147.36,
+      "within_10pct": 58.2,
+      "within_20pct": 83.2,
+      "n": 4284,
+      "fit_seconds": 2.7,
+      "best_iteration": 1200,
+      "params": {
+        "n_estimators": 1200,
+        "max_depth": 6,
+        "learning_rate": 0.03,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "min_child_weight": 3
+      },
+      "valid_rows": 1714,
+      "label": "XGBoost",
+      "note": "梯度提升树；经早停选择迭代轮数，作为最终估值模型。",
+      "interval": {
+        "level": 0.8,
+        "method": "5-fold out-of-fold residual quantiles (asymmetric conformal-style interval)",
+        "residual_q10": -90228.5,
+        "residual_q50": -2241.17,
+        "residual_q90": 86241.87,
+        "test_coverage_pct": 81.5,
+        "median_width_usd": 176470.37
+      }
+    },
+    "baseline_lift_pct": 40.2
+  },
+  "uci": {
+    "holdout": {
+      "mae": 3.7,
+      "rmse": 5.33,
+      "r2": 0.8305,
+      "mape": 11.59,
+      "median_ae": 2.44,
+      "within_10pct": 62.7,
+      "within_20pct": 84.3,
+      "n": 83
+    },
+    "cv": {
+      "mae": 4.76,
+      "rmse": 7.34,
+      "r2": 0.7,
+      "mape": 13.77
+    }
+  },
+  "california": {
+    "holdout": {
+      "mae": 29382.88,
+      "rmse": 44748.49,
+      "r2": 0.8472,
+      "mape": 16.87,
+      "median_ae": 18300.71,
+      "within_10pct": 47.4,
+      "within_20pct": 73.9,
+      "n": 4128
+    }
+  },
+  "disclaimer": "三个数据集的地区、年代、币种和目标定义不同，不进行跨数据集绝对指标比较。"
+}

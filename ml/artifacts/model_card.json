@@ -1,0 +1,61 @@
+{
+  "intended_use": "大西雅图地区住宅成交价的辅助估值与研究演示",
+  "not_intended_for": [
+    "正式抵押贷款评估或法律用途",
+    "美国境外房产定价",
+    "对个人或社区进行歧视性决策",
+    "替代现场勘察与结构安全鉴定"
+  ],
+  "training_period": "2014-05 至 2015-05",
+  "currency": "USD",
+  "performance": {
+    "mae": 59477.26,
+    "rmse": 100985.85,
+    "r2": 0.9156,
+    "mape": 11.91,
+    "median_ae": 37147.36,
+    "within_10pct": 58.2,
+    "within_20pct": 83.2,
+    "n": 4284,
+    "fit_seconds": 2.7,
+    "best_iteration": 1200,
+    "params": {
+      "n_estimators": 1200,
+      "max_depth": 6,
+      "learning_rate": 0.03,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "min_child_weight": 3
+    },
+    "valid_rows": 1714,
+    "label": "XGBoost",
+    "note": "梯度提升树；经早停选择迭代轮数，作为最终估值模型。",
+    "interval": {
+      "level": 0.8,
+      "method": "5-fold out-of-fold residual quantiles (asymmetric conformal-style interval)",
+      "residual_q10": -90228.5,
+      "residual_q50": -2241.17,
+      "residual_q90": 86241.87,
+      "test_coverage_pct": 81.5,
+      "median_width_usd": 176470.37
+    }
+  },
+  "interval": {
+    "level": 0.8,
+    "method": "5-fold out-of-fold residual quantiles (asymmetric conformal-style interval)",
+    "residual_q10": -90228.5,
+    "residual_q50": -2241.17,
+    "residual_q90": 86241.87,
+    "test_coverage_pct": 81.5,
+    "median_width_usd": 176470.37
+  },
+  "known_limitations": [
+    "历史成交数据，不能自动反映 2020 年后的市场变化。",
+    "邮编市场基准在训练集内学习；未见过的邮编会回退到全局基准。",
+    "目标为成交价，未针对翻新、景观或室内装修做现场核验。",
+    "模型误差在低价房中相对更大，使用 MAPE 与区间而非只看 R²。"
+  ],
+  "sensitive_attributes": "模型未使用种族、性别、宗教等受保护属性；但地理位置可能与历史性隔离相关，需进行公平性审查。",
+  "explainability": "逐套房源提供 TreeSHAP 加性分解，所有贡献值之和等于预测值减基准值。",
+  "generated_at": "2026-11-04T09:49:47.056078+00:00"
+}

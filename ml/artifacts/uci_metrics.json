@@ -1,0 +1,105 @@
+{
+  "dataset": "UCI Real Estate Valuation",
+  "source": "UCI ML Repository dataset 477",
+  "target": "house price of unit area (10,000 TWD / ping)",
+  "target_note": "新北市新店区 2012–2013 年 414 笔交易；与 King County 的目标、币种和地区均不同，不能横向比较绝对误差。",
+  "rows": 414,
+  "features": [
+    "transaction_year",
+    "house_age",
+    "mrt_distance",
+    "log_distance",
+    "stores",
+    "lat",
+    "long"
+  ],
+  "feature_labels": {
+    "transaction_year": "交易年份",
+    "house_age": "房龄",
+    "mrt_distance": "距捷运站距离",
+    "log_distance": "距捷运站距离(对数)",
+    "stores": "步行范围便利店数",
+    "lat": "纬度",
+    "long": "经度"
+  },
+  "holdout": {
+    "mae": 3.7,
+    "rmse": 5.33,
+    "r2": 0.8305,
+    "mape": 11.59,
+    "median_ae": 2.44,
+    "within_10pct": 62.7,
+    "within_20pct": 84.3,
+    "n": 83
+  },
+  "five_fold_cv": {
+    "mae": 4.76,
+    "rmse": 7.34,
+    "r2": 0.7,
+    "mape": 13.77
+  },
+  "model_info": {
+    "fit_seconds": 0.38,
+    "best_iteration": 117,
+    "params": {
+      "n_estimators": 1200,
+      "max_depth": 6,
+      "learning_rate": 0.03,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "min_child_weight": 3
+    }
+  },
+  "relationships": {
+    "distance_bins": [
+      {
+        "bin": "0–250",
+        "median": 48.1,
+        "count": 79
+      },
+      {
+        "bin": "250–500",
+        "median": 42.55,
+        "count": 132
+      },
+      {
+        "bin": "500–1000",
+        "median": 39.0,
+        "count": 65
+      },
+      {
+        "bin": "1000–2000",
+        "median": 26.2,
+        "count": 65
+      },
+      {
+        "bin": "2000–7000",
+        "median": 22.6,
+        "count": 73
+      }
+    ],
+    "age_bins": [
+      {
+        "bin": "0–10",
+        "median": 48.3,
+        "count": 110
+      },
+      {
+        "bin": "10–20",
+        "median": 33.1,
+        "count": 167
+      },
+      {
+        "bin": "20–30",
+        "median": 34.6,
+        "count": 43
+      },
+      {
+        "bin": "30–50",
+        "median": 38.35,
+        "count": 94
+      }
+    ]
+  },
+  "generated_at": "2026-11-04T09:49:39.845926+00:00"
+}

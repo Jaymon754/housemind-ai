@@ -1,0 +1,8497 @@
+{
+  "dataset": "California Housing",
+  "source": "Scikit-learn fetch_california_housing / 1990 U.S. Census",
+  "target": "median_house_value (USD)",
+  "target_note": "1990 年人口普查街区组中位数，目标在 500,001 美元处封顶；不用于 King County 预测。",
+  "rows": 20640,
+  "features": [
+    "longitude",
+    "latitude",
+    "housing_median_age",
+    "total_rooms",
+    "total_bedrooms",
+    "population",
+    "households",
+    "median_income",
+    "rooms_per_household",
+    "bedrooms_ratio",
+    "population_per_household",
+    "ocean_code"
+  ],
+  "feature_labels": {
+    "longitude": "经度",
+    "latitude": "纬度",
+    "housing_median_age": "房龄中位数",
+    "total_rooms": "房间总数",
+    "total_bedrooms": "卧室总数",
+    "population": "人口",
+    "households": "家庭数",
+    "median_income": "收入中位数",
+    "rooms_per_household": "户均房间",
+    "bedrooms_ratio": "卧室占比",
+    "population_per_household": "户均人口",
+    "ocean_code": "临海类型"
+  },
+  "holdout": {
+    "mae": 29382.88,
+    "rmse": 44748.49,
+    "r2": 0.8472,
+    "mape": 16.87,
+    "median_ae": 18300.71,
+    "within_10pct": 47.4,
+    "within_20pct": 73.9,
+    "n": 4128
+  },
+  "model_info": {
+    "fit_seconds": 2.71,
+    "best_iteration": 1026,
+    "params": {
+      "n_estimators": 1200,
+      "max_depth": 6,
+      "learning_rate": 0.03,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "min_child_weight": 3
+    }
+  },
+  "region_stats": [
+    {
+      "region": "<1H OCEAN",
+      "count": 9136,
+      "median_value": 214850,
+      "median_income": 3.88,
+      "median_age": 30.0
+    },
+    {
+      "region": "INLAND",
+      "count": 6551,
+      "median_value": 108500,
+      "median_income": 2.99,
+      "median_age": 23.0
+    },
+    {
+      "region": "ISLAND",
+      "count": 5,
+      "median_value": 414700,
+      "median_income": 2.74,
+      "median_age": 52.0
+    },
+    {
+      "region": "NEAR BAY",
+      "count": 2290,
+      "median_value": 233800,
+      "median_income": 3.82,
+      "median_age": 39.0
+    },
+    {
+      "region": "NEAR OCEAN",
+      "count": 2658,
+      "median_value": 229450,
+      "median_income": 3.65,
+      "median_age": 29.0
+    }
+  ],
+  "map_sample": [
+    {
+      "lat": 36.06,
+      "lon": -119.01,
+      "value": 47700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 35.14,
+      "lon": -119.46,
+      "value": 45800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.8,
+      "lon": -122.44,
+      "value": 500001,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.28,
+      "lon": -118.72,
+      "value": 218600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.62,
+      "lon": -121.93,
+      "value": 278000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.08,
+      "lon": -117.61,
+      "value": 158700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.89,
+      "lon": -118.02,
+      "value": 198200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.92,
+      "lon": -118.08,
+      "value": 157500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.39,
+      "lon": -122.08,
+      "value": 340000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.18,
+      "lon": -118.23,
+      "value": 446600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.01,
+      "lon": -120.37,
+      "value": 123200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.08,
+      "lon": -118.12,
+      "value": 253900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.76,
+      "lon": -117.91,
+      "value": 215100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.2,
+      "lon": -119.19,
+      "value": 220500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.92,
+      "lon": -117.98,
+      "value": 219800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.02,
+      "lon": -117.91,
+      "value": 136200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.69,
+      "lon": -122.1,
+      "value": 178400,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.48,
+      "lon": -121.02,
+      "value": 187500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.75,
+      "lon": -117.05,
+      "value": 139800,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.43,
+      "lon": -120.97,
+      "value": 137500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.45,
+      "lon": -122.16,
+      "value": 425000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.07,
+      "lon": -118.37,
+      "value": 405600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.83,
+      "lon": -119.73,
+      "value": 138800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.59,
+      "lon": -122.39,
+      "value": 500001,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 32.9,
+      "lon": -117.14,
+      "value": 162100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.53,
+      "lon": -119.38,
+      "value": 51400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.96,
+      "lon": -118.36,
+      "value": 151300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 40.55,
+      "lon": -124.13,
+      "value": 94800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.96,
+      "lon": -121.98,
+      "value": 204100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.72,
+      "lon": -118.3,
+      "value": 361500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.75,
+      "lon": -122.17,
+      "value": 85100,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.03,
+      "lon": -118.31,
+      "value": 138400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.75,
+      "lon": -117.23,
+      "value": 137500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.37,
+      "lon": -122.08,
+      "value": 465000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.75,
+      "lon": -122.5,
+      "value": 271800,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.46,
+      "lon": -118.5,
+      "value": 239400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.6,
+      "lon": -122.39,
+      "value": 340900,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.03,
+      "lon": -117.96,
+      "value": 150400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.87,
+      "lon": -121.13,
+      "value": 128100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.98,
+      "lon": -118.17,
+      "value": 156000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.29,
+      "lon": -118.75,
+      "value": 258100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.61,
+      "lon": -119.45,
+      "value": 90500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.78,
+      "lon": -120.85,
+      "value": 71300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.73,
+      "lon": -117.98,
+      "value": 219700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.04,
+      "lon": -117.65,
+      "value": 151000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.2,
+      "lon": -118.43,
+      "value": 290100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.73,
+      "lon": -117.03,
+      "value": 142000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 32.77,
+      "lon": -117.09,
+      "value": 291500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.73,
+      "lon": -118.3,
+      "value": 255400,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 40.86,
+      "lon": -124.06,
+      "value": 98100,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 38.46,
+      "lon": -122.91,
+      "value": 251900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.25,
+      "lon": -118.28,
+      "value": 162100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.84,
+      "lon": -116.95,
+      "value": 129400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.3,
+      "lon": -120.4,
+      "value": 89400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.04,
+      "lon": -118.18,
+      "value": 150500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.3,
+      "lon": -119.33,
+      "value": 133800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.11,
+      "lon": -117.22,
+      "value": 80400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.05,
+      "lon": -117.91,
+      "value": 211100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.79,
+      "lon": -117.2,
+      "value": 255600,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.94,
+      "lon": -117.34,
+      "value": 214500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.74,
+      "lon": -118.1,
+      "value": 500001,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.05,
+      "lon": -118.36,
+      "value": 202100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.73,
+      "lon": -120.93,
+      "value": 81500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 40.92,
+      "lon": -124.0,
+      "value": 98800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.68,
+      "lon": -117.98,
+      "value": 281900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.83,
+      "lon": -118.26,
+      "value": 184600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.16,
+      "lon": -122.41,
+      "value": 254700,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 38.03,
+      "lon": -121.95,
+      "value": 143100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.06,
+      "lon": -118.28,
+      "value": 162500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.06,
+      "lon": -118.17,
+      "value": 142600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 40.5,
+      "lon": -120.67,
+      "value": 85900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.67,
+      "lon": -122.14,
+      "value": 186900,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 36.79,
+      "lon": -119.68,
+      "value": 71300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.83,
+      "lon": -116.91,
+      "value": 174400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.9,
+      "lon": -118.35,
+      "value": 225000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.35,
+      "lon": -122.7,
+      "value": 146500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.51,
+      "lon": -122.28,
+      "value": 405000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.51,
+      "lon": -117.66,
+      "value": 189600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.89,
+      "lon": -118.09,
+      "value": 164400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.03,
+      "lon": -118.46,
+      "value": 337500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.29,
+      "lon": -119.15,
+      "value": 72500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.87,
+      "lon": -117.91,
+      "value": 143800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.07,
+      "lon": -118.27,
+      "value": 160000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.04,
+      "lon": -118.27,
+      "value": 118100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.17,
+      "lon": -118.27,
+      "value": 374000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.16,
+      "lon": -117.14,
+      "value": 202700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.88,
+      "lon": -122.72,
+      "value": 96600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.61,
+      "lon": -121.47,
+      "value": 65800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.19,
+      "lon": -119.18,
+      "value": 167400,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.2,
+      "lon": -118.59,
+      "value": 179800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.08,
+      "lon": -122.22,
+      "value": 96700,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.34,
+      "lon": -121.97,
+      "value": 266100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.71,
+      "lon": -117.14,
+      "value": 91100,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 36.71,
+      "lon": -119.75,
+      "value": 49800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.58,
+      "lon": -121.3,
+      "value": 90700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.04,
+      "lon": -117.76,
+      "value": 115800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.77,
+      "lon": -122.45,
+      "value": 278600,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 32.72,
+      "lon": -117.15,
+      "value": 250000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.88,
+      "lon": -122.08,
+      "value": 85000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.73,
+      "lon": -117.87,
+      "value": 177000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.04,
+      "lon": -117.67,
+      "value": 99700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.58,
+      "lon": -117.66,
+      "value": 357600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.85,
+      "lon": -117.27,
+      "value": 475000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 32.66,
+      "lon": -117.02,
+      "value": 273600,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.99,
+      "lon": -118.05,
+      "value": 182400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.87,
+      "lon": -117.92,
+      "value": 157800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.09,
+      "lon": -118.31,
+      "value": 193800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.05,
+      "lon": -118.38,
+      "value": 333600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.31,
+      "lon": -121.95,
+      "value": 264600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.6,
+      "lon": -120.98,
+      "value": 58400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.78,
+      "lon": -122.28,
+      "value": 173400,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.13,
+      "lon": -118.23,
+      "value": 214800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 35.42,
+      "lon": -119.11,
+      "value": 200000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.44,
+      "lon": -121.89,
+      "value": 422800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.54,
+      "lon": -121.44,
+      "value": 93600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.03,
+      "lon": -118.37,
+      "value": 122200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.91,
+      "lon": -118.1,
+      "value": 167600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.17,
+      "lon": -118.5,
+      "value": 303600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.78,
+      "lon": -117.96,
+      "value": 269300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.01,
+      "lon": -117.86,
+      "value": 264400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.48,
+      "lon": -122.79,
+      "value": 191000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.94,
+      "lon": -118.31,
+      "value": 153800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.73,
+      "lon": -122.44,
+      "value": 275500,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.09,
+      "lon": -118.32,
+      "value": 208800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.79,
+      "lon": -116.93,
+      "value": 142300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.58,
+      "lon": -119.44,
+      "value": 63500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.05,
+      "lon": -117.3,
+      "value": 95800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.73,
+      "lon": -118.29,
+      "value": 231700,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.17,
+      "lon": -118.4,
+      "value": 221500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.82,
+      "lon": -119.78,
+      "value": 89500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.1,
+      "lon": -117.73,
+      "value": 226000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.19,
+      "lon": -118.18,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.75,
+      "lon": -122.5,
+      "value": 270200,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.29,
+      "lon": -120.32,
+      "value": 59600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.25,
+      "lon": -122.65,
+      "value": 193300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.26,
+      "lon": -117.28,
+      "value": 133600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.77,
+      "lon": -122.16,
+      "value": 161900,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.44,
+      "lon": -119.73,
+      "value": 357500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 38.5,
+      "lon": -122.48,
+      "value": 276500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.17,
+      "lon": -118.88,
+      "value": 410700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.43,
+      "lon": -122.15,
+      "value": 375000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 32.74,
+      "lon": -117.01,
+      "value": 135200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.07,
+      "lon": -118.21,
+      "value": 167200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.05,
+      "lon": -118.36,
+      "value": 252000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.26,
+      "lon": -118.53,
+      "value": 308400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.98,
+      "lon": -118.19,
+      "value": 172100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.58,
+      "lon": -122.4,
+      "value": 500001,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.73,
+      "lon": -122.38,
+      "value": 193800,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 39.22,
+      "lon": -121.08,
+      "value": 105200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.09,
+      "lon": -117.28,
+      "value": 90800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.05,
+      "lon": -118.29,
+      "value": 168800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.02,
+      "lon": -121.33,
+      "value": 162100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.04,
+      "lon": -118.05,
+      "value": 161200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.01,
+      "lon": -118.16,
+      "value": 137500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.58,
+      "lon": -121.9,
+      "value": 289300,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.6,
+      "lon": -117.65,
+      "value": 278700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.7,
+      "lon": -117.92,
+      "value": 161700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.83,
+      "lon": -117.87,
+      "value": 231000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.36,
+      "lon": -120.61,
+      "value": 87500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.95,
+      "lon": -118.25,
+      "value": 95700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.79,
+      "lon": -116.66,
+      "value": 240600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.1,
+      "lon": -118.07,
+      "value": 214100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.28,
+      "lon": -118.55,
+      "value": 428600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.61,
+      "lon": -121.85,
+      "value": 125000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 40.44,
+      "lon": -122.42,
+      "value": 76400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.45,
+      "lon": -119.75,
+      "value": 263800,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.41,
+      "lon": -118.8,
+      "value": 120400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.57,
+      "lon": -119.3,
+      "value": 109100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.19,
+      "lon": -118.55,
+      "value": 170600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.4,
+      "lon": -121.88,
+      "value": 257400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.28,
+      "lon": -121.9,
+      "value": 320000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.75,
+      "lon": -117.17,
+      "value": 289600,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.24,
+      "lon": -117.2,
+      "value": 307300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.45,
+      "lon": -117.64,
+      "value": 325500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 40.03,
+      "lon": -122.1,
+      "value": 58400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.83,
+      "lon": -114.59,
+      "value": 48500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.17,
+      "lon": -122.23,
+      "value": 216700,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.25,
+      "lon": -117.31,
+      "value": 97900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 39.66,
+      "lon": -121.77,
+      "value": 158600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 36.76,
+      "lon": -119.72,
+      "value": 69000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.94,
+      "lon": -122.01,
+      "value": 322300,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.11,
+      "lon": -121.75,
+      "value": 467700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.78,
+      "lon": -117.02,
+      "value": 163000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.35,
+      "lon": -121.97,
+      "value": 287100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.83,
+      "lon": -119.69,
+      "value": 54600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.94,
+      "lon": -118.25,
+      "value": 90400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.06,
+      "lon": -117.97,
+      "value": 155500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.07,
+      "lon": -118.3,
+      "value": 175000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.36,
+      "lon": -122.0,
+      "value": 411200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.01,
+      "lon": -118.35,
+      "value": 332100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.92,
+      "lon": -118.2,
+      "value": 141200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.75,
+      "lon": -122.24,
+      "value": 247100,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.14,
+      "lon": -117.99,
+      "value": 153000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.05,
+      "lon": -118.22,
+      "value": 155000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.71,
+      "lon": -121.19,
+      "value": 390800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 36.25,
+      "lon": -119.32,
+      "value": 90000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.2,
+      "lon": -118.56,
+      "value": 196700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.75,
+      "lon": -116.21,
+      "value": 68200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.13,
+      "lon": -118.49,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.94,
+      "lon": -118.23,
+      "value": 92100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.7,
+      "lon": -122.48,
+      "value": 297900,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.62,
+      "lon": -117.87,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.32,
+      "lon": -122.53,
+      "value": 332300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.15,
+      "lon": -122.22,
+      "value": 171100,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.3,
+      "lon": -118.45,
+      "value": 152100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.72,
+      "lon": -122.46,
+      "value": 232000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.66,
+      "lon": -120.98,
+      "value": 127100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.37,
+      "lon": -120.67,
+      "value": 87500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.89,
+      "lon": -118.01,
+      "value": 203400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.97,
+      "lon": -121.97,
+      "value": 228600,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.98,
+      "lon": -118.25,
+      "value": 116700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.38,
+      "lon": -121.81,
+      "value": 416700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.89,
+      "lon": -118.36,
+      "value": 227600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.1,
+      "lon": -117.28,
+      "value": 267900,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 38.1,
+      "lon": -122.25,
+      "value": 97200,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.15,
+      "lon": -118.15,
+      "value": 137500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.08,
+      "lon": -118.27,
+      "value": 198800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.39,
+      "lon": -119.31,
+      "value": 68600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.39,
+      "lon": -122.07,
+      "value": 352500,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.0,
+      "lon": -118.27,
+      "value": 103800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.88,
+      "lon": -119.99,
+      "value": 107800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.7,
+      "lon": -121.2,
+      "value": 131700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.74,
+      "lon": -122.42,
+      "value": 271300,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.14,
+      "lon": -117.29,
+      "value": 97300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 39.44,
+      "lon": -123.8,
+      "value": 95000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.35,
+      "lon": -122.7,
+      "value": 67500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.19,
+      "lon": -118.3,
+      "value": 326100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.15,
+      "lon": -116.09,
+      "value": 65600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.62,
+      "lon": -117.7,
+      "value": 225600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.74,
+      "lon": -117.23,
+      "value": 263800,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.0,
+      "lon": -118.45,
+      "value": 348300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.0,
+      "lon": -118.42,
+      "value": 325000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.02,
+      "lon": -118.31,
+      "value": 108800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.77,
+      "lon": -122.43,
+      "value": 400000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 38.9,
+      "lon": -121.08,
+      "value": 138400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 36.32,
+      "lon": -119.63,
+      "value": 61000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.53,
+      "lon": -122.35,
+      "value": 453100,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.88,
+      "lon": -118.4,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.92,
+      "lon": -118.29,
+      "value": 120200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.89,
+      "lon": -118.36,
+      "value": 329200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.79,
+      "lon": -118.15,
+      "value": 196300,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.97,
+      "lon": -117.38,
+      "value": 150000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.07,
+      "lon": -118.03,
+      "value": 152000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.86,
+      "lon": -122.28,
+      "value": 169900,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.87,
+      "lon": -117.93,
+      "value": 137500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.94,
+      "lon": -118.12,
+      "value": 283000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.7,
+      "lon": -117.18,
+      "value": 404500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 32.81,
+      "lon": -117.01,
+      "value": 193500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.78,
+      "lon": -117.15,
+      "value": 205100,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 38.69,
+      "lon": -121.27,
+      "value": 145600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.65,
+      "lon": -121.7,
+      "value": 225000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.4,
+      "lon": -122.82,
+      "value": 215900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.08,
+      "lon": -118.17,
+      "value": 158500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.0,
+      "lon": -121.79,
+      "value": 124700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.64,
+      "lon": -116.15,
+      "value": 65400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.28,
+      "lon": -118.91,
+      "value": 280200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.03,
+      "lon": -118.14,
+      "value": 180500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.08,
+      "lon": -117.4,
+      "value": 105400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.93,
+      "lon": -118.25,
+      "value": 100000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.79,
+      "lon": -117.03,
+      "value": 166300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.89,
+      "lon": -120.43,
+      "value": 158000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.36,
+      "lon": -122.02,
+      "value": 243800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.9,
+      "lon": -122.28,
+      "value": 362900,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.82,
+      "lon": -118.27,
+      "value": 201900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 41.4,
+      "lon": -120.12,
+      "value": 52600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.05,
+      "lon": -118.39,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.97,
+      "lon": -118.25,
+      "value": 112000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.47,
+      "lon": -120.95,
+      "value": 225000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.99,
+      "lon": -117.25,
+      "value": 439900,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.05,
+      "lon": -117.31,
+      "value": 88300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.44,
+      "lon": -122.22,
+      "value": 500001,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.9,
+      "lon": -122.29,
+      "value": 276800,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.06,
+      "lon": -118.1,
+      "value": 179200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.9,
+      "lon": -117.99,
+      "value": 199700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.74,
+      "lon": -117.04,
+      "value": 132000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.77,
+      "lon": -118.09,
+      "value": 61300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.09,
+      "lon": -122.2,
+      "value": 171900,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 38.47,
+      "lon": -120.76,
+      "value": 123800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.02,
+      "lon": -117.51,
+      "value": 135300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.18,
+      "lon": -117.3,
+      "value": 137100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.08,
+      "lon": -118.18,
+      "value": 129300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.19,
+      "lon": -119.0,
+      "value": 227900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.4,
+      "lon": -121.35,
+      "value": 94400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.1,
+      "lon": -122.24,
+      "value": 103500,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 32.69,
+      "lon": -117.18,
+      "value": 320800,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.17,
+      "lon": -119.08,
+      "value": 125000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.67,
+      "lon": -121.9,
+      "value": 332400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.02,
+      "lon": -117.65,
+      "value": 159100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.4,
+      "lon": -122.0,
+      "value": 236900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.71,
+      "lon": -118.05,
+      "value": 461600,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.05,
+      "lon": -117.98,
+      "value": 156900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.95,
+      "lon": -119.16,
+      "value": 148200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.81,
+      "lon": -117.13,
+      "value": 166500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.14,
+      "lon": -118.25,
+      "value": 196900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.08,
+      "lon": -118.26,
+      "value": 167800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.03,
+      "lon": -121.33,
+      "value": 126700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.76,
+      "lon": -118.15,
+      "value": 500001,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 39.51,
+      "lon": -121.56,
+      "value": 57900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.41,
+      "lon": -121.96,
+      "value": 238000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.79,
+      "lon": -116.92,
+      "value": 142000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.71,
+      "lon": -118.14,
+      "value": 86900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 39.36,
+      "lon": -121.7,
+      "value": 56000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.88,
+      "lon": -118.44,
+      "value": 500001,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 32.68,
+      "lon": -117.08,
+      "value": 112400,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.96,
+      "lon": -121.26,
+      "value": 63600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.5,
+      "lon": -122.28,
+      "value": 431300,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.07,
+      "lon": -118.28,
+      "value": 265900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.76,
+      "lon": -120.38,
+      "value": 58000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 35.39,
+      "lon": -118.94,
+      "value": 194100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.86,
+      "lon": -117.87,
+      "value": 142800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.0,
+      "lon": -118.11,
+      "value": 178700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.2,
+      "lon": -118.42,
+      "value": 187500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.77,
+      "lon": -117.85,
+      "value": 225000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.42,
+      "lon": -119.28,
+      "value": 313000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.05,
+      "lon": -118.49,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.89,
+      "lon": -118.08,
+      "value": 153600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.9,
+      "lon": -119.98,
+      "value": 62300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.74,
+      "lon": -116.38,
+      "value": 194500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.94,
+      "lon": -117.55,
+      "value": 163900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.36,
+      "lon": -122.26,
+      "value": 398800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.14,
+      "lon": -122.11,
+      "value": 204100,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.39,
+      "lon": -119.3,
+      "value": 199300,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.16,
+      "lon": -118.13,
+      "value": 176700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.62,
+      "lon": -117.91,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.75,
+      "lon": -116.87,
+      "value": 248900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.97,
+      "lon": -118.14,
+      "value": 150000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.14,
+      "lon": -117.58,
+      "value": 231700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.97,
+      "lon": -116.86,
+      "value": 58000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 39.04,
+      "lon": -120.16,
+      "value": 126000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.99,
+      "lon": -118.07,
+      "value": 163300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.8,
+      "lon": -120.99,
+      "value": 113400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 36.85,
+      "lon": -121.91,
+      "value": 300000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.53,
+      "lon": -122.28,
+      "value": 310900,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.71,
+      "lon": -117.99,
+      "value": 218800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.77,
+      "lon": -119.75,
+      "value": 70400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.0,
+      "lon": -122.25,
+      "value": 237700,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 32.74,
+      "lon": -117.0,
+      "value": 118800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.67,
+      "lon": -115.49,
+      "value": 73100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.62,
+      "lon": -121.0,
+      "value": 75000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.3,
+      "lon": -118.52,
+      "value": 450700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.97,
+      "lon": -121.97,
+      "value": 240200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.82,
+      "lon": -115.38,
+      "value": 65800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.85,
+      "lon": -116.51,
+      "value": 64700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.87,
+      "lon": -118.18,
+      "value": 175100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.2,
+      "lon": -118.58,
+      "value": 223700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.69,
+      "lon": -122.03,
+      "value": 96300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.6,
+      "lon": -122.42,
+      "value": 405100,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.53,
+      "lon": -122.3,
+      "value": 376800,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 32.82,
+      "lon": -117.31,
+      "value": 500001,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.64,
+      "lon": -122.06,
+      "value": 350000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.19,
+      "lon": -118.96,
+      "value": 162500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.87,
+      "lon": -117.91,
+      "value": 177300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.96,
+      "lon": -118.28,
+      "value": 98400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 39.09,
+      "lon": -121.11,
+      "value": 138800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.96,
+      "lon": -118.37,
+      "value": 175000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.97,
+      "lon": -122.01,
+      "value": 260900,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 36.63,
+      "lon": -118.18,
+      "value": 104700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.8,
+      "lon": -117.92,
+      "value": 159500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.86,
+      "lon": -118.36,
+      "value": 295900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.77,
+      "lon": -117.2,
+      "value": 137500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 36.59,
+      "lon": -121.89,
+      "value": 500001,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.6,
+      "lon": -117.69,
+      "value": 227000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.22,
+      "lon": -118.24,
+      "value": 263900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.06,
+      "lon": -117.71,
+      "value": 160400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.94,
+      "lon": -118.31,
+      "value": 142000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.96,
+      "lon": -118.1,
+      "value": 162500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.9,
+      "lon": -118.36,
+      "value": 230400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.43,
+      "lon": -122.2,
+      "value": 500001,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.32,
+      "lon": -121.99,
+      "value": 217700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.99,
+      "lon": -118.34,
+      "value": 183000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.43,
+      "lon": -121.88,
+      "value": 245800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.42,
+      "lon": -122.71,
+      "value": 129200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.98,
+      "lon": -120.06,
+      "value": 60400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 40.81,
+      "lon": -124.15,
+      "value": 67500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 36.97,
+      "lon": -121.9,
+      "value": 295200,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.85,
+      "lon": -117.99,
+      "value": 192600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.01,
+      "lon": -118.09,
+      "value": 150600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.69,
+      "lon": -118.12,
+      "value": 125700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 39.13,
+      "lon": -121.62,
+      "value": 63400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.72,
+      "lon": -121.35,
+      "value": 151300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.19,
+      "lon": -118.64,
+      "value": 245600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.82,
+      "lon": -117.81,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.8,
+      "lon": -118.28,
+      "value": 165500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.07,
+      "lon": -117.45,
+      "value": 113500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.79,
+      "lon": -122.55,
+      "value": 322200,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.09,
+      "lon": -118.39,
+      "value": 362500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.35,
+      "lon": -119.45,
+      "value": 69600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.94,
+      "lon": -118.21,
+      "value": 156100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.59,
+      "lon": -117.1,
+      "value": 87500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.8,
+      "lon": -118.07,
+      "value": 193100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.8,
+      "lon": -117.93,
+      "value": 218000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.93,
+      "lon": -118.25,
+      "value": 101800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.0,
+      "lon": -118.31,
+      "value": 129100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.88,
+      "lon": -121.38,
+      "value": 156300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.91,
+      "lon": -117.15,
+      "value": 183200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.95,
+      "lon": -118.19,
+      "value": 148100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.08,
+      "lon": -118.34,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.65,
+      "lon": -117.94,
+      "value": 222100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.12,
+      "lon": -118.2,
+      "value": 167600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.14,
+      "lon": -118.25,
+      "value": 184500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.76,
+      "lon": -122.44,
+      "value": 370000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.71,
+      "lon": -122.47,
+      "value": 239400,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.97,
+      "lon": -118.08,
+      "value": 166700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.06,
+      "lon": -118.12,
+      "value": 233300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.97,
+      "lon": -122.01,
+      "value": 240000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 38.95,
+      "lon": -119.94,
+      "value": 91300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.24,
+      "lon": -118.51,
+      "value": 483500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.0,
+      "lon": -118.16,
+      "value": 150500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.58,
+      "lon": -120.94,
+      "value": 99500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.18,
+      "lon": -118.39,
+      "value": 240200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.76,
+      "lon": -122.16,
+      "value": 95500,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.61,
+      "lon": -117.92,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.09,
+      "lon": -118.06,
+      "value": 251600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.8,
+      "lon": -116.96,
+      "value": 120800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.67,
+      "lon": -121.31,
+      "value": 135700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.21,
+      "lon": -118.59,
+      "value": 225400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.14,
+      "lon": -118.42,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 40.31,
+      "lon": -120.49,
+      "value": 85100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.11,
+      "lon": -118.84,
+      "value": 500001,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.95,
+      "lon": -118.19,
+      "value": 164800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.67,
+      "lon": -121.27,
+      "value": 111600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.64,
+      "lon": -121.34,
+      "value": 161000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.97,
+      "lon": -121.78,
+      "value": 213700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.03,
+      "lon": -120.25,
+      "value": 116500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.14,
+      "lon": -121.98,
+      "value": 350000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.93,
+      "lon": -118.34,
+      "value": 159900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.11,
+      "lon": -118.28,
+      "value": 438300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.01,
+      "lon": -122.32,
+      "value": 171100,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.79,
+      "lon": -118.32,
+      "value": 271100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.38,
+      "lon": -119.55,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.6,
+      "lon": -121.02,
+      "value": 68000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.2,
+      "lon": -118.48,
+      "value": 191700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.77,
+      "lon": -118.03,
+      "value": 255900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.06,
+      "lon": -118.2,
+      "value": 112500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.81,
+      "lon": -117.02,
+      "value": 182200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.84,
+      "lon": -122.23,
+      "value": 347600,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.25,
+      "lon": -121.95,
+      "value": 332000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.79,
+      "lon": -120.98,
+      "value": 110900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.2,
+      "lon": -118.4,
+      "value": 211900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.2,
+      "lon": -118.51,
+      "value": 262500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.38,
+      "lon": -119.12,
+      "value": 237900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.93,
+      "lon": -118.25,
+      "value": 90000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.83,
+      "lon": -118.38,
+      "value": 427200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.94,
+      "lon": -117.25,
+      "value": 370500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 39.73,
+      "lon": -121.79,
+      "value": 116300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.88,
+      "lon": -118.0,
+      "value": 170800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.28,
+      "lon": -118.49,
+      "value": 285500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.95,
+      "lon": -117.4,
+      "value": 111500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 36.72,
+      "lon": -120.08,
+      "value": 83200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.54,
+      "lon": -122.06,
+      "value": 248200,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.49,
+      "lon": -122.25,
+      "value": 395500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.17,
+      "lon": -118.31,
+      "value": 218300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.39,
+      "lon": -122.1,
+      "value": 500001,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 39.49,
+      "lon": -121.49,
+      "value": 88900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.69,
+      "lon": -122.08,
+      "value": 181000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.45,
+      "lon": -119.83,
+      "value": 280900,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.05,
+      "lon": -118.37,
+      "value": 345300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.04,
+      "lon": -117.93,
+      "value": 181000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.94,
+      "lon": -118.02,
+      "value": 192200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 39.48,
+      "lon": -121.09,
+      "value": 78100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.64,
+      "lon": -121.01,
+      "value": 75000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.88,
+      "lon": -122.12,
+      "value": 433300,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.1,
+      "lon": -117.97,
+      "value": 160100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.74,
+      "lon": -117.22,
+      "value": 109200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.7,
+      "lon": -121.42,
+      "value": 96200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.87,
+      "lon": -121.27,
+      "value": 191400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 39.19,
+      "lon": -120.1,
+      "value": 360000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.42,
+      "lon": -122.79,
+      "value": 185600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.97,
+      "lon": -117.01,
+      "value": 118800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.79,
+      "lon": -122.23,
+      "value": 122700,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.14,
+      "lon": -117.55,
+      "value": 206300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.06,
+      "lon": -117.46,
+      "value": 195600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.7,
+      "lon": -117.13,
+      "value": 75600,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 40.25,
+      "lon": -122.35,
+      "value": 104300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.13,
+      "lon": -118.35,
+      "value": 385900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.74,
+      "lon": -117.07,
+      "value": 113900,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.94,
+      "lon": -122.36,
+      "value": 79400,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 36.77,
+      "lon": -119.85,
+      "value": 81300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.96,
+      "lon": -118.36,
+      "value": 129200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.87,
+      "lon": -122.64,
+      "value": 73500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.01,
+      "lon": -122.03,
+      "value": 175900,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.27,
+      "lon": -118.44,
+      "value": 142400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.05,
+      "lon": -118.35,
+      "value": 234100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.53,
+      "lon": -122.28,
+      "value": 286700,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 38.29,
+      "lon": -121.54,
+      "value": 92500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.82,
+      "lon": -116.91,
+      "value": 170100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.62,
+      "lon": -121.83,
+      "value": 161800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.83,
+      "lon": -118.11,
+      "value": 225300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.93,
+      "lon": -118.35,
+      "value": 170600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.03,
+      "lon": -118.39,
+      "value": 319400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 35.51,
+      "lon": -119.27,
+      "value": 95800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.94,
+      "lon": -116.87,
+      "value": 73400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 40.31,
+      "lon": -121.24,
+      "value": 93600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 36.84,
+      "lon": -119.79,
+      "value": 51700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.99,
+      "lon": -118.47,
+      "value": 358700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.79,
+      "lon": -119.82,
+      "value": 64700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.05,
+      "lon": -117.24,
+      "value": 344200,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 38.02,
+      "lon": -122.57,
+      "value": 314000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.03,
+      "lon": -118.38,
+      "value": 185700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.94,
+      "lon": -122.03,
+      "value": 279300,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.85,
+      "lon": -122.28,
+      "value": 119400,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.28,
+      "lon": -121.96,
+      "value": 280400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.91,
+      "lon": -121.7,
+      "value": 187100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 41.01,
+      "lon": -123.52,
+      "value": 83800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.11,
+      "lon": -118.15,
+      "value": 309300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.08,
+      "lon": -122.17,
+      "value": 229200,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 36.99,
+      "lon": -122.02,
+      "value": 245000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.83,
+      "lon": -118.13,
+      "value": 227600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.05,
+      "lon": -118.42,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 35.58,
+      "lon": -121.12,
+      "value": 320800,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 38.68,
+      "lon": -121.28,
+      "value": 147300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.74,
+      "lon": -116.98,
+      "value": 162300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.6,
+      "lon": -117.68,
+      "value": 265900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.87,
+      "lon": -118.43,
+      "value": 500001,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 32.89,
+      "lon": -117.16,
+      "value": 189100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.78,
+      "lon": -116.91,
+      "value": 316400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.23,
+      "lon": -118.39,
+      "value": 181900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.74,
+      "lon": -117.16,
+      "value": 261500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.12,
+      "lon": -117.33,
+      "value": 69000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.72,
+      "lon": -122.39,
+      "value": 181300,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.87,
+      "lon": -118.36,
+      "value": 293000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.18,
+      "lon": -117.3,
+      "value": 111100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.86,
+      "lon": -118.14,
+      "value": 218300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.04,
+      "lon": -118.2,
+      "value": 147200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.17,
+      "lon": -119.11,
+      "value": 243800,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.11,
+      "lon": -117.85,
+      "value": 223000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.11,
+      "lon": -117.97,
+      "value": 137500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 40.69,
+      "lon": -122.36,
+      "value": 60600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 35.22,
+      "lon": -117.76,
+      "value": 275000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.42,
+      "lon": -119.7,
+      "value": 350000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.21,
+      "lon": -118.38,
+      "value": 171200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.74,
+      "lon": -122.18,
+      "value": 83500,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.72,
+      "lon": -118.29,
+      "value": 225000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.32,
+      "lon": -121.92,
+      "value": 165600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.28,
+      "lon": -118.45,
+      "value": 152000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.73,
+      "lon": -122.39,
+      "value": 192000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 32.81,
+      "lon": -117.04,
+      "value": 254200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.71,
+      "lon": -118.06,
+      "value": 150000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.8,
+      "lon": -118.06,
+      "value": 212500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 40.63,
+      "lon": -122.42,
+      "value": 80400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.62,
+      "lon": -122.08,
+      "value": 206500,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.5,
+      "lon": -122.53,
+      "value": 331100,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.19,
+      "lon": -118.56,
+      "value": 201400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.42,
+      "lon": -121.36,
+      "value": 188400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.71,
+      "lon": -117.78,
+      "value": 195400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.26,
+      "lon": -121.99,
+      "value": 442500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.7,
+      "lon": -120.47,
+      "value": 152700,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.14,
+      "lon": -118.43,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.82,
+      "lon": -118.09,
+      "value": 239800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.48,
+      "lon": -120.89,
+      "value": 159400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.67,
+      "lon": -116.31,
+      "value": 91800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.73,
+      "lon": -122.43,
+      "value": 240900,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.09,
+      "lon": -117.74,
+      "value": 136400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.69,
+      "lon": -117.1,
+      "value": 103600,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 38.12,
+      "lon": -121.29,
+      "value": 132500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.56,
+      "lon": -122.31,
+      "value": 292900,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.41,
+      "lon": -116.01,
+      "value": 62800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.93,
+      "lon": -122.34,
+      "value": 112100,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 35.4,
+      "lon": -118.96,
+      "value": 89100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.76,
+      "lon": -117.02,
+      "value": 120700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.78,
+      "lon": -122.44,
+      "value": 471400,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.13,
+      "lon": -118.15,
+      "value": 314700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.93,
+      "lon": -118.14,
+      "value": 226400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.7,
+      "lon": -117.17,
+      "value": 409700,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.94,
+      "lon": -118.05,
+      "value": 149000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.73,
+      "lon": -119.69,
+      "value": 171700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.96,
+      "lon": -122.1,
+      "value": 235500,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.52,
+      "lon": -117.68,
+      "value": 322800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.32,
+      "lon": -122.0,
+      "value": 244500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.63,
+      "lon": -117.29,
+      "value": 162200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.88,
+      "lon": -122.06,
+      "value": 340900,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 35.37,
+      "lon": -118.99,
+      "value": 57400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.18,
+      "lon": -118.37,
+      "value": 198900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.83,
+      "lon": -122.27,
+      "value": 109700,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.01,
+      "lon": -118.29,
+      "value": 137500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 35.62,
+      "lon": -117.66,
+      "value": 85700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 39.19,
+      "lon": -121.53,
+      "value": 98300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.92,
+      "lon": -117.95,
+      "value": 178200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.0,
+      "lon": -122.0,
+      "value": 137500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.75,
+      "lon": -122.42,
+      "value": 275000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.9,
+      "lon": -117.96,
+      "value": 381500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.89,
+      "lon": -118.4,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.84,
+      "lon": -117.25,
+      "value": 500001,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 39.18,
+      "lon": -120.12,
+      "value": 179200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 35.6,
+      "lon": -121.1,
+      "value": 204500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.24,
+      "lon": -118.24,
+      "value": 394100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.75,
+      "lon": -117.99,
+      "value": 184400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.68,
+      "lon": -122.1,
+      "value": 174000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.43,
+      "lon": -120.79,
+      "value": 80700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.96,
+      "lon": -122.06,
+      "value": 189600,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 36.54,
+      "lon": -119.83,
+      "value": 60000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.89,
+      "lon": -118.22,
+      "value": 126600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.67,
+      "lon": -117.99,
+      "value": 262500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.79,
+      "lon": -122.21,
+      "value": 139200,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 36.7,
+      "lon": -119.8,
+      "value": 51300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.27,
+      "lon": -118.65,
+      "value": 229200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.83,
+      "lon": -119.77,
+      "value": 101100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.71,
+      "lon": -118.15,
+      "value": 97700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.07,
+      "lon": -118.22,
+      "value": 158300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.89,
+      "lon": -122.04,
+      "value": 349100,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 36.81,
+      "lon": -119.77,
+      "value": 85500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.87,
+      "lon": -118.14,
+      "value": 214100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.81,
+      "lon": -118.13,
+      "value": 227100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.82,
+      "lon": -116.92,
+      "value": 155700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 40.59,
+      "lon": -124.14,
+      "value": 66800,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.07,
+      "lon": -117.93,
+      "value": 207300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.77,
+      "lon": -121.37,
+      "value": 222800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.77,
+      "lon": -122.43,
+      "value": 354500,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.03,
+      "lon": -118.47,
+      "value": 340500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.15,
+      "lon": -119.06,
+      "value": 52900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.86,
+      "lon": -122.3,
+      "value": 140600,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.04,
+      "lon": -117.95,
+      "value": 150800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 41.79,
+      "lon": -120.08,
+      "value": 56100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.69,
+      "lon": -121.91,
+      "value": 259600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.83,
+      "lon": -118.32,
+      "value": 318900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.93,
+      "lon": -118.33,
+      "value": 148400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.99,
+      "lon": -117.97,
+      "value": 289900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.89,
+      "lon": -117.92,
+      "value": 161800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.74,
+      "lon": -118.3,
+      "value": 255000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 38.02,
+      "lon": -121.3,
+      "value": 87500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.94,
+      "lon": -117.93,
+      "value": 245000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.01,
+      "lon": -118.42,
+      "value": 305000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.13,
+      "lon": -118.15,
+      "value": 215000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.75,
+      "lon": -117.17,
+      "value": 249000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.08,
+      "lon": -118.42,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.99,
+      "lon": -118.43,
+      "value": 320000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.95,
+      "lon": -118.04,
+      "value": 174000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.3,
+      "lon": -121.93,
+      "value": 292500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.82,
+      "lon": -117.26,
+      "value": 500001,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.76,
+      "lon": -122.23,
+      "value": 289900,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.43,
+      "lon": -122.13,
+      "value": 438400,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.08,
+      "lon": -118.28,
+      "value": 182000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.02,
+      "lon": -118.33,
+      "value": 170500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.78,
+      "lon": -119.82,
+      "value": 69200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.67,
+      "lon": -117.07,
+      "value": 95600,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.66,
+      "lon": -117.83,
+      "value": 272800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.13,
+      "lon": -121.84,
+      "value": 81300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.75,
+      "lon": -122.5,
+      "value": 272400,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 35.05,
+      "lon": -120.48,
+      "value": 152600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.94,
+      "lon": -121.25,
+      "value": 55900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.85,
+      "lon": -117.82,
+      "value": 213500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.65,
+      "lon": -121.52,
+      "value": 331300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.81,
+      "lon": -118.0,
+      "value": 201800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.76,
+      "lon": -119.81,
+      "value": 57100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.15,
+      "lon": -118.33,
+      "value": 331800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.13,
+      "lon": -118.01,
+      "value": 365900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.82,
+      "lon": -121.27,
+      "value": 127500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.02,
+      "lon": -119.57,
+      "value": 111800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.64,
+      "lon": -122.46,
+      "value": 353700,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.27,
+      "lon": -119.23,
+      "value": 229300,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.93,
+      "lon": -118.25,
+      "value": 87500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.88,
+      "lon": -118.31,
+      "value": 237500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 40.55,
+      "lon": -122.36,
+      "value": 113300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.1,
+      "lon": -117.39,
+      "value": 112500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.7,
+      "lon": -118.09,
+      "value": 138500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.81,
+      "lon": -117.25,
+      "value": 307400,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.89,
+      "lon": -118.24,
+      "value": 100900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.68,
+      "lon": -121.78,
+      "value": 97800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.25,
+      "lon": -118.3,
+      "value": 176700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.6,
+      "lon": -121.85,
+      "value": 218000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.4,
+      "lon": -122.09,
+      "value": 290600,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.91,
+      "lon": -118.06,
+      "value": 157700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.59,
+      "lon": -117.64,
+      "value": 348000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.97,
+      "lon": -121.24,
+      "value": 67200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.14,
+      "lon": -118.07,
+      "value": 260400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.31,
+      "lon": -120.8,
+      "value": 123600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 36.33,
+      "lon": -119.63,
+      "value": 67500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.67,
+      "lon": -121.22,
+      "value": 130700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 40.47,
+      "lon": -122.31,
+      "value": 66000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.99,
+      "lon": -122.03,
+      "value": 166600,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.18,
+      "lon": -117.26,
+      "value": 225600,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.15,
+      "lon": -118.23,
+      "value": 257100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.64,
+      "lon": -117.81,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.89,
+      "lon": -118.21,
+      "value": 113900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.88,
+      "lon": -117.53,
+      "value": 91000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.64,
+      "lon": -121.26,
+      "value": 217400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.03,
+      "lon": -117.1,
+      "value": 96000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.46,
+      "lon": -120.55,
+      "value": 129200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.69,
+      "lon": -117.98,
+      "value": 350200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.64,
+      "lon": -117.81,
+      "value": 442100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.82,
+      "lon": -116.77,
+      "value": 222900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.62,
+      "lon": -120.98,
+      "value": 81300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.74,
+      "lon": -117.89,
+      "value": 160600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.13,
+      "lon": -118.76,
+      "value": 500001,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.29,
+      "lon": -118.57,
+      "value": 341200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.18,
+      "lon": -118.93,
+      "value": 287900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.37,
+      "lon": -122.05,
+      "value": 344700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.81,
+      "lon": -117.96,
+      "value": 180000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.66,
+      "lon": -117.59,
+      "value": 167800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.78,
+      "lon": -116.46,
+      "value": 55000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 35.38,
+      "lon": -118.98,
+      "value": 50800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.74,
+      "lon": -117.93,
+      "value": 142600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.3,
+      "lon": -121.83,
+      "value": 235800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.11,
+      "lon": -122.22,
+      "value": 112700,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.8,
+      "lon": -118.2,
+      "value": 210200,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 36.49,
+      "lon": -121.48,
+      "value": 210700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.53,
+      "lon": -121.47,
+      "value": 65400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.78,
+      "lon": -118.19,
+      "value": 162500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.14,
+      "lon": -117.97,
+      "value": 150300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.05,
+      "lon": -118.4,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.77,
+      "lon": -122.19,
+      "value": 101400,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.18,
+      "lon": -118.52,
+      "value": 221800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.0,
+      "lon": -121.57,
+      "value": 260300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.78,
+      "lon": -117.86,
+      "value": 178800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.2,
+      "lon": -118.37,
+      "value": 170400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.28,
+      "lon": -118.49,
+      "value": 319400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.38,
+      "lon": -121.4,
+      "value": 190600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.22,
+      "lon": -117.3,
+      "value": 184100,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.2,
+      "lon": -118.53,
+      "value": 191100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.95,
+      "lon": -118.31,
+      "value": 149600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.43,
+      "lon": -122.2,
+      "value": 500001,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.94,
+      "lon": -118.09,
+      "value": 183400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.07,
+      "lon": -117.07,
+      "value": 444100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.62,
+      "lon": -122.41,
+      "value": 242700,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.0,
+      "lon": -117.4,
+      "value": 76200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.98,
+      "lon": -122.35,
+      "value": 132900,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.19,
+      "lon": -118.22,
+      "value": 409800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.55,
+      "lon": -121.28,
+      "value": 112500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.44,
+      "lon": -122.11,
+      "value": 376600,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.97,
+      "lon": -121.26,
+      "value": 50500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.16,
+      "lon": -118.48,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.62,
+      "lon": -122.03,
+      "value": 209500,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 40.87,
+      "lon": -121.67,
+      "value": 77800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.28,
+      "lon": -119.22,
+      "value": 299700,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.36,
+      "lon": -118.29,
+      "value": 375000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.57,
+      "lon": -117.06,
+      "value": 156500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.28,
+      "lon": -121.94,
+      "value": 240000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 39.91,
+      "lon": -122.12,
+      "value": 77200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 36.04,
+      "lon": -118.92,
+      "value": 98500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.8,
+      "lon": -122.41,
+      "value": 500001,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.74,
+      "lon": -121.43,
+      "value": 110400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 36.13,
+      "lon": -120.37,
+      "value": 86400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.09,
+      "lon": -118.3,
+      "value": 230400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.14,
+      "lon": -117.96,
+      "value": 163900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.38,
+      "lon": -122.11,
+      "value": 500001,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 40.35,
+      "lon": -121.03,
+      "value": 49500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.58,
+      "lon": -118.07,
+      "value": 107400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 36.25,
+      "lon": -121.84,
+      "value": 362500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.04,
+      "lon": -118.16,
+      "value": 145000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.34,
+      "lon": -121.93,
+      "value": 218500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.12,
+      "lon": -117.99,
+      "value": 130100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.89,
+      "lon": -118.07,
+      "value": 146000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.67,
+      "lon": -121.79,
+      "value": 152500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.52,
+      "lon": -122.31,
+      "value": 457200,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.98,
+      "lon": -121.82,
+      "value": 165200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.02,
+      "lon": -118.42,
+      "value": 394700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.55,
+      "lon": -117.09,
+      "value": 144400,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 38.61,
+      "lon": -121.39,
+      "value": 136600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.38,
+      "lon": -122.02,
+      "value": 216400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.73,
+      "lon": -121.16,
+      "value": 139000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 39.16,
+      "lon": -121.63,
+      "value": 103800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.81,
+      "lon": -118.38,
+      "value": 488500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.09,
+      "lon": -117.26,
+      "value": 227100,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.63,
+      "lon": -117.63,
+      "value": 238000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.27,
+      "lon": -118.31,
+      "value": 215600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.84,
+      "lon": -122.21,
+      "value": 292300,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 32.64,
+      "lon": -117.09,
+      "value": 145900,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.57,
+      "lon": -117.16,
+      "value": 187300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 39.01,
+      "lon": -121.02,
+      "value": 185400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.16,
+      "lon": -118.25,
+      "value": 280000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.94,
+      "lon": -118.21,
+      "value": 141100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.68,
+      "lon": -122.09,
+      "value": 190900,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.07,
+      "lon": -117.37,
+      "value": 262500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.86,
+      "lon": -122.49,
+      "value": 442000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.22,
+      "lon": -118.88,
+      "value": 274800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.15,
+      "lon": -117.3,
+      "value": 85500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.58,
+      "lon": -122.01,
+      "value": 231800,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.29,
+      "lon": -118.71,
+      "value": 302000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.2,
+      "lon": -118.62,
+      "value": 235800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 39.79,
+      "lon": -122.25,
+      "value": 72200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.35,
+      "lon": -121.82,
+      "value": 182400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.8,
+      "lon": -122.42,
+      "value": 500001,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 39.72,
+      "lon": -121.83,
+      "value": 78700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.19,
+      "lon": -118.45,
+      "value": 181300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.13,
+      "lon": -117.84,
+      "value": 198000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.92,
+      "lon": -118.34,
+      "value": 199600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.93,
+      "lon": -120.04,
+      "value": 63300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.13,
+      "lon": -118.94,
+      "value": 94000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.17,
+      "lon": -119.19,
+      "value": 186800,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 32.72,
+      "lon": -117.05,
+      "value": 117000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 38.02,
+      "lon": -121.87,
+      "value": 117800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.02,
+      "lon": -117.03,
+      "value": 121000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.03,
+      "lon": -118.39,
+      "value": 230900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.76,
+      "lon": -122.43,
+      "value": 427300,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.57,
+      "lon": -116.87,
+      "value": 128100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.53,
+      "lon": -117.77,
+      "value": 384700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.71,
+      "lon": -122.43,
+      "value": 290400,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 32.75,
+      "lon": -117.1,
+      "value": 91300,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 36.95,
+      "lon": -120.06,
+      "value": 61900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.23,
+      "lon": -119.01,
+      "value": 232200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.7,
+      "lon": -121.35,
+      "value": 129600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.08,
+      "lon": -117.42,
+      "value": 127500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.73,
+      "lon": -117.86,
+      "value": 150500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.8,
+      "lon": -117.16,
+      "value": 187500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.67,
+      "lon": -118.07,
+      "value": 437900,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.68,
+      "lon": -118.14,
+      "value": 126500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.9,
+      "lon": -122.55,
+      "value": 453400,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.67,
+      "lon": -121.87,
+      "value": 229400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.51,
+      "lon": -122.27,
+      "value": 364900,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 38.43,
+      "lon": -122.68,
+      "value": 191900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.95,
+      "lon": -118.23,
+      "value": 87500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 35.07,
+      "lon": -119.45,
+      "value": 30000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.63,
+      "lon": -117.91,
+      "value": 335700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.29,
+      "lon": -122.49,
+      "value": 242100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.23,
+      "lon": -118.43,
+      "value": 173700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.31,
+      "lon": -119.22,
+      "value": 54100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 35.33,
+      "lon": -120.84,
+      "value": 207800,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 32.75,
+      "lon": -115.64,
+      "value": 112500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.1,
+      "lon": -117.91,
+      "value": 166700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.56,
+      "lon": -122.3,
+      "value": 271800,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 32.57,
+      "lon": -117.06,
+      "value": 141100,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.02,
+      "lon": -118.05,
+      "value": 375000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.23,
+      "lon": -118.39,
+      "value": 161600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.88,
+      "lon": -117.99,
+      "value": 159400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.83,
+      "lon": -121.28,
+      "value": 86300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 36.98,
+      "lon": -121.99,
+      "value": 256300,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.21,
+      "lon": -118.53,
+      "value": 213200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.85,
+      "lon": -117.85,
+      "value": 254100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.95,
+      "lon": -117.24,
+      "value": 132600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.23,
+      "lon": -117.32,
+      "value": 169300,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.75,
+      "lon": -122.43,
+      "value": 347700,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.1,
+      "lon": -117.98,
+      "value": 159700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 36.96,
+      "lon": -120.1,
+      "value": 90900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.83,
+      "lon": -118.17,
+      "value": 290500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.1,
+      "lon": -117.85,
+      "value": 189900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.13,
+      "lon": -118.36,
+      "value": 495600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.83,
+      "lon": -122.21,
+      "value": 333300,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.69,
+      "lon": -121.75,
+      "value": 183800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.08,
+      "lon": -117.95,
+      "value": 189000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.58,
+      "lon": -121.48,
+      "value": 157500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 36.3,
+      "lon": -119.78,
+      "value": 66600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.24,
+      "lon": -117.26,
+      "value": 132400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.11,
+      "lon": -118.23,
+      "value": 156000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.04,
+      "lon": -118.46,
+      "value": 348100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.61,
+      "lon": -121.92,
+      "value": 226400,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 36.64,
+      "lon": -118.05,
+      "value": 74200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.71,
+      "lon": -117.75,
+      "value": 158300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.36,
+      "lon": -122.07,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.89,
+      "lon": -118.13,
+      "value": 165500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.31,
+      "lon": -121.95,
+      "value": 329500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.76,
+      "lon": -117.1,
+      "value": 139600,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 32.6,
+      "lon": -117.04,
+      "value": 152900,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.77,
+      "lon": -118.11,
+      "value": 367300,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 39.72,
+      "lon": -122.04,
+      "value": 70000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.93,
+      "lon": -118.28,
+      "value": 97400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 39.12,
+      "lon": -121.62,
+      "value": 65900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 35.36,
+      "lon": -118.99,
+      "value": 49300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.01,
+      "lon": -117.89,
+      "value": 154100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.91,
+      "lon": -118.35,
+      "value": 272800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.17,
+      "lon": -118.32,
+      "value": 247100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.87,
+      "lon": -122.27,
+      "value": 268800,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.05,
+      "lon": -118.12,
+      "value": 247600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.77,
+      "lon": -118.31,
+      "value": 416800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.65,
+      "lon": -121.3,
+      "value": 121600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.96,
+      "lon": -118.2,
+      "value": 171700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.18,
+      "lon": -118.85,
+      "value": 173800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.75,
+      "lon": -118.04,
+      "value": 235600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.15,
+      "lon": -118.09,
+      "value": 260100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.1,
+      "lon": -118.28,
+      "value": 200000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.94,
+      "lon": -118.11,
+      "value": 296600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.02,
+      "lon": -121.51,
+      "value": 374600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.91,
+      "lon": -122.31,
+      "value": 177800,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.15,
+      "lon": -117.87,
+      "value": 269500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 36.14,
+      "lon": -120.36,
+      "value": 62000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.25,
+      "lon": -118.28,
+      "value": 197600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.96,
+      "lon": -121.27,
+      "value": 52700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.8,
+      "lon": -117.98,
+      "value": 191400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.74,
+      "lon": -122.49,
+      "value": 317700,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.8,
+      "lon": -118.29,
+      "value": 329400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.96,
+      "lon": -118.4,
+      "value": 330700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.3,
+      "lon": -118.41,
+      "value": 187400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.16,
+      "lon": -118.06,
+      "value": 286500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.75,
+      "lon": -116.43,
+      "value": 500001,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.01,
+      "lon": -121.78,
+      "value": 133900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.22,
+      "lon": -118.53,
+      "value": 199800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.76,
+      "lon": -114.63,
+      "value": 45000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.3,
+      "lon": -122.02,
+      "value": 354600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.99,
+      "lon": -118.42,
+      "value": 263800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.12,
+      "lon": -118.01,
+      "value": 278400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.8,
+      "lon": -118.19,
+      "value": 160400,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.92,
+      "lon": -117.97,
+      "value": 241300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.63,
+      "lon": -120.84,
+      "value": 208300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.27,
+      "lon": -121.9,
+      "value": 263600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.85,
+      "lon": -116.92,
+      "value": 145000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.49,
+      "lon": -123.04,
+      "value": 132500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.11,
+      "lon": -118.18,
+      "value": 183800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.75,
+      "lon": -119.85,
+      "value": 81100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.23,
+      "lon": -118.43,
+      "value": 176500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.16,
+      "lon": -118.27,
+      "value": 255500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.88,
+      "lon": -118.13,
+      "value": 166100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.71,
+      "lon": -121.31,
+      "value": 102000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.14,
+      "lon": -117.31,
+      "value": 86100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 40.51,
+      "lon": -122.4,
+      "value": 100600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.77,
+      "lon": -122.45,
+      "value": 500000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.81,
+      "lon": -118.2,
+      "value": 209900,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.95,
+      "lon": -121.28,
+      "value": 52500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.2,
+      "lon": -118.34,
+      "value": 262900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.84,
+      "lon": -119.82,
+      "value": 158800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.13,
+      "lon": -117.86,
+      "value": 209500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.1,
+      "lon": -118.31,
+      "value": 350000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.26,
+      "lon": -118.46,
+      "value": 217100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.32,
+      "lon": -120.55,
+      "value": 141400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.67,
+      "lon": -116.31,
+      "value": 93400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.86,
+      "lon": -122.27,
+      "value": 198200,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.75,
+      "lon": -117.88,
+      "value": 187200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.74,
+      "lon": -122.39,
+      "value": 185300,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.13,
+      "lon": -118.04,
+      "value": 500001,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.34,
+      "lon": -119.04,
+      "value": 281300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.91,
+      "lon": -118.24,
+      "value": 103600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.12,
+      "lon": -122.59,
+      "value": 287900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.17,
+      "lon": -118.29,
+      "value": 208300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.98,
+      "lon": -122.33,
+      "value": 175000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 38.5,
+      "lon": -122.97,
+      "value": 132700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.07,
+      "lon": -117.9,
+      "value": 172000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.83,
+      "lon": -117.8,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.69,
+      "lon": -115.49,
+      "value": 64000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.88,
+      "lon": -122.28,
+      "value": 227900,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 36.21,
+      "lon": -119.32,
+      "value": 63100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.7,
+      "lon": -117.12,
+      "value": 84100,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 38.33,
+      "lon": -122.26,
+      "value": 339200,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 36.96,
+      "lon": -120.16,
+      "value": 156300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.73,
+      "lon": -117.25,
+      "value": 383600,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.87,
+      "lon": -117.55,
+      "value": 137100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 36.32,
+      "lon": -119.66,
+      "value": 56800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.98,
+      "lon": -121.27,
+      "value": 70000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.22,
+      "lon": -121.42,
+      "value": 96300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.96,
+      "lon": -121.31,
+      "value": 92600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.78,
+      "lon": -118.05,
+      "value": 359100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.9,
+      "lon": -118.09,
+      "value": 158700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.86,
+      "lon": -118.4,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 35.94,
+      "lon": -121.0,
+      "value": 114600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.88,
+      "lon": -117.77,
+      "value": 410200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.32,
+      "lon": -121.95,
+      "value": 281900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 40.58,
+      "lon": -122.34,
+      "value": 101700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.8,
+      "lon": -122.24,
+      "value": 169300,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.78,
+      "lon": -118.15,
+      "value": 207800,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.9,
+      "lon": -122.53,
+      "value": 327200,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.8,
+      "lon": -118.31,
+      "value": 277900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.29,
+      "lon": -116.76,
+      "value": 111400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.76,
+      "lon": -122.21,
+      "value": 80600,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.7,
+      "lon": -117.77,
+      "value": 207500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.91,
+      "lon": -122.03,
+      "value": 275300,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.33,
+      "lon": -121.93,
+      "value": 421000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 40.2,
+      "lon": -122.23,
+      "value": 128800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 36.63,
+      "lon": -121.93,
+      "value": 313900,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 35.37,
+      "lon": -118.91,
+      "value": 67600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.38,
+      "lon": -120.73,
+      "value": 64400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.93,
+      "lon": -118.34,
+      "value": 153900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.66,
+      "lon": -121.35,
+      "value": 130700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.17,
+      "lon": -118.38,
+      "value": 238500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.46,
+      "lon": -122.15,
+      "value": 379600,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.75,
+      "lon": -117.82,
+      "value": 146500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.85,
+      "lon": -118.19,
+      "value": 150300,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.61,
+      "lon": -117.71,
+      "value": 80300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.71,
+      "lon": -121.17,
+      "value": 293300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.9,
+      "lon": -122.08,
+      "value": 288000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 38.0,
+      "lon": -121.87,
+      "value": 144100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.07,
+      "lon": -117.62,
+      "value": 127000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.71,
+      "lon": -122.12,
+      "value": 152100,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 39.11,
+      "lon": -121.22,
+      "value": 156800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.0,
+      "lon": -117.04,
+      "value": 104900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.1,
+      "lon": -118.45,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.58,
+      "lon": -117.07,
+      "value": 134400,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.42,
+      "lon": -122.21,
+      "value": 500001,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.72,
+      "lon": -117.82,
+      "value": 272800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.53,
+      "lon": -117.26,
+      "value": 151600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.81,
+      "lon": -118.31,
+      "value": 362600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.87,
+      "lon": -118.25,
+      "value": 169200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.79,
+      "lon": -117.18,
+      "value": 140400,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 35.88,
+      "lon": -119.27,
+      "value": 43700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.35,
+      "lon": -122.0,
+      "value": 136000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.27,
+      "lon": -118.75,
+      "value": 264400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.76,
+      "lon": -117.04,
+      "value": 152200,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.1,
+      "lon": -118.32,
+      "value": 137500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.06,
+      "lon": -118.11,
+      "value": 214700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.27,
+      "lon": -118.78,
+      "value": 170900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.26,
+      "lon": -121.81,
+      "value": 236200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.74,
+      "lon": -122.5,
+      "value": 297800,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.04,
+      "lon": -119.94,
+      "value": 88500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.58,
+      "lon": -117.1,
+      "value": 127600,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 38.69,
+      "lon": -121.37,
+      "value": 80200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.75,
+      "lon": -122.42,
+      "value": 306000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.11,
+      "lon": -118.29,
+      "value": 436400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.69,
+      "lon": -117.78,
+      "value": 238900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.88,
+      "lon": -117.83,
+      "value": 231700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.05,
+      "lon": -118.19,
+      "value": 122900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.82,
+      "lon": -118.11,
+      "value": 218200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.9,
+      "lon": -122.28,
+      "value": 397000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 38.39,
+      "lon": -122.83,
+      "value": 260300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.95,
+      "lon": -122.54,
+      "value": 435700,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.95,
+      "lon": -118.35,
+      "value": 164000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.0,
+      "lon": -122.03,
+      "value": 440500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 39.7,
+      "lon": -122.18,
+      "value": 85400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.48,
+      "lon": -117.2,
+      "value": 101900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.48,
+      "lon": -117.96,
+      "value": 159400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.92,
+      "lon": -117.89,
+      "value": 190300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.51,
+      "lon": -119.65,
+      "value": 100000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.02,
+      "lon": -118.16,
+      "value": 139600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.14,
+      "lon": -118.49,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.12,
+      "lon": -122.04,
+      "value": 154500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.12,
+      "lon": -118.21,
+      "value": 170500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.88,
+      "lon": -117.57,
+      "value": 110600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 36.6,
+      "lon": -121.86,
+      "value": 191200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.06,
+      "lon": -117.9,
+      "value": 287200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.7,
+      "lon": -116.99,
+      "value": 150100,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.89,
+      "lon": -117.82,
+      "value": 238300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.12,
+      "lon": -118.24,
+      "value": 154200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.31,
+      "lon": -121.94,
+      "value": 280500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.9,
+      "lon": -118.1,
+      "value": 161900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.5,
+      "lon": -122.63,
+      "value": 265600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.58,
+      "lon": -117.1,
+      "value": 122700,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.57,
+      "lon": -122.04,
+      "value": 231200,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.75,
+      "lon": -122.49,
+      "value": 319100,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.78,
+      "lon": -117.93,
+      "value": 231300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.46,
+      "lon": -121.89,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.56,
+      "lon": -121.45,
+      "value": 121200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.27,
+      "lon": -118.51,
+      "value": 222500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.7,
+      "lon": -121.72,
+      "value": 450000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.96,
+      "lon": -118.28,
+      "value": 102100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.08,
+      "lon": -117.94,
+      "value": 201200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.6,
+      "lon": -121.41,
+      "value": 104200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.12,
+      "lon": -118.37,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.96,
+      "lon": -120.42,
+      "value": 132000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.12,
+      "lon": -118.23,
+      "value": 221100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.7,
+      "lon": -118.4,
+      "value": 151600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.3,
+      "lon": -122.29,
+      "value": 146900,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 32.91,
+      "lon": -117.13,
+      "value": 151200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.26,
+      "lon": -118.44,
+      "value": 165100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.86,
+      "lon": -118.12,
+      "value": 213600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.08,
+      "lon": -118.28,
+      "value": 213500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.17,
+      "lon": -118.56,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.87,
+      "lon": -122.17,
+      "value": 438000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.36,
+      "lon": -121.83,
+      "value": 183800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.8,
+      "lon": -122.41,
+      "value": 350000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.58,
+      "lon": -118.74,
+      "value": 159300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.71,
+      "lon": -117.01,
+      "value": 129100,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 36.51,
+      "lon": -119.55,
+      "value": 76600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.75,
+      "lon": -117.22,
+      "value": 225000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.2,
+      "lon": -118.45,
+      "value": 230800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.81,
+      "lon": -117.81,
+      "value": 431800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.96,
+      "lon": -118.32,
+      "value": 191000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.73,
+      "lon": -122.19,
+      "value": 84700,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.78,
+      "lon": -118.18,
+      "value": 152500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 38.63,
+      "lon": -121.46,
+      "value": 67600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.87,
+      "lon": -118.15,
+      "value": 198200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.2,
+      "lon": -118.23,
+      "value": 306300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 39.15,
+      "lon": -123.22,
+      "value": 122100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.68,
+      "lon": -121.25,
+      "value": 276100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.07,
+      "lon": -117.09,
+      "value": 103000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.31,
+      "lon": -122.03,
+      "value": 409100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.03,
+      "lon": -118.2,
+      "value": 135200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.32,
+      "lon": -120.47,
+      "value": 121600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.92,
+      "lon": -118.15,
+      "value": 182800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.29,
+      "lon": -121.87,
+      "value": 228000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.03,
+      "lon": -121.31,
+      "value": 110000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.43,
+      "lon": -117.11,
+      "value": 111200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 35.33,
+      "lon": -119.02,
+      "value": 84700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.34,
+      "lon": -122.04,
+      "value": 447300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.26,
+      "lon": -121.31,
+      "value": 88300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.74,
+      "lon": -122.19,
+      "value": 87100,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.33,
+      "lon": -121.91,
+      "value": 187500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.91,
+      "lon": -118.08,
+      "value": 146900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.65,
+      "lon": -120.98,
+      "value": 103100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.8,
+      "lon": -121.98,
+      "value": 343700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.74,
+      "lon": -122.16,
+      "value": 98200,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.95,
+      "lon": -118.37,
+      "value": 262500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 40.48,
+      "lon": -121.55,
+      "value": 77400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.95,
+      "lon": -122.34,
+      "value": 135100,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.71,
+      "lon": -117.02,
+      "value": 134700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.99,
+      "lon": -117.26,
+      "value": 231300,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.05,
+      "lon": -117.96,
+      "value": 158600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.57,
+      "lon": -121.31,
+      "value": 101600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.35,
+      "lon": -121.97,
+      "value": 122000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.81,
+      "lon": -117.78,
+      "value": 380000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.58,
+      "lon": -122.45,
+      "value": 189400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.62,
+      "lon": -120.11,
+      "value": 440000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 35.32,
+      "lon": -119.01,
+      "value": 70000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 40.78,
+      "lon": -124.19,
+      "value": 70000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.01,
+      "lon": -118.41,
+      "value": 333500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.75,
+      "lon": -117.12,
+      "value": 101800,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.07,
+      "lon": -118.33,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.11,
+      "lon": -118.28,
+      "value": 360500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.66,
+      "lon": -121.23,
+      "value": 169500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.02,
+      "lon": -118.12,
+      "value": 205600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.1,
+      "lon": -118.01,
+      "value": 166300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.56,
+      "lon": -121.36,
+      "value": 32500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.3,
+      "lon": -121.74,
+      "value": 362700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.78,
+      "lon": -118.26,
+      "value": 174500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.06,
+      "lon": -117.92,
+      "value": 197600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.3,
+      "lon": -118.38,
+      "value": 183000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.18,
+      "lon": -118.45,
+      "value": 158300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.03,
+      "lon": -121.92,
+      "value": 100200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 40.87,
+      "lon": -124.09,
+      "value": 87500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.01,
+      "lon": -118.47,
+      "value": 461100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.83,
+      "lon": -117.22,
+      "value": 190200,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 38.66,
+      "lon": -121.21,
+      "value": 232300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.71,
+      "lon": -122.45,
+      "value": 221600,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 32.98,
+      "lon": -117.26,
+      "value": 226900,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.25,
+      "lon": -118.46,
+      "value": 224200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.98,
+      "lon": -118.32,
+      "value": 119800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.49,
+      "lon": -121.5,
+      "value": 78200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.95,
+      "lon": -118.21,
+      "value": 165100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.84,
+      "lon": -119.85,
+      "value": 213900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 36.81,
+      "lon": -119.71,
+      "value": 69700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.0,
+      "lon": -118.29,
+      "value": 105800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.96,
+      "lon": -121.29,
+      "value": 75000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.04,
+      "lon": -120.25,
+      "value": 91700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.91,
+      "lon": -117.97,
+      "value": 269500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.82,
+      "lon": -119.7,
+      "value": 68200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.19,
+      "lon": -117.28,
+      "value": 165800,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.47,
+      "lon": -118.59,
+      "value": 154600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.88,
+      "lon": -118.39,
+      "value": 472700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.3,
+      "lon": -122.04,
+      "value": 345900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.8,
+      "lon": -117.81,
+      "value": 230700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.07,
+      "lon": -118.3,
+      "value": 300000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.76,
+      "lon": -116.92,
+      "value": 249400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.77,
+      "lon": -122.46,
+      "value": 435700,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 38.0,
+      "lon": -121.36,
+      "value": 225800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.02,
+      "lon": -118.2,
+      "value": 175000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.16,
+      "lon": -118.16,
+      "value": 178400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.4,
+      "lon": -122.1,
+      "value": 276000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.98,
+      "lon": -120.42,
+      "value": 115900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.32,
+      "lon": -119.51,
+      "value": 214300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 40.65,
+      "lon": -120.77,
+      "value": 118300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.1,
+      "lon": -118.36,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.2,
+      "lon": -117.28,
+      "value": 152100,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 36.6,
+      "lon": -121.85,
+      "value": 140400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.36,
+      "lon": -117.24,
+      "value": 222600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.43,
+      "lon": -122.2,
+      "value": 444500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.59,
+      "lon": -122.37,
+      "value": 500000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 38.1,
+      "lon": -121.29,
+      "value": 163300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.79,
+      "lon": -117.24,
+      "value": 193800,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 36.84,
+      "lon": -120.44,
+      "value": 90500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.84,
+      "lon": -122.28,
+      "value": 115200,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 32.65,
+      "lon": -117.08,
+      "value": 147000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.82,
+      "lon": -118.04,
+      "value": 273900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.89,
+      "lon": -118.16,
+      "value": 190900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.59,
+      "lon": -121.54,
+      "value": 74800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.8,
+      "lon": -122.41,
+      "value": 500001,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.98,
+      "lon": -118.33,
+      "value": 118500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.72,
+      "lon": -117.7,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.26,
+      "lon": -119.21,
+      "value": 55000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.97,
+      "lon": -121.22,
+      "value": 58400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.56,
+      "lon": -121.47,
+      "value": 95800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.01,
+      "lon": -118.24,
+      "value": 99200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.16,
+      "lon": -119.18,
+      "value": 167400,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.89,
+      "lon": -116.99,
+      "value": 70500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.82,
+      "lon": -115.55,
+      "value": 67500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.54,
+      "lon": -121.44,
+      "value": 75700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.09,
+      "lon": -118.04,
+      "value": 183000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.15,
+      "lon": -118.49,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 40.55,
+      "lon": -124.09,
+      "value": 97300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.09,
+      "lon": -121.23,
+      "value": 230000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.71,
+      "lon": -117.14,
+      "value": 82900,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 36.19,
+      "lon": -119.82,
+      "value": 52200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.77,
+      "lon": -122.22,
+      "value": 114800,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 36.81,
+      "lon": -119.69,
+      "value": 88000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.81,
+      "lon": -117.07,
+      "value": 224200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.96,
+      "lon": -118.15,
+      "value": 150000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.76,
+      "lon": -116.42,
+      "value": 341700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.71,
+      "lon": -122.14,
+      "value": 181700,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.73,
+      "lon": -117.81,
+      "value": 140600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 40.05,
+      "lon": -122.1,
+      "value": 72700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.15,
+      "lon": -118.09,
+      "value": 210900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 39.02,
+      "lon": -120.83,
+      "value": 97700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 39.22,
+      "lon": -121.06,
+      "value": 109700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.77,
+      "lon": -118.17,
+      "value": 165600,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.8,
+      "lon": -117.84,
+      "value": 230600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.17,
+      "lon": -118.16,
+      "value": 163800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.7,
+      "lon": -115.4,
+      "value": 95800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 40.44,
+      "lon": -122.29,
+      "value": 48100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 36.71,
+      "lon": -119.76,
+      "value": 44400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.44,
+      "lon": -121.88,
+      "value": 237900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.55,
+      "lon": -122.03,
+      "value": 284800,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 38.47,
+      "lon": -122.72,
+      "value": 164800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.85,
+      "lon": -117.88,
+      "value": 200000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.99,
+      "lon": -122.52,
+      "value": 77800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.09,
+      "lon": -117.88,
+      "value": 186000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.96,
+      "lon": -118.09,
+      "value": 169700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.74,
+      "lon": -117.16,
+      "value": 418800,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 35.06,
+      "lon": -118.15,
+      "value": 73300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.7,
+      "lon": -117.14,
+      "value": 87000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.22,
+      "lon": -118.46,
+      "value": 168200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.93,
+      "lon": -117.55,
+      "value": 154300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.42,
+      "lon": -121.89,
+      "value": 225000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.35,
+      "lon": -122.0,
+      "value": 333000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.59,
+      "lon": -121.34,
+      "value": 225900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.87,
+      "lon": -117.6,
+      "value": 138100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.96,
+      "lon": -117.41,
+      "value": 112700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.83,
+      "lon": -122.25,
+      "value": 231600,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.1,
+      "lon": -118.15,
+      "value": 419100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.19,
+      "lon": -118.48,
+      "value": 221100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.06,
+      "lon": -118.01,
+      "value": 155400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.69,
+      "lon": -120.7,
+      "value": 151700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.71,
+      "lon": -122.44,
+      "value": 248900,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 38.95,
+      "lon": -121.04,
+      "value": 153200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.25,
+      "lon": -122.02,
+      "value": 126500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.62,
+      "lon": -121.31,
+      "value": 240000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.36,
+      "lon": -121.89,
+      "value": 186100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.48,
+      "lon": -119.78,
+      "value": 500001,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.06,
+      "lon": -118.12,
+      "value": 181600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.37,
+      "lon": -122.0,
+      "value": 178100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.6,
+      "lon": -119.44,
+      "value": 69200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.52,
+      "lon": -121.41,
+      "value": 66800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.14,
+      "lon": -118.53,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.4,
+      "lon": -122.1,
+      "value": 181300,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.24,
+      "lon": -118.23,
+      "value": 396400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.25,
+      "lon": -122.24,
+      "value": 187500,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 37.66,
+      "lon": -122.47,
+      "value": 297900,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.63,
+      "lon": -117.88,
+      "value": 345400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.85,
+      "lon": -121.65,
+      "value": 245100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.11,
+      "lon": -117.41,
+      "value": 105500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 40.87,
+      "lon": -124.08,
+      "value": 101100,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.15,
+      "lon": -118.13,
+      "value": 141700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.24,
+      "lon": -121.96,
+      "value": 430900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.75,
+      "lon": -122.5,
+      "value": 286300,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.88,
+      "lon": -117.56,
+      "value": 113000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.72,
+      "lon": -117.24,
+      "value": 466700,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.85,
+      "lon": -117.94,
+      "value": 168600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.5,
+      "lon": -122.26,
+      "value": 360500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.82,
+      "lon": -122.0,
+      "value": 256400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.82,
+      "lon": -118.93,
+      "value": 113900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.01,
+      "lon": -118.36,
+      "value": 350400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.19,
+      "lon": -118.35,
+      "value": 209100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.74,
+      "lon": -117.83,
+      "value": 131500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.35,
+      "lon": -122.18,
+      "value": 216700,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.77,
+      "lon": -117.27,
+      "value": 101300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.36,
+      "lon": -122.54,
+      "value": 202800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.75,
+      "lon": -121.43,
+      "value": 117600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.57,
+      "lon": -122.31,
+      "value": 292600,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.04,
+      "lon": -118.4,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.68,
+      "lon": -120.97,
+      "value": 130300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.1,
+      "lon": -119.49,
+      "value": 92400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.0,
+      "lon": -118.28,
+      "value": 112500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.75,
+      "lon": -117.86,
+      "value": 154200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.56,
+      "lon": -121.46,
+      "value": 104000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.34,
+      "lon": -122.71,
+      "value": 121600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.86,
+      "lon": -122.07,
+      "value": 206300,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 36.71,
+      "lon": -119.69,
+      "value": 108300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.19,
+      "lon": -118.85,
+      "value": 349400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 39.55,
+      "lon": -121.19,
+      "value": 83300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.2,
+      "lon": -118.61,
+      "value": 245800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.46,
+      "lon": -122.74,
+      "value": 91500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.15,
+      "lon": -118.54,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.99,
+      "lon": -118.5,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.1,
+      "lon": -117.79,
+      "value": 190500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.74,
+      "lon": -121.43,
+      "value": 108300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.97,
+      "lon": -116.52,
+      "value": 89600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.27,
+      "lon": -122.01,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.97,
+      "lon": -121.34,
+      "value": 94600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.02,
+      "lon": -118.21,
+      "value": 67500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.0,
+      "lon": -121.9,
+      "value": 177500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.23,
+      "lon": -118.25,
+      "value": 261300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.51,
+      "lon": -117.32,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.15,
+      "lon": -117.14,
+      "value": 168400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.24,
+      "lon": -121.94,
+      "value": 245300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.09,
+      "lon": -122.02,
+      "value": 240000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.93,
+      "lon": -121.05,
+      "value": 156500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.96,
+      "lon": -117.3,
+      "value": 500001,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.88,
+      "lon": -117.91,
+      "value": 235600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.89,
+      "lon": -118.1,
+      "value": 185600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.08,
+      "lon": -118.29,
+      "value": 316700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 39.96,
+      "lon": -120.93,
+      "value": 118800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.46,
+      "lon": -122.4,
+      "value": 248500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.79,
+      "lon": -117.94,
+      "value": 236500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.55,
+      "lon": -121.47,
+      "value": 94600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.01,
+      "lon": -118.07,
+      "value": 176800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.86,
+      "lon": -117.21,
+      "value": 148600,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 36.6,
+      "lon": -121.86,
+      "value": 195300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.8,
+      "lon": -118.27,
+      "value": 215900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.02,
+      "lon": -118.2,
+      "value": 126600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.08,
+      "lon": -118.29,
+      "value": 173900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.13,
+      "lon": -117.29,
+      "value": 183000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 36.78,
+      "lon": -119.75,
+      "value": 74300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.85,
+      "lon": -117.88,
+      "value": 224700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.52,
+      "lon": -119.59,
+      "value": 101600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.51,
+      "lon": -122.3,
+      "value": 391000,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.94,
+      "lon": -118.13,
+      "value": 265000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.21,
+      "lon": -121.86,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.3,
+      "lon": -121.81,
+      "value": 186500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.12,
+      "lon": -116.4,
+      "value": 78000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.98,
+      "lon": -115.55,
+      "value": 80800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.26,
+      "lon": -118.31,
+      "value": 189600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.26,
+      "lon": -118.47,
+      "value": 199200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 35.32,
+      "lon": -120.84,
+      "value": 189600,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.78,
+      "lon": -122.19,
+      "value": 160000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.68,
+      "lon": -117.79,
+      "value": 375300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.97,
+      "lon": -122.03,
+      "value": 166700,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.19,
+      "lon": -118.56,
+      "value": 215600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.03,
+      "lon": -121.79,
+      "value": 228600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 35.49,
+      "lon": -120.66,
+      "value": 171300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.74,
+      "lon": -122.46,
+      "value": 431000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.87,
+      "lon": -118.04,
+      "value": 275100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.44,
+      "lon": -119.85,
+      "value": 276800,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 36.31,
+      "lon": -119.61,
+      "value": 46300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.68,
+      "lon": -118.09,
+      "value": 144000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 39.74,
+      "lon": -122.13,
+      "value": 94300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.01,
+      "lon": -117.93,
+      "value": 157600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.79,
+      "lon": -117.86,
+      "value": 194500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.16,
+      "lon": -118.26,
+      "value": 351100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.07,
+      "lon": -118.37,
+      "value": 453400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.19,
+      "lon": -118.41,
+      "value": 224600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.12,
+      "lon": -118.2,
+      "value": 155600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.01,
+      "lon": -121.37,
+      "value": 242000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 39.74,
+      "lon": -123.15,
+      "value": 70000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.3,
+      "lon": -117.18,
+      "value": 71300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 39.09,
+      "lon": -122.79,
+      "value": 66800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.1,
+      "lon": -118.18,
+      "value": 153100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.7,
+      "lon": -122.11,
+      "value": 137500,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.88,
+      "lon": -117.9,
+      "value": 230400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.31,
+      "lon": -122.0,
+      "value": 242200,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.87,
+      "lon": -117.85,
+      "value": 301900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.27,
+      "lon": -122.0,
+      "value": 415800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.0,
+      "lon": -121.72,
+      "value": 156500,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 40.46,
+      "lon": -122.27,
+      "value": 78600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.87,
+      "lon": -122.02,
+      "value": 441400,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.08,
+      "lon": -118.27,
+      "value": 184300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.29,
+      "lon": -118.73,
+      "value": 276500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.93,
+      "lon": -117.96,
+      "value": 232800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.29,
+      "lon": -120.48,
+      "value": 60400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.55,
+      "lon": -121.49,
+      "value": 224100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.77,
+      "lon": -117.79,
+      "value": 439000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.27,
+      "lon": -119.67,
+      "value": 123100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 32.91,
+      "lon": -117.09,
+      "value": 255700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 39.51,
+      "lon": -121.55,
+      "value": 57600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.2,
+      "lon": -118.52,
+      "value": 199800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.76,
+      "lon": -119.78,
+      "value": 51300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.48,
+      "lon": -119.85,
+      "value": 348200,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 37.82,
+      "lon": -122.2,
+      "value": 362800,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.18,
+      "lon": -118.53,
+      "value": 240300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.25,
+      "lon": -119.46,
+      "value": 73600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.14,
+      "lon": -117.12,
+      "value": 172600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.22,
+      "lon": -118.59,
+      "value": 229000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.08,
+      "lon": -118.01,
+      "value": 166300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.71,
+      "lon": -117.2,
+      "value": 83300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.14,
+      "lon": -118.47,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.68,
+      "lon": -117.98,
+      "value": 332900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 35.41,
+      "lon": -119.03,
+      "value": 54300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.88,
+      "lon": -117.93,
+      "value": 241700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.55,
+      "lon": -121.87,
+      "value": 387500,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.1,
+      "lon": -117.65,
+      "value": 136400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.98,
+      "lon": -121.3,
+      "value": 98300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.18,
+      "lon": -118.91,
+      "value": 176000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 36.87,
+      "lon": -120.46,
+      "value": 63000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.24,
+      "lon": -118.58,
+      "value": 236900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.21,
+      "lon": -120.89,
+      "value": 97200,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.78,
+      "lon": -122.43,
+      "value": 220000,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.62,
+      "lon": -117.72,
+      "value": 105800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.57,
+      "lon": -122.3,
+      "value": 270900,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 34.08,
+      "lon": -117.34,
+      "value": 99400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.11,
+      "lon": -118.2,
+      "value": 166300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 32.77,
+      "lon": -117.04,
+      "value": 143800,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.81,
+      "lon": -123.02,
+      "value": 140600,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.5,
+      "lon": -122.71,
+      "value": 330900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.02,
+      "lon": -118.34,
+      "value": 156900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.09,
+      "lon": -117.26,
+      "value": 500001,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.9,
+      "lon": -118.04,
+      "value": 162500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 39.33,
+      "lon": -120.1,
+      "value": 124800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.21,
+      "lon": -117.34,
+      "value": 216100,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 32.75,
+      "lon": -117.15,
+      "value": 171400,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.16,
+      "lon": -118.11,
+      "value": 325600,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.58,
+      "lon": -121.46,
+      "value": 109800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.65,
+      "lon": -122.44,
+      "value": 276200,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.13,
+      "lon": -117.09,
+      "value": 129900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.73,
+      "lon": -122.42,
+      "value": 292300,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 38.48,
+      "lon": -122.6,
+      "value": 341500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.15,
+      "lon": -116.06,
+      "value": 66800,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.08,
+      "lon": -122.81,
+      "value": 238800,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 38.41,
+      "lon": -120.54,
+      "value": 77400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.61,
+      "lon": -114.58,
+      "value": 82400,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.58,
+      "lon": -122.33,
+      "value": 359900,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.02,
+      "lon": -118.44,
+      "value": 465700,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.37,
+      "lon": -122.69,
+      "value": 214000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.11,
+      "lon": -117.36,
+      "value": 107100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.99,
+      "lon": -122.31,
+      "value": 157800,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 33.91,
+      "lon": -118.25,
+      "value": 119300,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.25,
+      "lon": -118.49,
+      "value": 232900,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 38.12,
+      "lon": -122.22,
+      "value": 179500,
+      "ocean": "NEAR BAY"
+    },
+    {
+      "lat": 32.67,
+      "lon": -115.49,
+      "value": 70100,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.86,
+      "lon": -116.95,
+      "value": 55000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.64,
+      "lon": -121.43,
+      "value": 65900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 40.95,
+      "lon": -124.09,
+      "value": 99600,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 33.62,
+      "lon": -117.85,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.64,
+      "lon": -117.67,
+      "value": 164100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.75,
+      "lon": -116.99,
+      "value": 77000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 39.26,
+      "lon": -121.18,
+      "value": 140300,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 33.06,
+      "lon": -116.6,
+      "value": 172900,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 34.05,
+      "lon": -118.38,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.03,
+      "lon": -117.33,
+      "value": 314300,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.02,
+      "lon": -118.43,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 37.34,
+      "lon": -122.08,
+      "value": 500001,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.04,
+      "lon": -118.29,
+      "value": 143000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.42,
+      "lon": -117.6,
+      "value": 280600,
+      "ocean": "NEAR OCEAN"
+    },
+    {
+      "lat": 34.07,
+      "lon": -118.38,
+      "value": 375000,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 34.08,
+      "lon": -118.29,
+      "value": 137500,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.71,
+      "lon": -117.77,
+      "value": 337100,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 33.72,
+      "lon": -116.39,
+      "value": 128000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 38.45,
+      "lon": -122.71,
+      "value": 185400,
+      "ocean": "<1H OCEAN"
+    },
+    {
+      "lat": 39.36,
+      "lon": -121.69,
+      "value": 63000,
+      "ocean": "INLAND"
+    },
+    {
+      "lat": 37.79,
+      "lon": -122.22,
+      "value": 109500,
+      "ocean": "NEAR BAY"
+    }
+  ],
+  "generated_at": "2026-11-04T09:49:42.670098+00:00"
+}

@@ -1,0 +1,693 @@
+{
+  "zip_stats": {
+    "98001": {
+      "count": 285,
+      "median_price": 260000,
+      "median_ppsf": 145.83,
+      "market_value": 260000,
+      "lat": 47.317,
+      "long": -122.272,
+      "region": "南金县"
+    },
+    "98002": {
+      "count": 162,
+      "median_price": 235000,
+      "median_ppsf": 146.39,
+      "market_value": 235000,
+      "lat": 47.3065,
+      "long": -122.215,
+      "region": "南金县"
+    },
+    "98003": {
+      "count": 232,
+      "median_price": 274000,
+      "median_ppsf": 154.61,
+      "market_value": 274000,
+      "lat": 47.3296,
+      "long": -122.308,
+      "region": "南金县"
+    },
+    "98004": {
+      "count": 261,
+      "median_price": 1150000,
+      "median_ppsf": 455.14,
+      "market_value": 1150000,
+      "lat": 47.6214,
+      "long": -122.205,
+      "region": "东区"
+    },
+    "98005": {
+      "count": 141,
+      "median_price": 772650,
+      "median_ppsf": 316.23,
+      "market_value": 772650,
+      "lat": 47.6059,
+      "long": -122.168,
+      "region": "东区"
+    },
+    "98006": {
+      "count": 414,
+      "median_price": 760184,
+      "median_ppsf": 285.05,
+      "market_value": 760184,
+      "lat": 47.5582,
+      "long": -122.1455,
+      "region": "东区"
+    },
+    "98007": {
+      "count": 106,
+      "median_price": 573450,
+      "median_ppsf": 288.92,
+      "market_value": 573450,
+      "lat": 47.6118,
+      "long": -122.142,
+      "region": "东区"
+    },
+    "98008": {
+      "count": 225,
+      "median_price": 544950,
+      "median_ppsf": 293.39,
+      "market_value": 544950,
+      "lat": 47.616,
+      "long": -122.117,
+      "region": "东区"
+    },
+    "98010": {
+      "count": 74,
+      "median_price": 342500,
+      "median_ppsf": 188.72,
+      "market_value": 350562,
+      "lat": 47.33345,
+      "long": -122.006,
+      "region": "南金县"
+    },
+    "98011": {
+      "count": 153,
+      "median_price": 471000,
+      "median_ppsf": 219.8,
+      "market_value": 471000,
+      "lat": 47.7573,
+      "long": -122.202,
+      "region": "东区"
+    },
+    "98014": {
+      "count": 102,
+      "median_price": 406846,
+      "median_ppsf": 206.67,
+      "market_value": 406846,
+      "lat": 47.6742,
+      "long": -121.91,
+      "region": "东区"
+    },
+    "98019": {
+      "count": 147,
+      "median_price": 400000,
+      "median_ppsf": 194.15,
+      "market_value": 400000,
+      "lat": 47.7359,
+      "long": -121.968,
+      "region": "东区"
+    },
+    "98022": {
+      "count": 181,
+      "median_price": 279000,
+      "median_ppsf": 168.8,
+      "market_value": 279000,
+      "lat": 47.2056,
+      "long": -122.0,
+      "region": "南金县"
+    },
+    "98023": {
+      "count": 378,
+      "median_price": 269475,
+      "median_ppsf": 144.03,
+      "market_value": 269475,
+      "lat": 47.30815,
+      "long": -122.365,
+      "region": "南金县"
+    },
+    "98024": {
+      "count": 63,
+      "median_price": 457000,
+      "median_ppsf": 239.81,
+      "market_value": 455512,
+      "lat": 47.5621,
+      "long": -121.901,
+      "region": "东区"
+    },
+    "98027": {
+      "count": 328,
+      "median_price": 575000,
+      "median_ppsf": 251.51,
+      "market_value": 575000,
+      "lat": 47.5321,
+      "long": -122.046,
+      "region": "东区"
+    },
+    "98028": {
+      "count": 224,
+      "median_price": 445500,
+      "median_ppsf": 222.57,
+      "market_value": 445500,
+      "lat": 47.75965,
+      "long": -122.245,
+      "region": "东区"
+    },
+    "98029": {
+      "count": 261,
+      "median_price": 574000,
+      "median_ppsf": 270.06,
+      "market_value": 574000,
+      "lat": 47.5573,
+      "long": -122.003,
+      "region": "东区"
+    },
+    "98030": {
+      "count": 209,
+      "median_price": 280000,
+      "median_ppsf": 152.01,
+      "market_value": 280000,
+      "lat": 47.3719,
+      "long": -122.185,
+      "region": "南金县"
+    },
+    "98031": {
+      "count": 213,
+      "median_price": 285000,
+      "median_ppsf": 157.23,
+      "market_value": 285000,
+      "lat": 47.4034,
+      "long": -122.188,
+      "region": "南金县"
+    },
+    "98032": {
+      "count": 99,
+      "median_price": 250200,
+      "median_ppsf": 149.19,
+      "market_value": 250200,
+      "lat": 47.3731,
+      "long": -122.285,
+      "region": "南金县"
+    },
+    "98033": {
+      "count": 355,
+      "median_price": 702000,
+      "median_ppsf": 325.34,
+      "market_value": 702000,
+      "lat": 47.6834,
+      "long": -122.188,
+      "region": "东区"
+    },
+    "98034": {
+      "count": 431,
+      "median_price": 445000,
+      "median_ppsf": 255.92,
+      "market_value": 445000,
+      "lat": 47.7212,
+      "long": -122.213,
+      "region": "东区"
+    },
+    "98038": {
+      "count": 455,
+      "median_price": 344000,
+      "median_ppsf": 171.35,
+      "market_value": 344000,
+      "lat": 47.3637,
+      "long": -122.034,
+      "region": "南金县"
+    },
+    "98039": {
+      "count": 43,
+      "median_price": 1920000,
+      "median_ppsf": 565.36,
+      "market_value": 1240125,
+      "lat": 47.6242,
+      "long": -122.236,
+      "region": "东区"
+    },
+    "98040": {
+      "count": 222,
+      "median_price": 998000,
+      "median_ppsf": 369.56,
+      "market_value": 998000,
+      "lat": 47.56025,
+      "long": -122.225,
+      "region": "东区"
+    },
+    "98042": {
+      "count": 430,
+      "median_price": 290000,
+      "median_ppsf": 158.52,
+      "market_value": 290000,
+      "lat": 47.3665,
+      "long": -122.115,
+      "region": "南金县"
+    },
+    "98045": {
+      "count": 166,
+      "median_price": 398250,
+      "median_ppsf": 207.03,
+      "market_value": 398250,
+      "lat": 47.4804,
+      "long": -121.769,
+      "region": "南金县"
+    },
+    "98052": {
+      "count": 464,
+      "median_price": 615000,
+      "median_ppsf": 273.93,
+      "market_value": 615000,
+      "lat": 47.68155,
+      "long": -122.116,
+      "region": "东区"
+    },
+    "98053": {
+      "count": 324,
+      "median_price": 632800,
+      "median_ppsf": 266.31,
+      "market_value": 632800,
+      "lat": 47.682,
+      "long": -122.0255,
+      "region": "东区"
+    },
+    "98055": {
+      "count": 195,
+      "median_price": 295000,
+      "median_ppsf": 170.8,
+      "market_value": 295000,
+      "lat": 47.4556,
+      "long": -122.202,
+      "region": "南金县"
+    },
+    "98056": {
+      "count": 313,
+      "median_price": 392500,
+      "median_ppsf": 205.14,
+      "market_value": 392500,
+      "lat": 47.511,
+      "long": -122.182,
+      "region": "南金县"
+    },
+    "98058": {
+      "count": 376,
+      "median_price": 333000,
+      "median_ppsf": 171.38,
+      "market_value": 333000,
+      "lat": 47.4477,
+      "long": -122.151,
+      "region": "南金县"
+    },
+    "98059": {
+      "count": 383,
+      "median_price": 430000,
+      "median_ppsf": 199.12,
+      "market_value": 430000,
+      "lat": 47.4887,
+      "long": -122.146,
+      "region": "南金县"
+    },
+    "98065": {
+      "count": 231,
+      "median_price": 490000,
+      "median_ppsf": 206.32,
+      "market_value": 490000,
+      "lat": 47.5328,
+      "long": -121.87,
+      "region": "东区"
+    },
+    "98070": {
+      "count": 95,
+      "median_price": 465000,
+      "median_ppsf": 264.06,
+      "market_value": 465000,
+      "lat": 47.4161,
+      "long": -122.461,
+      "region": "西雅图西岸"
+    },
+    "98072": {
+      "count": 226,
+      "median_price": 501000,
+      "median_ppsf": 239.71,
+      "market_value": 501000,
+      "lat": 47.7502,
+      "long": -122.132,
+      "region": "东区"
+    },
+    "98074": {
+      "count": 364,
+      "median_price": 636625,
+      "median_ppsf": 257.38,
+      "market_value": 636625,
+      "lat": 47.62535,
+      "long": -122.045,
+      "region": "东区"
+    },
+    "98075": {
+      "count": 290,
+      "median_price": 735000,
+      "median_ppsf": 249.29,
+      "market_value": 735000,
+      "lat": 47.5884,
+      "long": -122.021,
+      "region": "东区"
+    },
+    "98077": {
+      "count": 156,
+      "median_price": 644000,
+      "median_ppsf": 244.53,
+      "market_value": 644000,
+      "lat": 47.74305,
+      "long": -122.0655,
+      "region": "东区"
+    },
+    "98092": {
+      "count": 276,
+      "median_price": 309950,
+      "median_ppsf": 148.25,
+      "market_value": 309950,
+      "lat": 47.31145,
+      "long": -122.182,
+      "region": "南金县"
+    },
+    "98102": {
+      "count": 83,
+      "median_price": 729000,
+      "median_ppsf": 404.15,
+      "market_value": 729000,
+      "lat": 47.638,
+      "long": -122.321,
+      "region": "西雅图北区"
+    },
+    "98103": {
+      "count": 474,
+      "median_price": 550000,
+      "median_ppsf": 359.85,
+      "market_value": 550000,
+      "lat": 47.6799,
+      "long": -122.346,
+      "region": "西雅图北区"
+    },
+    "98105": {
+      "count": 182,
+      "median_price": 670750,
+      "median_ppsf": 394.0,
+      "market_value": 670750,
+      "lat": 47.6661,
+      "long": -122.288,
+      "region": "西雅图北区"
+    },
+    "98106": {
+      "count": 260,
+      "median_price": 315000,
+      "median_ppsf": 216.67,
+      "market_value": 315000,
+      "lat": 47.5329,
+      "long": -122.357,
+      "region": "西雅图中南部"
+    },
+    "98107": {
+      "count": 219,
+      "median_price": 529950,
+      "median_ppsf": 374.13,
+      "market_value": 529950,
+      "lat": 47.6711,
+      "long": -122.372,
+      "region": "西雅图北区"
+    },
+    "98108": {
+      "count": 151,
+      "median_price": 349950,
+      "median_ppsf": 209.38,
+      "market_value": 349950,
+      "lat": 47.5531,
+      "long": -122.304,
+      "region": "西雅图中南部"
+    },
+    "98109": {
+      "count": 82,
+      "median_price": 736000,
+      "median_ppsf": 426.48,
+      "market_value": 736000,
+      "lat": 47.63745,
+      "long": -122.3515,
+      "region": "西雅图北区"
+    },
+    "98112": {
+      "count": 211,
+      "median_price": 895000,
+      "median_ppsf": 418.79,
+      "market_value": 895000,
+      "lat": 47.6283,
+      "long": -122.3,
+      "region": "西雅图北区"
+    },
+    "98115": {
+      "count": 452,
+      "median_price": 570000,
+      "median_ppsf": 336.13,
+      "market_value": 570000,
+      "lat": 47.6846,
+      "long": -122.304,
+      "region": "西雅图北区"
+    },
+    "98116": {
+      "count": 273,
+      "median_price": 568000,
+      "median_ppsf": 336.13,
+      "market_value": 568000,
+      "lat": 47.5733,
+      "long": -122.392,
+      "region": "西雅图西岸"
+    },
+    "98117": {
+      "count": 429,
+      "median_price": 539950,
+      "median_ppsf": 347.04,
+      "market_value": 539950,
+      "lat": 47.6865,
+      "long": -122.379,
+      "region": "西雅图北区"
+    },
+    "98118": {
+      "count": 406,
+      "median_price": 357000,
+      "median_ppsf": 242.5,
+      "market_value": 357000,
+      "lat": 47.54585,
+      "long": -122.275,
+      "region": "西雅图中南部"
+    },
+    "98119": {
+      "count": 140,
+      "median_price": 752500,
+      "median_ppsf": 424.43,
+      "market_value": 752500,
+      "lat": 47.63855,
+      "long": -122.368,
+      "region": "西雅图北区"
+    },
+    "98122": {
+      "count": 223,
+      "median_price": 557000,
+      "median_ppsf": 353.56,
+      "market_value": 557000,
+      "lat": 47.6103,
+      "long": -122.299,
+      "region": "西雅图北区"
+    },
+    "98125": {
+      "count": 319,
+      "median_price": 426000,
+      "median_ppsf": 267.47,
+      "market_value": 426000,
+      "lat": 47.7174,
+      "long": -122.303,
+      "region": "西雅图北区"
+    },
+    "98126": {
+      "count": 274,
+      "median_price": 392000,
+      "median_ppsf": 274.92,
+      "market_value": 392000,
+      "lat": 47.54465,
+      "long": -122.375,
+      "region": "西雅图中南部"
+    },
+    "98133": {
+      "count": 395,
+      "median_price": 374150,
+      "median_ppsf": 243.98,
+      "market_value": 374150,
+      "lat": 47.7346,
+      "long": -122.342,
+      "region": "西雅图北区"
+    },
+    "98136": {
+      "count": 211,
+      "median_price": 489950,
+      "median_ppsf": 319.75,
+      "market_value": 489950,
+      "lat": 47.5402,
+      "long": -122.387,
+      "region": "西雅图西岸"
+    },
+    "98144": {
+      "count": 271,
+      "median_price": 450000,
+      "median_ppsf": 304.74,
+      "market_value": 450000,
+      "lat": 47.5883,
+      "long": -122.297,
+      "region": "西雅图北区"
+    },
+    "98146": {
+      "count": 212,
+      "median_price": 311000,
+      "median_ppsf": 205.35,
+      "market_value": 311000,
+      "lat": 47.50395,
+      "long": -122.359,
+      "region": "西雅图中南部"
+    },
+    "98148": {
+      "count": 45,
+      "median_price": 280000,
+      "median_ppsf": 182.91,
+      "market_value": 354375,
+      "lat": 47.4337,
+      "long": -122.329,
+      "region": "西雅图中南部"
+    },
+    "98155": {
+      "count": 363,
+      "median_price": 382000,
+      "median_ppsf": 236.18,
+      "market_value": 382000,
+      "lat": 47.754,
+      "long": -122.304,
+      "region": "北金县"
+    },
+    "98166": {
+      "count": 202,
+      "median_price": 386250,
+      "median_ppsf": 211.32,
+      "market_value": 386250,
+      "lat": 47.4561,
+      "long": -122.35,
+      "region": "西雅图中南部"
+    },
+    "98168": {
+      "count": 211,
+      "median_price": 240500,
+      "median_ppsf": 165.7,
+      "market_value": 240500,
+      "lat": 47.4889,
+      "long": -122.313,
+      "region": "西雅图中南部"
+    },
+    "98177": {
+      "count": 213,
+      "median_price": 540000,
+      "median_ppsf": 271.16,
+      "market_value": 540000,
+      "lat": 47.7545,
+      "long": -122.369,
+      "region": "北金县"
+    },
+    "98178": {
+      "count": 203,
+      "median_price": 285000,
+      "median_ppsf": 176.74,
+      "market_value": 285000,
+      "lat": 47.5003,
+      "long": -122.248,
+      "region": "南金县"
+    },
+    "98188": {
+      "count": 116,
+      "median_price": 267250,
+      "median_ppsf": 161.14,
+      "market_value": 267250,
+      "lat": 47.44765,
+      "long": -122.282,
+      "region": "西雅图中南部"
+    },
+    "98198": {
+      "count": 213,
+      "median_price": 269800,
+      "median_ppsf": 172.41,
+      "market_value": 269800,
+      "lat": 47.3908,
+      "long": -122.317,
+      "region": "南金县"
+    },
+    "98199": {
+      "count": 248,
+      "median_price": 701506,
+      "median_ppsf": 363.73,
+      "market_value": 701506,
+      "lat": 47.6482,
+      "long": -122.399,
+      "region": "西雅图西岸"
+    }
+  },
+  "features": [
+    "bedrooms",
+    "bathrooms",
+    "sqft_living",
+    "sqft_lot",
+    "floors",
+    "waterfront",
+    "view",
+    "condition",
+    "grade",
+    "sqft_above",
+    "sqft_basement",
+    "yr_built",
+    "yr_renovated",
+    "lat",
+    "long",
+    "sqft_living15",
+    "sqft_lot15",
+    "house_age",
+    "has_renovated",
+    "living_lot_ratio",
+    "bath_bed_ratio",
+    "zip_market_value"
+  ],
+  "feature_labels": {
+    "bedrooms": "卧室数量",
+    "bathrooms": "卫浴数量",
+    "sqft_living": "室内面积",
+    "sqft_lot": "土地面积",
+    "floors": "楼层数",
+    "waterfront": "滨水属性",
+    "view": "景观等级",
+    "condition": "房屋状况",
+    "grade": "建筑等级",
+    "sqft_above": "地上面积",
+    "sqft_basement": "地下室面积",
+    "yr_built": "建造年份",
+    "yr_renovated": "翻新年份",
+    "lat": "纬度",
+    "long": "经度",
+    "sqft_living15": "周边平均室内面积",
+    "sqft_lot15": "周边平均土地面积",
+    "house_age": "房龄",
+    "has_renovated": "是否翻新",
+    "living_lot_ratio": "容积率代理",
+    "bath_bed_ratio": "卫浴卧室比",
+    "zip_market_value": "邮编市场基准价"
+  },
+  "interval": {
+    "level": 0.8,
+    "method": "5-fold out-of-fold residual quantiles (asymmetric conformal-style interval)",
+    "residual_q10": -90228.5,
+    "residual_q50": -2241.17,
+    "residual_q90": 86241.87,
+    "test_coverage_pct": 81.5,
+    "median_width_usd": 176470.37
+  },
+  "trained_at": "2026-11-04T09:49:38.114119+00:00",
+  "training_rows": 17134
+}

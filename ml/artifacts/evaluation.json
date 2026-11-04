@@ -1,0 +1,100 @@
+{
+  "errors_by_price_band": [
+    {
+      "group": "<300k",
+      "count": 179,
+      "mae": 37819.28,
+      "mape": 16.67
+    },
+    {
+      "group": "300-500k",
+      "count": 292,
+      "mae": 41426.6,
+      "mape": 10.51
+    },
+    {
+      "group": "500-750k",
+      "count": 202,
+      "mae": 61329.11,
+      "mape": 10.08
+    },
+    {
+      "group": "750k-1M",
+      "count": 70,
+      "mae": 74389.7,
+      "mape": 8.87
+    },
+    {
+      "group": "1-2M",
+      "count": 46,
+      "mae": 194283.91,
+      "mape": 14.71
+    },
+    {
+      "group": "2M+",
+      "count": 11,
+      "mae": 253238.39,
+      "mape": 10.46
+    }
+  ],
+  "errors_by_region": [
+    {
+      "group": "东区",
+      "count": 237,
+      "mae": 72219.98,
+      "mape": 10.54
+    },
+    {
+      "group": "北金县",
+      "count": 14,
+      "mae": 93490.96,
+      "mape": 13.29
+    },
+    {
+      "group": "南金县",
+      "count": 226,
+      "mae": 35295.31,
+      "mape": 11.17
+    },
+    {
+      "group": "西雅图中南部",
+      "count": 92,
+      "mae": 48633.42,
+      "mape": 15.95
+    },
+    {
+      "group": "西雅图北区",
+      "count": 179,
+      "mae": 74228.02,
+      "mape": 12.5
+    },
+    {
+      "group": "西雅图西岸",
+      "count": 52,
+      "mae": 77342.68,
+      "mape": 11.39
+    }
+  ],
+  "residual": {
+    "mean": 1223.6,
+    "median": -1801.82,
+    "std": 97320.65,
+    "p10": -78560.2,
+    "p90": 87307.62
+  },
+  "interval": {
+    "level": 0.8,
+    "method": "5-fold out-of-fold residual quantiles (asymmetric conformal-style interval)",
+    "residual_q10": -90228.5,
+    "residual_q50": -2241.17,
+    "residual_q90": 86241.87,
+    "test_coverage_pct": 81.5,
+    "median_width_usd": 176470.37
+  },
+  "figures": [
+    "model_comparison.png",
+    "actual_vs_predicted.png",
+    "residual_distribution.png",
+    "shap_importance.png"
+  ]
+}
