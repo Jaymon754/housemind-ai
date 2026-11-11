@@ -392,10 +392,12 @@ pre .c { color: #9fb4a7; }
         <div class="toc-row"><span class="n">06</span><span class="t">RAG、Agent 与 MCP</span></div>
         <div class="toc-row"><span class="n">07</span><span class="t">多模态、工程与安全</span></div>
         <div class="toc-row"><span class="n">08</span><span class="t">评测、限制与复现</span></div>
+        <div class="toc-row"><span class="n">A</span><span class="t">需求、选型与创新补充</span><span class="d">A1–A3</span></div>
       </div>
       <div class="note" style="margin-top:5mm">
         <b>阅读提示</b><br />
-        第 3–5 节是 AI 深度；第 6–7 节是工程与产品；第 8 节是评审最关心的“边界与诚实”。
+        第 3–5 节是 AI 深度；第 6–7 节是工程与产品；第 8 节是评审最关心的“边界与诚实”；
+        附录 A1–A3 直接对照比赛评分表、选型理由与创新点。
       </div>
     </div>
   </div>
@@ -1061,6 +1063,161 @@ cp .env.example .env
     </p>
   </div>
   <div class="folio">HouseMind AI · Technical Dossier</div><div class="folio right">15</div>
+</section>
+
+
+<!-- A1 Requirements -->
+<section class="sheet">
+  <div class="kicker">A1 / Requirements &amp; Traceability</div>
+  <h2>先把要求，<br />变成<em>证据</em>。</h2>
+  <p class="lead">
+    这不是“功能列表”，而是一张可核对的对照表：比赛看什么，项目用什么证据回答。
+  </p>
+  <div class="two">
+    <div>
+      <h3>目标用户与真实任务</h3>
+      <table>
+        <tr><th>用户</th><th>要解决的问题</th><th>对应能力</th></tr>
+        <tr><td>首购者</td><td>挂牌价是否明显偏离历史可比</td><td>估值、区间、可比成交、SHAP</td></tr>
+        <tr><td>小投资者</td><td>租金能否覆盖月供，最坏情景如何</td><td>NOI、DSCR、现金流、IRR、压力情景</td></tr>
+        <tr><td>分析师 / 经纪</td><td>结论能否复核，依据在哪里</td><td>引用、工具轨迹、模型卡、数据边界</td></tr>
+      </table>
+      <h3>功能与非功能要求</h3>
+      <p class="small">
+        <b>功能：</b>市场驾驶舱、房价预测、价值解释、投资测算、Agent、RAG、图像分析。<br />
+        <b>非功能：</b>可解释、可追溯、可降级、安全、响应式、可复现；没有密钥也必须能完整演示。<br />
+        <b>边界：</b>历史成交样本，不是当前挂牌价；不是正式评估、贷款审批、税务或法律意见。
+      </p>
+      <div class="note">
+        <b>需求取舍：</b>不追求“全国房价预测”，而是把 King County 的历史样本做深；
+        不用一个聊天框包住所有能力，而是让每个数字都能回到模型、公式或引用。
+      </div>
+    </div>
+    <div>
+      <h3>评分维度 → 项目证据</h3>
+      <table>
+        <tr><th>维度</th><th>证据</th></tr>
+        <tr><td><b>AI 深度 35%</b></td><td>6 工具 Agent、DeepSeek Function Calling、18 篇/71 片段 RAG、MCP、精确 TreeSHAP</td></tr>
+        <tr><td><b>创新性 25%</b></td><td>估值—区间—解释—现金流—知识—Agent 串成可核对决策链；双模式 Agent；边界产品化</td></tr>
+        <tr><td><b>前端工程 10%</b></td><td>Vue 3 + TS strict、Pinia、ECharts、路由懒加载、代码分割、三档响应式检查</td></tr>
+        <tr><td><b>实用性 10%</b></td><td>21,418 套真实成交；默认负现金流不美化；估值/投资/知识均可复核</td></tr>
+        <tr><td><b>用户体验 10%</b></td><td>SSE 流式输出、工具轨迹、加载/错误状态、统一设计系统</td></tr>
+        <tr><td><b>社会价值 10%</b></td><td>降低首次购房信息不对称；公平性说明；不替代专业评估与检查</td></tr>
+      </table>
+      <h3>七个模块的实际映射</h3>
+      <table>
+        <tr><th>原方案</th><th>实现位置</th></tr>
+        <tr><td>01 驾驶舱</td><td><span class="mono">/</span></td></tr>
+        <tr><td>02 预测 + 03 解释</td><td><span class="mono">/valuation</span>（点估计、区间、局部 SHAP）</td></tr>
+        <tr><td>04 投资</td><td><span class="mono">/investment</span></td></tr>
+        <tr><td>05 Agent</td><td><span class="mono">/agent</span></td></tr>
+        <tr><td>06 RAG</td><td><span class="mono">/knowledge</span></td></tr>
+        <tr><td>07 视觉</td><td><span class="mono">/vision</span></td></tr>
+        <tr><td>附加验证页</td><td><span class="mono">/research</span>（不替代 03）</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="folio">HouseMind AI · Technical Dossier</div><div class="folio right">A1</div>
+</section>
+
+<!-- A2 AI selection -->
+<section class="sheet">
+  <div class="kicker">A2 / AI Selection &amp; Optimization</div>
+  <h2>不是堆模型，<br />是选<em>可验证的</em>。</h2>
+  <p class="lead">
+    每个选型都同时说明“为什么选、怎么集成、代价是什么”；不用“先进”代替“可验证”。
+  </p>
+  <table>
+    <tr><th>层</th><th>选型</th><th>选型理由</th><th>代价 / 边界</th></tr>
+    <tr><td>估值</td><td><b>XGBoost</b></td><td>表格数据强、CPU 可训练、推理稳定；相对 Ridge 的 MAE 降低 40.2%</td><td>只适用于 King County 历史分布，不做全国泛化</td></tr>
+    <tr><td>解释</td><td><b>精确 TreeSHAP</b></td><td>用 <span class="mono">pred_contribs=True</span> 避免近似解释误差；贡献之和可校验</td><td>依赖树模型；解释不等于因果</td></tr>
+    <tr><td>区间</td><td><b>OOF 残差分位数</b></td><td>不假设正态；测试集实测覆盖 81.5%，中位宽度 $176,470</td><td>只校准历史误差，不覆盖装修/产权突变</td></tr>
+    <tr><td>LLM</td><td><b>DeepSeek + Function Calling</b></td><td>OpenAI 兼容、中文稳定、工具参数可控；最多 6 轮工具循环</td><td>外部依赖；无 Key 时明确降级，不伪装在线</td></tr>
+    <tr><td>Agent</td><td><b>自研 Orchestrator</b></td><td>同一套工具、SSE 事件和本地确定性规划器；无需额外图运行时</td><td>不是通用 LangGraph；复杂多 Agent 图需扩展</td></tr>
+    <tr><td>RAG</td><td><b>Chroma + BM25 + 字符 n-gram</b></td><td>可离线、可复现、精确词召回强；带引用与拒答门槛</td><td>不是神经语义 Embedding；开放域泛化有限</td></tr>
+    <tr><td>视觉</td><td><b>Pillow + 可选 VLM</b></td><td>无 Key 也能分析亮度/色温/主色；有 Key 才做房间/风格语义</td><td>单图不能判断结构安全、面积、产权</td></tr>
+    <tr><td>工具协议</td><td><b>MCP stdio + REST</b></td><td>Web 与 MCP 共用 <span class="mono">execute_tool</span>，同一模型、同一假设</td><td>MCP 客户端需本地配置；非浏览器直连</td></tr>
+  </table>
+  <div class="two" style="margin-top:5mm">
+    <div>
+      <h3>集成方式</h3>
+      <p class="small">
+        Vue SPA 只经 FastAPI 访问能力层；Agent 与 MCP 不直接加载模型，而是调用共享工具层。
+        请求链路固定为：Pydantic 校验 → 特征工程 → 模型/公式/检索 → 结果封装 → SSE 或 JSON。
+      </p>
+      <h3>优化策略</h3>
+      <p class="small">
+        <b>防泄漏：</b>固定 80/20 holdout，邮编统计只在训练集拟合；GroupShuffleSplit 单独报告未见邮编。<br />
+        <b>稳定性：</b>Prompt 约束、canary、输出清洗、PII 脱敏、注入拦截、30 次/分钟限流。<br />
+        <b>成本：</b>DeepSeek 只在有 Key 时调用；本地规划器与本地 RAG 兜底；工具循环上限 6 轮。
+      </p>
+    </div>
+    <div>
+      <div class="card">
+        <h3 style="margin-top:0">关键指标（可复核）</h3>
+        <p class="small">
+          XGBoost MAE <b>$59,477</b> · R² <b>0.9156</b><br />
+          区间覆盖 <b>81.5%</b> · 未见邮编 MAE <b>$95,130</b><br />
+          RAG：18 篇 / 71 片段 · Hit@1 <b>100%</b> · 拒答 <b>4/4</b><br />
+          测试：<b>25</b> 个 pytest（本地模式也覆盖）
+        </p>
+      </div>
+      <div class="note" style="margin-top:3mm">
+        <b>为什么不用“一个更大的模型”解决一切？</b><br />
+        房产决策需要可核对的数字、公式和来源；通用大模型无法替代估值模型、现金流公式和可追溯引用。
+      </div>
+    </div>
+  </div>
+  <div class="folio">HouseMind AI · Technical Dossier</div><div class="folio right">A2</div>
+</section>
+
+<!-- A3 Innovation -->
+<section class="sheet">
+  <div class="kicker">A3 / Innovation &amp; Delivery</div>
+  <h2>创新，不是<br />多一个<em>功能</em>。</h2>
+  <p class="lead">
+    项目的创新点不在“用了大模型”，而在把多个 AI 能力组织成一条可核对、可降级、可解释的房产决策链。
+  </p>
+  <div class="two">
+    <div>
+      <h3>技术创新</h3>
+      <p class="small">
+        <b>01 决策链而不是单点模型。</b>估值、区间、SHAP、现金流、RAG、Agent 共享同一套服务层与假设。<br /><br />
+        <b>02 不确定性优先。</b>OOF 残差分位数给出不对称 80% 区间，界面主视觉是区间而不是单点。<br /><br />
+        <b>03 精确可加性。</b>TreeSHAP 贡献之和与预测值可校验，避免“看起来像解释”的近似图。<br /><br />
+        <b>04 双模式 Agent。</b>有 Key 走 Function Calling，无 Key 走确定性规划器；工具、事件流、轨迹保持一致。<br /><br />
+        <b>05 工具层复用。</b>Web API 与 MCP Server 共享 <span class="mono">execute_tool</span>，不出现两套估值逻辑。<br /><br />
+        <b>06 边界产品化。</b>视觉只描述可见信号；知识库检索不到就拒答；不把辅助参考包装成正式评估。
+      </p>
+    </div>
+    <div>
+      <h3>应用创新</h3>
+      <p class="small">
+        <b>01 从“给一个价格”到“给一条决策路径”。</b>用户能看到价格、区间、原因、月供、DSCR、引用和下一步核查。<br /><br />
+        <b>02 负现金流不美化。</b>默认示例可以是负现金流；系统不为了演示好看而改参数。<br /><br />
+        <b>03 让“不知道”成为答案。</b>超纲知识问题明确拒答，而不是拿最相似段落硬答。<br /><br />
+        <b>04 让图片“看见但不越界”。</b>不根据一张照片断言结构安全、面积或产权。<br /><br />
+        <b>05 面向首次购房者的信息公平。</b>把评估师/投资机构才熟悉的区间、归因、现金流拆开给普通用户看。<br /><br />
+        <b>06 可复现的竞赛工程。</b>模型、指标、截图、PDF、视频都有生成脚本，数字不靠手写。
+      </p>
+    </div>
+  </div>
+  <h3>交付对照</h3>
+  <table>
+    <tr><th>交付物</th><th>状态</th><th>说明</th></tr>
+    <tr><td>可运行 Web 应用</td><td>完成</td><td>7 个路由，单端口 8000；开发模式 5173</td></tr>
+    <tr><td>数据与模型</td><td>完成</td><td>三数据集隔离；模型、指标、SHAP、模型卡入库</td></tr>
+    <tr><td>Agent / MCP</td><td>完成</td><td>6 工具；DeepSeek 与本地规划器；stdio MCP</td></tr>
+    <tr><td>RAG</td><td>完成</td><td>18 篇 / 71 片段；引用与拒答</td></tr>
+    <tr><td>技术文档</td><td>完成</td><td>本文档；A1–A3 为评审补充</td></tr>
+    <tr><td>演示视频</td><td>完成</td><td>5:35 · 1080p · 普通话</td></tr>
+    <tr><td>公开仓库</td><td>提交前完成</td><td>推送 GitHub/Gitee，确认无密钥</td></tr>
+    <tr><td>在线演示</td><td>可选</td><td>Docker / 单端口部署</td></tr>
+  </table>
+  <div class="note" style="margin-top:4mm">
+    <b>答辩一句话：</b>HouseMind AI 不是再给一个房价数字，而是把“价格是否合理、为什么、会错多少、养不养得起、依据在哪里”放进同一条可核对的决策链。
+  </div>
+  <div class="folio">HouseMind AI · Technical Dossier</div><div class="folio right">A3</div>
 </section>
 
 </body>

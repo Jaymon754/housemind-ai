@@ -35,3 +35,7 @@ Datasets/.idea/
 
 # Chrome headless artefact
 :memory:.ses
+
+# Local submission archives
+releases/
+.uv-cache/
