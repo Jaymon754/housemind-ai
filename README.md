@@ -205,9 +205,9 @@ cp .env.example .env
 # DeepSeek：启用真实 Function Calling Agent
 DEEPSEEK_API_KEY=sk-...
 
-# Qwen-VL：启用远程视觉语义分析（房间类型、风格、材质）
+# Qwen3-VL：当前演示已启用（房间类型、风格、可见材质）
 VISION_API_KEY=...
-VISION_MODEL=qwen-vl-max
+VISION_MODEL=qwen3-vl-plus
 ```
 
 不配置任何密钥时，系统完整可用：**本地规划器 + 本地图像信号 + 本地抽取式 RAG 回答**。界面会明确显示当前模式，不会把本地规则伪装成大模型。
@@ -346,7 +346,7 @@ docs/               # 技术文档、截图、演示脚本
 3. **数据集绝不混训。** King County 用于主估值；UCI 与 California 只做独立验证与区域对照，指标不拼成“平均成绩”。
 4. **RAG 有拒答门槛。** 查询词必须与语料有特定术语重叠；明显超纲问题返回“没有找到”，而不是拿最相似的段落硬答。
 5. **Agent 不假装有模型。** 无密钥时明确显示“本地规划器”，工具调用与结果仍然真实；有密钥时才显示 DeepSeek 模式。
-6. **图像不越界。** 本地模式只读取亮度、色温、色彩、边缘密度；不推断房间类型、风格、结构安全或面积。远程 VLM 也只做可见语义描述。
+6. **图像不越界。** 当前已接入 Qwen3-VL，可识别房间类型、风格、可见材质；它只描述照片里看得见的内容，不推断结构安全、面积或产权。无 Key 或调用失败时回退到本地亮度/色温/色彩/边缘信号。
 7. **每个数字可追溯。** 页面展示训练时间、测试集大小、数据截止、模型版本、误差指标与免责声明；报告可保存到 SQLite。
 
 ## 评分维度对照
@@ -368,7 +368,7 @@ docs/               # 技术文档、截图、演示脚本
 - **OOF 残差分位数区间**：不假设正态，测试覆盖 81.5%。
 - **DeepSeek + Function Calling**：工具参数可控、轨迹可追溯；无 Key 时确定性本地规划器兜底。
 - **Chroma + BM25 + 字符 n-gram**：可离线、可复现、精确词召回强；已标注不是神经语义 Embedding。
-- **Pillow + 可选 VLM**：无 Key 也能分析亮度/色温/主色；有 Key 才做房间/风格语义。
+- **Pillow + Qwen3-VL**：当前已接入 `qwen3-vl-plus`，可识别房间/风格/可见材质；无 Key 或调用失败时回退本地信号。
 
 ## 提交前检查
 
@@ -402,7 +402,7 @@ cd frontend && pnpm build && cd ..
 - [远程模型配置](docs/REMOTE_MODELS.md)
 - [提交清单](docs/SUBMISSION_CHECKLIST.md)
 - [技术文档 PDF（19 页）](docs/HouseMind_AI_技术文档.pdf)
-- [演示视频（5:35 · 1080p）](docs/HouseMind_AI_Demo_1080p.mp4)
+- [演示视频（5:37 · 1080p）](docs/HouseMind_AI_Demo_1080p.mp4)
 
 ## 数据来源与致谢
 

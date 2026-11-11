@@ -60,7 +60,7 @@ flowchart LR
 | `backend/app/services/model_service.py` | 估值、区间、SHAP、市场、what-if、可比 |
 | `backend/app/services/investment_service.py` | 月供、NOI、DSCR、IRR、情景、敏感性 |
 | `backend/app/rag/engine.py` | 文档切分、哈希向量、BM25、混合排序、抽取式回答 |
-| `backend/app/services/vision_service.py` | Pillow 本地信号 + 可选远程 VLM |
+| `backend/app/services/vision_service.py` | Pillow 本地信号 + Qwen3-VL 远程语义，失败可降级 |
 | `backend/app/agent/tools.py` | 6 个工具 schema、别名、参数强制转换 |
 | `backend/app/agent/orchestrator.py` | SSE、DeepSeek loop、本地规划器、持久化 |
 | `backend/app/api/*.py` | REST 路由与请求/响应模型 |
@@ -274,7 +274,7 @@ docker compose up --build
 |---|---|---|
 | 本地字符哈希 embedding | 零依赖、可离线、演示稳定 | 可替换 OpenAI/BGE embedding，保留同一接口 |
 | 本地规划器 | 无密钥也能完整演示 | 有密钥时无缝切换 Function Calling |
-| Pillow 视觉信号 | 不假装语义理解 | 远程 VLM 仅做可见描述，不替代检查 |
+| Pillow + Qwen3-VL | 无 Key 时只给物理信号 | 远程语义也仅做可见描述，不替代检查 |
 | 单进程 | 演示简单 | 生产可拆模型服务与 API，加 Redis 限流 |
 | SQLite | 零配置 | MySQL 已支持，适合多用户部署 |
 

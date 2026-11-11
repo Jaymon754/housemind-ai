@@ -21,12 +21,12 @@ DeepSeek 用于：
 
 ## 2. 配置 Vision
 
-以阿里云 DashScope 的 Qwen-VL OpenAI-compatible 接口为例：
+以阿里云 DashScope 的 Qwen3-VL OpenAI-compatible 接口为例：
 
 ```bash
 VISION_API_KEY=sk-...
 VISION_BASE_URL=https://dashscope.aliyuncs.com/compatible-mode/v1
-VISION_MODEL=qwen-vl-max
+VISION_MODEL=qwen3-vl-plus
 ```
 
 也可以替换成任意兼容 `/chat/completions` 的视觉服务。视觉模型只描述可见内容，不判断结构安全、面积、产权或价格。
@@ -50,7 +50,7 @@ curl -s http://127.0.0.1:8000/api/health
 应看到：
 
 ```json
-{"llm":{"mode":"deepseek","model":"deepseek-chat"},"vision":{"mode":"remote","model":"qwen-vl-max"}}
+{"llm":{"mode":"deepseek","model":"deepseek-chat"},"vision":{"mode":"remote","model":"qwen3-vl-plus"}}
 ```
 
 失败时脚本只输出异常类型和截断信息，不打印完整密钥。
@@ -59,7 +59,7 @@ curl -s http://127.0.0.1:8000/api/health
 
 - 代码路径、模式切换、回退逻辑与前端标签已实现；
 - **DeepSeek 已用真实 key 在本机验证**：`scripts/check_remote.py` 返回“可用”，Agent 通过真实 Function Calling 调用了 3 个工具，RAG 返回 6 条引用；
-- **Vision 尚未配置真实 key**，因此 Qwen-VL 远程调用尚未验证；
+- **Vision 已用真实 key 在本机验证**：2026-11-11 上传 `interior.jpg`，返回远程模式，识别为客厅、现代简约混搭北欧风，置信度 0.92，并列出可见材质；
 - `scripts/check_remote.py` 用最小请求分别验证聊天与视觉接口，填入 key 后即可执行；
 - key 只保存在本机 `.env`（权限 600、被 Git 忽略），不进入仓库或日志。
 

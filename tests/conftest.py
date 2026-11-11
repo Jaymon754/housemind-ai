@@ -1,10 +1,17 @@
 """Shared test fixtures. The app is started once because model/RAG loading is expensive."""
 from __future__ import annotations
 
+import os
+
 import pytest
 from fastapi.testclient import TestClient
 
-from backend.main import app
+# Tests must be deterministic and offline: never call paid DeepSeek / Qwen
+# endpoints just because the developer's local .env contains a key.
+os.environ["DEEPSEEK_API_KEY"] = ""
+os.environ["VISION_API_KEY"] = ""
+
+from backend.main import app  # noqa: E402
 
 
 @pytest.fixture(scope="session")

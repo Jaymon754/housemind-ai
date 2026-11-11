@@ -52,7 +52,7 @@ class Settings:
             "VISION_BASE_URL", "https://dashscope.aliyuncs.com/compatible-mode/v1"
         ).rstrip("/")
     )
-    vision_model: str = field(default_factory=lambda: os.getenv("VISION_MODEL", "qwen-vl-max"))
+    vision_model: str = field(default_factory=lambda: os.getenv("VISION_MODEL", "qwen3-vl-plus"))
     rag_top_k: int = field(default_factory=lambda: int(os.getenv("RAG_TOP_K", "6")))
     max_upload_mb: int = field(default_factory=lambda: int(os.getenv("MAX_UPLOAD_MB", "8")))
     agent_rate_limit: int = field(default_factory=lambda: int(os.getenv("AGENT_RATE_LIMIT_PER_MINUTE", "30")))

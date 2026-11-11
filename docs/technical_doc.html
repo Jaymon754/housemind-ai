@@ -849,18 +849,20 @@ done       消息 ID、建议追问</pre>
   <h2>看见，<br />但不<em>越界</em>。</h2>
   <div class="split">
     <div>
-      <h3>本地模式</h3>
+      <h3>本地兜底</h3>
       <p>
         Pillow 读取亮度、过暗/过亮像素比例、色温、饱和度、边缘密度与主色板。
         它只描述“画面本身”，不推断房间类型、风格、材质、面积、结构安全、霉菌、电路或产权。
       </p>
       <div class="note">
         <b>没有语义模型时，不伪造置信度。</b><br />
-        页面显示“语义能力 · 未启用”，而不是给出一个看似精确的 28%。
+        页面显示“语义能力 · 未启用”，而不是给出一个看似精确的 28%；
+        远程调用失败时自动回退，并保留失败原因。
       </div>
-      <h3>远程模式</h3>
+      <h3>远程语义（当前已启用）</h3>
       <p>
-        可选 Qwen-VL 只做可见语义描述：空间类型、采光、材质、明显破损；
+        当前演示接入 <b>Qwen3-VL（qwen3-vl-plus）</b>：识别客厅、现代简约混搭北欧风、
+        实木/皮革/织物/玻璃等可见材质，并给出置信度与 3–5 条观察；
         仍不输出结构安全、价格或法律结论，并附“不能替代持牌房屋检查”。
       </p>
       <h3>现场清单</h3>
@@ -872,7 +874,7 @@ done       消息 ID、建议追问</pre>
     <div>
       <figure>
         <img src="screenshots/06-vision.png" alt="图像分析" />
-        <figcaption>图 8 · 图像页：本地信号、主色板、观察与能力边界。</figcaption>
+        <figcaption>图 8 · 图像页：Qwen3-VL 语义、可见材质、观察与能力边界。</figcaption>
       </figure>
     </div>
   </div>
@@ -1135,7 +1137,7 @@ cp .env.example .env
     <tr><td>LLM</td><td><b>DeepSeek + Function Calling</b></td><td>OpenAI 兼容、中文稳定、工具参数可控；最多 6 轮工具循环</td><td>外部依赖；无 Key 时明确降级，不伪装在线</td></tr>
     <tr><td>Agent</td><td><b>自研 Orchestrator</b></td><td>同一套工具、SSE 事件和本地确定性规划器；无需额外图运行时</td><td>不是通用 LangGraph；复杂多 Agent 图需扩展</td></tr>
     <tr><td>RAG</td><td><b>Chroma + BM25 + 字符 n-gram</b></td><td>可离线、可复现、精确词召回强；带引用与拒答门槛</td><td>不是神经语义 Embedding；开放域泛化有限</td></tr>
-    <tr><td>视觉</td><td><b>Pillow + 可选 VLM</b></td><td>无 Key 也能分析亮度/色温/主色；有 Key 才做房间/风格语义</td><td>单图不能判断结构安全、面积、产权</td></tr>
+    <tr><td>视觉</td><td><b>Pillow + Qwen3-VL</b></td><td>当前已接入 qwen3-vl-plus，可识别房间/风格/材质；无 Key 或失败时回退本地信号</td><td>单图不能判断结构安全、面积、产权</td></tr>
     <tr><td>工具协议</td><td><b>MCP stdio + REST</b></td><td>Web 与 MCP 共用 <span class="mono">execute_tool</span>，同一模型、同一假设</td><td>MCP 客户端需本地配置；非浏览器直连</td></tr>
   </table>
   <div class="two" style="margin-top:5mm">

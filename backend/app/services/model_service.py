@@ -131,7 +131,9 @@ class ModelService:
         return frame[self.features]
 
     def _raw_predict(self, X: pd.DataFrame) -> np.ndarray:
-        return np.asarray(self.model.predict(X), dtype=float)
+        # XGBoost 3.x + pandas 3.x can reject DataFrame feature names even when
+        # they match the booster; the matrix is already ordered by self.features.
+        return np.asarray(self.model.predict(X, validate_features=False), dtype=float)
 
     def _contributions(self, X: pd.DataFrame) -> tuple[np.ndarray, float]:
         matrix = xgb.DMatrix(X, feature_names=self.features)
