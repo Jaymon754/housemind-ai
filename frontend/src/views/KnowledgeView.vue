@@ -412,7 +412,7 @@ onMounted(async () => {
 .ask-meta i { width: 4px; height: 4px; border-radius: 50%; background: var(--sage-light); }
 .search-box { display: flex; align-items: center; gap: 11px; background: var(--paper-2); border-radius: 8px; padding: 7px 8px 7px 15px; margin-top: 21px; position: relative; z-index: 2; }
 .search-icon { color: var(--gold); flex: 0 0 auto; }
-.search-box input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font-size: 12.5px; height: 33px; }
+.search-box input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--ink); caret-color: var(--ink); font-size: 12.5px; height: 33px; }
 .search-box input::placeholder { color: var(--muted-light); }
 .search-mode { display: flex; background: var(--paper-3); border-radius: 7px; padding: 2px; flex: 0 0 auto; }
 .search-mode button { border: 0; background: transparent; padding: 5px 8px; font-size: 8px; color: var(--muted); border-radius: 6px; }
