@@ -349,6 +349,10 @@ docs/               # 技术文档、截图、演示脚本
 6. **图像不越界。** 当前已接入 Qwen3-VL，可识别房间类型、风格、可见材质；它只描述照片里看得见的内容，不推断结构安全、面积或产权。无 Key 或调用失败时回退到本地亮度/色温/色彩/边缘信号。
 7. **每个数字可追溯。** 页面展示训练时间、测试集大小、数据截止、模型版本、误差指标与免责声明；报告可保存到 SQLite。
 
+## 运行证据
+
+真实 Agent 轨迹、RAG Top-K、Vision 结果与测试记录见 [运行证据](docs/EVIDENCE.md)。
+
 ## 评分维度对照
 
 | 评分维度 | 权重 | 本项目证据 |
@@ -401,8 +405,8 @@ cd frontend && pnpm build && cd ..
 - [演示视频脚本](docs/DEMO_SCRIPT.md)
 - [远程模型配置](docs/REMOTE_MODELS.md)
 - [提交清单](docs/SUBMISSION_CHECKLIST.md)
-- [技术文档 PDF（19 页）](docs/HouseMind_AI_技术文档.pdf)
-- [演示视频（5:37 · 1080p）](docs/HouseMind_AI_Demo_1080p.mp4)
+- [技术文档 PDF（20 页）](docs/HouseMind_AI_技术文档.pdf)
+- [演示视频（5:41 · 1080p）](docs/HouseMind_AI_Demo_1080p.mp4)
 
 ## 数据来源与致谢
 

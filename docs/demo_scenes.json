@@ -54,7 +54,7 @@
     "id": "agent",
     "kicker": "04 / AI 顾问",
     "title": "先调工具，再说话。",
-    "subtitle": "3 个真实工具 · DeepSeek Function Calling · 可追溯轨迹",
+    "subtitle": "5 个真实工具 · DeepSeek Function Calling · 可追溯轨迹",
     "image": "screenshots/04-agent.png",
     "highlight": [
       0.34,
@@ -62,7 +62,7 @@
       0.88,
       0.74
     ],
-    "narration": "接下来把问题交给 Agent。它先规划，再调用工具。这里可以看到三次真实调用：房价预测、区域市场分析、投资回报测算；每次都有参数、摘要和耗时。它给出的价格、区间、月供、DSCR 都来自工具，不是语言模型即兴生成。当前已配置 DeepSeek，界面标注 DeepSeek Agent 与 Function Calling；没有密钥时，同一个界面会回退到本地规划器。刷新页面，工具轨迹仍然保留在会话历史里。"
+    "narration": "接下来把问题交给 Agent。它先理解任务，再自主选择工具。这里可以看到五次真实调用：房价预测、价格归因、区域市场、投资测算、知识检索；每次都有参数、摘要和耗时。它给出的价格、区间、SHAP 归因、DSCR 和引用都来自工具，不是语言模型即兴生成。当前使用 DeepSeek Function Calling，界面显示 5/5 轨迹；没有密钥时，同一个界面会回退到确定性本地规划器。刷新页面，工具轨迹仍然保留在会话历史里。"
   },
   {
     "id": "knowledge",

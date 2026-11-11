@@ -392,12 +392,12 @@ pre .c { color: #9fb4a7; }
         <div class="toc-row"><span class="n">06</span><span class="t">RAG、Agent 与 MCP</span></div>
         <div class="toc-row"><span class="n">07</span><span class="t">多模态、工程与安全</span></div>
         <div class="toc-row"><span class="n">08</span><span class="t">评测、限制与复现</span></div>
-        <div class="toc-row"><span class="n">A</span><span class="t">需求、选型与创新补充</span><span class="d">A1–A3</span></div>
+        <div class="toc-row"><span class="n">A</span><span class="t">需求、选型、创新与运行证据</span><span class="d">A1–A4</span></div>
       </div>
       <div class="note" style="margin-top:5mm">
         <b>阅读提示</b><br />
         第 3–5 节是 AI 深度；第 6–7 节是工程与产品；第 8 节是评审最关心的“边界与诚实”；
-        附录 A1–A3 直接对照比赛评分表、选型理由与创新点。
+        附录 A1–A4 直接对照比赛评分表、选型理由、创新点与运行证据。
       </div>
     </div>
   </div>
@@ -832,7 +832,7 @@ done       消息 ID、建议追问</pre>
     <div>
       <figure>
         <img src="screenshots/04-agent.png" alt="Agent 工具轨迹" />
-        <figcaption>图 7 · Agent 页：4 个工具的调用轨迹、摘要、耗时，以及带引用的结论。</figcaption>
+        <figcaption>图 7 · Agent 页：5 个工具的调用轨迹、参数、摘要、耗时，以及带引用的结论。</figcaption>
       </figure>
       <div class="note">
         <b>MCP：</b>官方 FastMCP stdio server 暴露同样 6 个工具，可接入 Claude Desktop / Cursor。
@@ -1211,8 +1211,8 @@ cp .env.example .env
     <tr><td>数据与模型</td><td>完成</td><td>三数据集隔离；模型、指标、SHAP、模型卡入库</td></tr>
     <tr><td>Agent / MCP</td><td>完成</td><td>6 工具；DeepSeek 与本地规划器；stdio MCP</td></tr>
     <tr><td>RAG</td><td>完成</td><td>18 篇 / 71 片段；引用与拒答</td></tr>
-    <tr><td>技术文档</td><td>完成</td><td>本文档；A1–A3 为评审补充</td></tr>
-    <tr><td>演示视频</td><td>完成</td><td>5:35 · 1080p · 普通话</td></tr>
+    <tr><td>技术文档</td><td>完成</td><td>本文档；A1–A4 为评审补充</td></tr>
+    <tr><td>演示视频</td><td>完成</td><td>5:41 · 1080p · 普通话</td></tr>
     <tr><td>公开仓库</td><td>提交前完成</td><td>推送 GitHub/Gitee，确认无密钥</td></tr>
     <tr><td>在线演示</td><td>可选</td><td>Docker / 单端口部署</td></tr>
   </table>
@@ -1220,6 +1220,61 @@ cp .env.example .env
     <b>答辩一句话：</b>HouseMind AI 不是再给一个房价数字，而是把“价格是否合理、为什么、会错多少、养不养得起、依据在哪里”放进同一条可核对的决策链。
   </div>
   <div class="folio">HouseMind AI · Technical Dossier</div><div class="folio right">A3</div>
+</section>
+
+
+<!-- A4 Runtime evidence -->
+<section class="sheet">
+  <div class="kicker">A4 / Runtime Evidence</div>
+  <h2>不是“说实现了”，<br />是<em>能复核</em>。</h2>
+  <p class="lead">
+    以下结果来自 2026-11-12 运行中的 FastAPI 服务，不是 README 的功能列表。完整记录见 <span class="mono">docs/EVIDENCE.md</span>。
+  </p>
+  <div class="two">
+    <div>
+      <h3>Agent：DeepSeek Function Calling</h3>
+      <p class="small">
+        会话 <span class="mono">b9c348c7…</span> · 模式 <span class="mono">deepseek</span> · 工具轨迹 <b>5/5</b>；
+        SSE 事件顺序 <span class="mono">meta → status → tool_call → tool_result → token → citations → done</span>。
+      </p>
+      <table>
+        <tr><th>#</th><th>工具</th><th>实际返回摘要</th></tr>
+        <tr><td>1</td><td>predict</td><td>$500,200；区间 $410,000–$586,500；挂牌低于区间</td></tr>
+        <tr><td>2</td><td>explain</td><td>纬度 +$60,980、邮编 +$55,973；面积 −$59,739</td></tr>
+        <tr><td>3</td><td>market</td><td>98052 中位价 $615,000；$274/sqft；571 笔</td></tr>
+        <tr><td>4</td><td>investment</td><td>月供 $1,896；月现金流 −$193；Cap 5.11%；IRR 8.9%</td></tr>
+        <tr><td>5</td><td>knowledge</td><td>命中 5 段；最高来源 DSCR 文档</td></tr>
+      </table>
+      <p class="tiny">工具由模型在 Function Calling 循环中选择；代码路径：agent/orchestrator.py、agent/tools.py、mcp_server.py。</p>
+    </div>
+    <div>
+      <h3>RAG：Top-K、分数与引用</h3>
+      <p class="small">问题“首付比例和DSCR有什么关系？”，<span class="mono">top_k=6</span>，回答模式 <span class="mono">deepseek</span>，引用 6 条。</p>
+      <table>
+        <tr><th>#</th><th>分数</th><th>文档 / 章节</th></tr>
+        <tr><td>1</td><td>1.901</td><td>DSCR 与盈亏平衡 · DSCR</td></tr>
+        <tr><td>2</td><td>1.454</td><td>DSCR 与盈亏平衡 · 盈亏平衡</td></tr>
+        <tr><td>3</td><td>1.102</td><td>月供、首付与摊还 · 月供公式</td></tr>
+        <tr><td>4</td><td>1.046</td><td>月供、首付与摊还 · 首付与 PMI</td></tr>
+        <tr><td>5</td><td>0.882</td><td>中国购房政策概览 · 因城施策</td></tr>
+        <tr><td>6</td><td>0.785</td><td>市场周期 · 杠杆的双刃剑</td></tr>
+      </table>
+      <p class="tiny">Chroma 向量召回 + BM25 + 领域加权；结果带 score、section、source_url；检索不到时拒答。</p>
+    </div>
+  </div>
+  <div class="three" style="margin-top:5mm">
+    <div class="card"><h4>Vision 实测</h4><p class="small">Qwen3-VL：客厅；现代简约混搭北欧风；置信度 0.92；实木/皮革/织物/玻璃等可见材质。失败自动回退本地信号。</p></div>
+    <div class="card"><h4>接口实测</h4><p class="small"><span class="mono">/api/valuation/analyze</span> 200，估值 $570,000，区间 $479,800–$656,200；<span class="mono">/api/vision/analyze</span> 200，remote-vision。</p></div>
+    <div class="card"><h4>测试</h4><p class="small">25 passed；覆盖估值、SHAP 加性、投资数学、RAG、上传限制、SSE、历史轨迹、注入、PII、MCP、模型确定性。</p></div>
+  </div>
+  <div class="note" style="margin-top:4mm">
+    <b>可复核命令：</b>
+    <span class="mono">curl -N -X POST /api/agent/stream ...</span> ·
+    <span class="mono">curl -X POST /api/knowledge/query ...</span> ·
+    <span class="mono">python -m pytest tests -q</span>。
+    测试通过不等于远程调用通过；远程调用另由 <span class="mono">scripts/check_remote.py</span> 验证。
+  </div>
+  <div class="folio">HouseMind AI · Technical Dossier</div><div class="folio right">A4</div>
 </section>
 
 </body>
