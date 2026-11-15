@@ -36,15 +36,13 @@ HouseMind AI 用 **7 个模块** 回答这些问题：
 
 ## 团队信息
 
-> 提交前请替换为真实信息；公开版本不要填写手机号、邮箱等隐私信息。
-
 | 项目 | 内容 |
 |---|---|
-| 学校 | 待填写 |
-| 队伍名称 | 待填写 |
-| 参赛组别 | A组 / B组 / C组 / 研究生组（按实际填写） |
-| 成员 | 待填写（1–3 人，注明分工） |
-| 指导教师 | 待填写（不超过 2 人） |
+| 学校 | 广州商学院 |
+| 队伍名称 | 苏俊鑫队 |
+| 参赛组别 |  B组  |
+| 成员 | 彭俊文、黄培鑫、苏朗盛 |
+| 指导教师 | 叶丽珠、黄世奇 |
 
 ## 核心结果（全部来自仓库脚本）
 
@@ -167,7 +165,7 @@ flowchart TB
 
 - Python **3.13**
 - Node.js **20.19+**（推荐 22）与 pnpm
-- macOS / Linux / Windows（推荐 Linux 或 macOS）
+- macOS / Linux / Windows（当前操作系统为macOS 推荐 Linux 或 macOS）
 
 ### 1. 安装依赖
 
@@ -406,7 +404,7 @@ cd frontend && pnpm build && cd ..
 - [远程模型配置](docs/REMOTE_MODELS.md)
 - [提交清单](docs/SUBMISSION_CHECKLIST.md)
 - [技术文档 PDF（20 页）](docs/HouseMind_AI_技术文档.pdf)
-- [演示视频（5:41 · 1080p）](docs/HouseMind_AI_Demo_1080p.mp4)
+- [演示视频（5:47 · 1080p）](docs/HouseMind_AI_Demo_1080p.mp4)
 
 ## 数据来源与致谢
 
