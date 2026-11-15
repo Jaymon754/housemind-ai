@@ -29,7 +29,7 @@ HouseMind AI 用 **7 个模块** 回答这些问题：
 | 投资决策 | `/investment` | 月供、NOI、Cap Rate、CoC、DSCR、IRR、情景与敏感性 |
 | AI 顾问 | `/agent` | 6 个真实工具的 SSE Agent，带完整工具轨迹 |
 | 知识库 | `/knowledge` | Chroma + BM25 混合检索、引用、文档阅读 |
-| 图像分析 | `/vision` | 本地图像信号 + 可选视觉大模型 + 能力边界 |
+| 图像分析 | `/vision` | Qwen3-VL 语义 + 本地兜底 + 能力边界 |
 | 研究实验室 | `/research` | 模型对比、全局 SHAP、泛化检验、模型卡 |
 
 > 对照最初方案：**模块 02 预测 + 模块 03 价值解释**合并到 `/valuation`（点估计、区间、局部 SHAP、可比成交）；`/research` 是附加的模型验证页，不替代模块 03。这样 7 个路由覆盖了原方案的 7 个能力模块，并额外提供研究验证页。
@@ -120,7 +120,7 @@ flowchart TB
         MS["ModelService<br/>XGBoost + TreeSHAP + interval"]
         IS["InvestmentService<br/>mortgage / NOI / DSCR / IRR"]
         RAG["RAGService<br/>Chroma + BM25 + citations"]
-        VS["VisionService<br/>local signals + optional VLM"]
+        VS["VisionService<br/>Qwen3-VL + local fallback"]
         OR["AgentOrchestrator<br/>DeepSeek tools or local planner"]
     end
 
@@ -165,7 +165,7 @@ flowchart TB
 
 - Python **3.13**
 - Node.js **20.19+**（推荐 22）与 pnpm
-- macOS / Linux / Windows（当前操作系统为macOS 推荐 Linux 或 macOS）
+- macOS / Linux / Windows（推荐 Linux 或 macOS）
 
 ### 1. 安装依赖
 
